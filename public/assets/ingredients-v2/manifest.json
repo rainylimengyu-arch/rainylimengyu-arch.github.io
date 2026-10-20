@@ -1,0 +1,985 @@
+{
+  "version": 2,
+  "createdAt": "2026-10-18",
+  "assetCount": 39,
+  "method": "Original illustrations created with built-in ImageGen; alpha-preserving atlas extraction and thumbnail sizing only.",
+  "sourceImagePixelsCopied": false,
+  "note": "References establish identity and visual associations only. Illustrations are not actual product photography, exact microscopy, final ingredient sources, mineral supplement forms or confirmed blend compositions.",
+  "assets": [
+    {
+      "id": "vitamin-d3",
+      "path": "/assets/ingredients-v2/vitamin-d3.webp",
+      "subjectZh": "金色油滴与 D3 标识",
+      "alt": "Conceptual oil droplet with D3 marker",
+      "role": "concept",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 1,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "sha256": "13ec9d7d88151541fedcb4ff39dcf7548461ee0d76d4b118616e8a0debafcaab",
+      "bytes": 22354,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "vitamin-c",
+      "path": "/assets/ingredients-v2/vitamin-c.webp",
+      "subjectZh": "鲜橙与橙瓣",
+      "alt": "Orange half and wedge",
+      "role": "food-association",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 1,
+        "column": 2
+      },
+      "sourceCrop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "sha256": "cd4875af4161955c5cbd99a5003dfb0815b307f4f268ee510447568f7b4813a0",
+      "bytes": 31816,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "vitamin-b12",
+      "path": "/assets/ingredients-v2/vitamin-b12.webp",
+      "subjectZh": "红色结晶粉末与 B12 标识",
+      "alt": "Conceptual red B12 crystals with B12 marker",
+      "role": "concept",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 1,
+        "column": 3
+      },
+      "sourceCrop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "sha256": "bd5a63cadf38096454288a2df4467e185788a7448ade5623678172bbcd41af7a",
+      "bytes": 29470,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "magnesium",
+      "path": "/assets/ingredients-v2/magnesium.webp",
+      "subjectZh": "浅色矿物晶体与 Mg 标识",
+      "alt": "Conceptual mineral crystals with Mg marker",
+      "role": "mineral-concept",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 1,
+        "column": 4
+      },
+      "sourceCrop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "sha256": "e5bfbb79575ab71bbb3e9b30fbff14db48e15542cc9082fe86da4201bf25c9ce",
+      "bytes": 25222,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "omega-3",
+      "path": "/assets/ingredients-v2/omega-3.webp",
+      "subjectZh": "金色油滴",
+      "alt": "Conceptual omega 3 oil droplets",
+      "role": "concept",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 2,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "sha256": "a47c25e8e64209afea71253414450f2338dee40e3199d620ecb21ba9fc553a6a",
+      "bytes": 29650,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "zinc",
+      "path": "/assets/ingredients-v2/zinc.webp",
+      "subjectZh": "银色矿物与 Zn 标识",
+      "alt": "Conceptual zinc mineral specimen with Zn marker",
+      "role": "mineral-concept",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 2,
+        "column": 2
+      },
+      "sourceCrop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "sha256": "6932a92ba110b40a7eed106dabb7759203239e1a19da3c12cc50379e3d8cf8dd",
+      "bytes": 33006,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "collagen",
+      "path": "/assets/ingredients-v2/collagen.webp",
+      "subjectZh": "胶原蛋白三股螺旋示意",
+      "alt": "Conceptual collagen triple helix",
+      "role": "micro-concept",
+      "identityReferenceUrl": "https://www.rcsb.org/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 2,
+        "column": 3
+      },
+      "sourceCrop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "sha256": "99ebcef503f5379cf2bf1734a5be714614eac7d8fe6d0722335747f1b4384cdd",
+      "bytes": 30900,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "probiotics",
+      "path": "/assets/ingredients-v2/probiotics.webp",
+      "subjectZh": "青绿色杆菌与芽孢示意",
+      "alt": "Conceptual teal probiotic rods and a spore",
+      "role": "micro-concept",
+      "identityReferenceUrl": "https://lactospore.com/about-lactospore/heyndrickxia-coagulans",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 2,
+        "column": 4
+      },
+      "sourceCrop": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "sha256": "ea40cff063cef5d4757086aeb657cf55aedbd682aa696127c40f4bbdf5e62a0a",
+      "bytes": 35306,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "l-theanine",
+      "path": "/assets/ingredients-v2/l-theanine.webp",
+      "subjectZh": "鲜绿茶嫩叶",
+      "alt": "Fresh green tea leaves",
+      "role": "food-association",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 1,
+        "column": 3
+      },
+      "sourceCrop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "sha256": "f9f3a348ddb6d550217d7b805a3f5171f458f2fae84eb42a1c43c571d29b37e6",
+      "bytes": 24336,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "ashwagandha",
+      "path": "/assets/ingredients-v2/ashwagandha.webp",
+      "subjectZh": "南非醉茄干根",
+      "alt": "Dried ashwagandha roots",
+      "role": "botanical",
+      "identityReferenceUrl": "https://www.nccih.nih.gov/health/ashwagandha",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 1,
+        "column": 4
+      },
+      "sourceCrop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "sha256": "9448f7585e7ebde19bff7999aaf1a1870a00634dcc4abf4bb75ad5576876c194",
+      "bytes": 31676,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "iron",
+      "path": "/assets/ingredients-v2/iron.webp",
+      "subjectZh": "深色矿物与 Fe 标识",
+      "alt": "Conceptual iron mineral specimen with Fe marker",
+      "role": "mineral-concept",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 3,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "sha256": "ded49898c6e0a5c42e0a58d14b167d4a680de2a6254e823eb3ff3006bfb73f8b",
+      "bytes": 28098,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "hydrocurc",
+      "path": "/assets/ingredients-v2/hydrocurc.webp",
+      "subjectZh": "姜黄根茎与黑胡椒粒",
+      "alt": "Turmeric rhizome and black peppercorns",
+      "role": "botanical",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 2,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "sha256": "eeb561d243697b0bd34c813050c38f09b837c54424326520c882e8d8c71c862d",
+      "bytes": 31284,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "5-htp",
+      "path": "/assets/ingredients-v2/5-htp.webp",
+      "subjectZh": "加纳籽与豆荚",
+      "alt": "Griffonia simplicifolia seeds and pod",
+      "role": "botanical-association",
+      "identityReferenceUrl": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/5-htp-01",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 3,
+        "column": 3
+      },
+      "sourceCrop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "sha256": "54bb61f5d14045946f48fffa9c86a70b4e42afc87ed5a09ac5f2fe6bba63cc94",
+      "bytes": 26208,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "apple-cider-vinegar",
+      "path": "/assets/ingredients-v2/apple-cider-vinegar.webp",
+      "subjectZh": "苹果与苹果醋玻璃壶",
+      "alt": "Apple and a clear glass cruet of apple cider vinegar",
+      "role": "botanical",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "remaining.png",
+      "grid": {
+        "columns": 3,
+        "row": 3,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        836,
+        418,
+        1254
+      ],
+      "sha256": "38e9916b32b2eb34a91fc4a9fab1f392bc76dae868f4912fa889186cdf74315e",
+      "bytes": 31706,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "beetroot",
+      "path": "/assets/ingredients-v2/beetroot.webp",
+      "subjectZh": "甜菜根与红色环纹切面",
+      "alt": "Beetroot with a sliced half",
+      "role": "botanical",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 2,
+        "column": 2
+      },
+      "sourceCrop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "sha256": "ca3e2d04ba9c49a96a44d3e06faee7bc002ac356d218922db38e8c303e6aaff6",
+      "bytes": 38828,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "beta-glucan",
+      "path": "/assets/ingredients-v2/beta-glucan.webp",
+      "subjectZh": "酵母出芽细胞示意",
+      "alt": "Conceptual budding yeast cells",
+      "role": "micro-concept",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients/products/beta-glucan",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 3,
+        "column": 2
+      },
+      "sourceCrop": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "sha256": "8bd332aa1e3e4f4c5863fec52afb2ebbfdc077c95504945333af6b64eb4a7714",
+      "bytes": 30504,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "bpl1",
+      "path": "/assets/ingredients-v2/bpl1.webp",
+      "subjectZh": "紫色双歧杆菌与后生元碎片示意",
+      "alt": "Conceptual bifidobacteria and postbiotic fragments",
+      "role": "micro-concept",
+      "identityReferenceUrl": "https://www.adm.com/globalassets/products--services/human-nutrition/products/microbiome-solutions/postbiotics/htbpl1-postbiotic.pdf/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 3,
+        "column": 3
+      },
+      "sourceCrop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "sha256": "4aec0af0608ffc2748a3be4c469e44c0770c4fa5bb789c83112b217adae7190d",
+      "bytes": 40194,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "careflow",
+      "path": "/assets/ingredients-v2/careflow.webp",
+      "subjectZh": "芒果果肉",
+      "alt": "Ripe mango cheek",
+      "role": "botanical",
+      "identityReferenceUrl": "https://media.knowde.com/image/upload/v1631511747/production/Collateral/272420/Careflow_Technical_Data_Sheet.pdf",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 4,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "sha256": "08d974c53548c138cddd75da7a96ffb8cb5c0327220c3b1b28a18e699adbc1b6",
+      "bytes": 28096,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "coq10",
+      "path": "/assets/ingredients-v2/coq10.webp",
+      "subjectZh": "橙黄色粉末与 Q10 标识",
+      "alt": "Conceptual orange CoQ10 powder with Q10 marker",
+      "role": "concept",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 3,
+        "column": 4
+      },
+      "sourceCrop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "sha256": "41942e895a27339ac5f35bac4a2661754c8bff7d11337e8f9b9e9e4a2284fcdd",
+      "bytes": 32014,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "cordyceps",
+      "path": "/assets/ingredients-v2/cordyceps.webp",
+      "subjectZh": "橙色蛹虫草子实体",
+      "alt": "Illustration of orange cordyceps fruiting bodies",
+      "role": "botanical-association",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 2,
+        "column": 3
+      },
+      "sourceCrop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "sha256": "1d63e98b768529a177ca3a4606e83914e13827a2161ede9f4247f22df094b42a",
+      "bytes": 34256,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "folic-acid",
+      "path": "/assets/ingredients-v2/folic-acid.webp",
+      "subjectZh": "新鲜菠菜叶",
+      "alt": "Fresh spinach leaves as a folate food association",
+      "role": "food-association",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 4,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "sha256": "287afba999f6fb5603fd3d946b68b2fea5246c0ee8a4a115efeecb90786da2d1",
+      "bytes": 26990,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "ginger",
+      "path": "/assets/ingredients-v2/ginger.webp",
+      "subjectZh": "生姜根茎与切片",
+      "alt": "Ginger rhizome and fresh slices",
+      "role": "botanical",
+      "identityReferenceUrl": "https://www.nccih.nih.gov/health/ginger",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 1,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "sha256": "282e7e166cb284bd5192caffb90594b6ae461a6c0a6054eb375b47501bcf06a0",
+      "bytes": 30842,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "ginseng",
+      "path": "/assets/ingredients-v2/ginseng.webp",
+      "subjectZh": "完整人参根与细根须",
+      "alt": "Whole Panax ginseng root with fine rootlets",
+      "role": "botanical",
+      "identityReferenceUrl": "https://www.nccih.nih.gov/health/asian-ginseng",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 1,
+        "column": 2
+      },
+      "sourceCrop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "sha256": "9121210d9daf08ad00fffe059f9a8aa75efcb69365188d034b6075ecd9e64492",
+      "bytes": 47778,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "inositol",
+      "path": "/assets/ingredients-v2/inositol.webp",
+      "subjectZh": "白色结晶粉末与 IN 标识",
+      "alt": "Conceptual white inositol powder with IN marker",
+      "role": "concept",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 4,
+        "column": 2
+      },
+      "sourceCrop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "sha256": "47de461c2551078a1a683ce4aec837befc4e5a4380b12b02c4d97e3e7f28618b",
+      "bytes": 27022,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "iodine",
+      "path": "/assets/ingredients-v2/iodine.webp",
+      "subjectZh": "海带藻叶",
+      "alt": "Kelp fronds as an iodine food association",
+      "role": "food-association",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 4,
+        "column": 3
+      },
+      "sourceCrop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "sha256": "b9a0dca44a40e29b2bf9d85ad7d8cd5183c44bc938160a8c759fdbabc5061af8",
+      "bytes": 31636,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "vitamin-k2",
+      "path": "/assets/ingredients-v2/vitamin-k2.webp",
+      "subjectZh": "金色油滴与 K2 标识",
+      "alt": "Conceptual oil droplet with K2 marker",
+      "role": "concept",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "micronutrients.png",
+      "grid": {
+        "columns": 4,
+        "row": 4,
+        "column": 4
+      },
+      "sourceCrop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "sha256": "acaf6dfcfdd09a1e88a35792253be1857db285cbc8dd445974e2197477468d0c",
+      "bytes": 22818,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "lutemax",
+      "path": "/assets/ingredients-v2/lutemax.webp",
+      "subjectZh": "橙色万寿菊花",
+      "alt": "Orange marigold blossom",
+      "role": "botanical",
+      "identityReferenceUrl": "https://lutemax.com/",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 4,
+        "column": 2
+      },
+      "sourceCrop": [
+        344,
+        940,
+        627,
+        1254
+      ],
+      "sha256": "b47d53b947e5dfcb93dee62ff6bc7edd24c9304beb2a240bc11f6e1629dbabbd",
+      "bytes": 32426,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "lycopene",
+      "path": "/assets/ingredients-v2/lycopene.webp",
+      "subjectZh": "番茄与切面",
+      "alt": "Ripe tomato with sliced half",
+      "role": "food-association",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "remaining.png",
+      "grid": {
+        "columns": 3,
+        "row": 1,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "sha256": "15dce5662ce3549d3d317f3ba3a5b97241dfc86f23148048f33904ec0f0e577f",
+      "bytes": 31544,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "maca",
+      "path": "/assets/ingredients-v2/maca.webp",
+      "subjectZh": "玛咖根与切面",
+      "alt": "Maca roots with a sliced half",
+      "role": "botanical",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 2,
+        "column": 4
+      },
+      "sourceCrop": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "sha256": "0870baf75b96069aabf9ac97fafa62c6a684ea2a5458725e853369ce422b8252",
+      "bytes": 35458,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "milk-thistle",
+      "path": "/assets/ingredients-v2/milk-thistle.webp",
+      "subjectZh": "水飞蓟花与白纹刺叶",
+      "alt": "Milk thistle flower and white-veined leaf",
+      "role": "botanical",
+      "identityReferenceUrl": "https://www.nccih.nih.gov/health/milk-thistle",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 3,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "sha256": "f8c0d5e90ce15c2fd4724ccfdb7d05f615ce26c5b02acb851628689847375e93",
+      "bytes": 50140,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "greens-blend",
+      "path": "/assets/ingredients-v2/greens-blend.webp",
+      "subjectZh": "羽衣甘蓝、菠菜与小麦草",
+      "alt": "Illustrative kale, spinach and wheatgrass blend",
+      "role": "food-association",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "remaining.png",
+      "grid": {
+        "columns": 3,
+        "row": 1,
+        "column": 2
+      },
+      "sourceCrop": [
+        418,
+        0,
+        836,
+        418
+      ],
+      "sha256": "ce7a414b58e21d1e3e193de292b5997da4b91bc38d9464029b028d8b033109e3",
+      "bytes": 49006,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "resveratrol",
+      "path": "/assets/ingredients-v2/resveratrol.webp",
+      "subjectZh": "紫葡萄与葡萄皮",
+      "alt": "Purple grapes with a split grape",
+      "role": "food-association",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 4,
+        "column": 4
+      },
+      "sourceCrop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "sha256": "caab1ea961260247760ddf7385bcbdcd7002b696c043c86c3f2f4221653914b8",
+      "bytes": 38352,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "scutellup",
+      "path": "/assets/ingredients-v2/scutellup.webp",
+      "subjectZh": "黄芩根与黄色切面",
+      "alt": "Dried Scutellaria baicalensis roots",
+      "role": "botanical",
+      "identityReferenceUrl": "https://greenplantsextracts.com/products/scutellup/",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 3,
+        "column": 2
+      },
+      "sourceCrop": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "sha256": "20df6ffe8f4398af1a7b0020969f20a26bbe84f4911aecac64b7867249f84017",
+      "bytes": 33282,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "selenium",
+      "path": "/assets/ingredients-v2/selenium.webp",
+      "subjectZh": "深银色矿物与 Se 标识",
+      "alt": "Conceptual selenium mineral granules with Se marker",
+      "role": "mineral-concept",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "remaining.png",
+      "grid": {
+        "columns": 3,
+        "row": 2,
+        "column": 1
+      },
+      "sourceCrop": [
+        0,
+        418,
+        418,
+        836
+      ],
+      "sha256": "dbe11f253690d999b3989153d32042d93177144da0626d18e35460fb5c3cb9e0",
+      "bytes": 36630,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "silica",
+      "path": "/assets/ingredients-v2/silica.webp",
+      "subjectZh": "无色石英晶体",
+      "alt": "Conceptual quartz crystals representing silica",
+      "role": "mineral-concept",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "remaining.png",
+      "grid": {
+        "columns": 3,
+        "row": 1,
+        "column": 3
+      },
+      "sourceCrop": [
+        836,
+        0,
+        1254,
+        418
+      ],
+      "sha256": "1456401459cc18edb1545407a6f435e8e02bc93a733794cb09c220190b040f54",
+      "bytes": 29842,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "tart-cherry",
+      "path": "/assets/ingredients-v2/tart-cherry.webp",
+      "subjectZh": "酸樱桃与切面",
+      "alt": "Tart cherries with stems and a cut half",
+      "role": "botanical",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 4,
+        "column": 3
+      },
+      "sourceCrop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "sha256": "aeaa82508c1832feafcd1b534266e35f94269a3614f3a5cd5f0e21df0f8ea6a8",
+      "bytes": 27754,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "vitamin-a",
+      "path": "/assets/ingredients-v2/vitamin-a.webp",
+      "subjectZh": "胡萝卜与切面",
+      "alt": "Carrots as a provitamin A food association",
+      "role": "food-association",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "remaining.png",
+      "grid": {
+        "columns": 3,
+        "row": 2,
+        "column": 2
+      },
+      "sourceCrop": [
+        418,
+        418,
+        836,
+        836
+      ],
+      "sha256": "5030232a103bfe65c94e4ad42064c9d1bfdf5ed7ca5d3d0fffab98bf91e82697",
+      "bytes": 33774,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "vitamin-e",
+      "path": "/assets/ingredients-v2/vitamin-e.webp",
+      "subjectZh": "杏仁与油滴",
+      "alt": "Almonds and an oil droplet as a vitamin E food association",
+      "role": "food-association",
+      "identityReferenceUrl": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+      "atlas": "remaining.png",
+      "grid": {
+        "columns": 3,
+        "row": 2,
+        "column": 3
+      },
+      "sourceCrop": [
+        871,
+        418,
+        1254,
+        836
+      ],
+      "sha256": "1e70c57483d96b140d2df8800c999db2b2a3563d6a16fe2f36dee334c64ef203",
+      "bytes": 25708,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "id": "white-kidney-bean",
+      "path": "/assets/ingredients-v2/white-kidney-bean.webp",
+      "subjectZh": "白芸豆",
+      "alt": "White kidney beans",
+      "role": "botanical",
+      "identityReferenceUrl": "https://get-nourished.com/collections/all-ingredients",
+      "atlas": "botanicals.png",
+      "grid": {
+        "columns": 4,
+        "row": 3,
+        "column": 4
+      },
+      "sourceCrop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "sha256": "58b96c24de967bf3816e4c30bb3376c8451f79ef648b6f23f8059b0348b24a3f",
+      "bytes": 22542,
+      "width": 320,
+      "height": 320,
+      "transparent": true
+    }
+  ]
+}

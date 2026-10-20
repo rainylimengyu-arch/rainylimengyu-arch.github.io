@@ -1,0 +1,32 @@
+{
+  "purpose": "Potential academic collaborators in an academic venture simulation. No established partnership or endorsement is claimed.",
+  "marks_unchanged": true,
+  "sources": [
+    {
+      "institution": "NTU Singapore",
+      "file": "ntu.png",
+      "asset_url": "https://www.ntu.edu.sg/ResourcePackages/NTU/assets/images/NTU_Logo.png",
+      "source_page": "https://www.ntu.edu.sg/"
+    },
+    {
+      "institution": "SUTD",
+      "file": "sutd.png",
+      "asset_url": "https://www.sutd.edu.sg/wp-content/uploads/2024/10/SUTDLogo_Dark@2x.png",
+      "source_page": "https://www.sutd.edu.sg/"
+    },
+    {
+      "institution": "Jiangnan University",
+      "file": "jiangnan.jpg",
+      "asset_url": "https://www.jiangnan.edu.cn/__local/B/49/B0/1B084BD2BFF9273609FE4BF2DC0_CED06ED5_1C23.jpg?e=.jpg",
+      "source_page": "https://www.jiangnan.edu.cn/info/1906/11171.htm"
+    },
+    {
+      "institution": "NUS",
+      "file": "nus-horizontal.png",
+      "asset_url": "https://www.comp.nus.edu.sg/~cs3202/nus-logo.gif",
+      "source_page": "https://www.comp.nus.edu.sg/~cs3202/",
+      "original": "nus-horizontal-original.gif",
+      "processing": "Lossless GIF to PNG format conversion only at original 208 x 105 size, no cropping/recolour/upscale."
+    }
+  ]
+}

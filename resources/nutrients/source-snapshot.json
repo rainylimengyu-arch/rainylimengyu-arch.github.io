@@ -1,0 +1,490 @@
+{
+  "url": "https://get-nourished.com/pages/stack-builder",
+  "accessedAt": "2026-10-18",
+  "items": [
+    {
+      "amount": "95mg | 1mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(255, 142, 85)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/hydrocurc-2x.png",
+      "name": "HydroCurc™ & Black Pepper Extract",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/hydrocurc-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/hydrocurc-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/hydrocurc-4x.png 4x",
+      "benefits": [
+        "Antioxidant",
+        "Bone & joints",
+        "Digestion"
+      ],
+      "title": "HydroCurc™ & Black Pepper Extract"
+    },
+    {
+      "amount": "200mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(177, 188, 88)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/5htp-2x.png",
+      "name": "5-HTP",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/5htp-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/5htp-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/5htp-4x.png 4x",
+      "benefits": [
+        "Mind",
+        "Sleep",
+        "Weight management"
+      ],
+      "title": "5-HTP"
+    },
+    {
+      "amount": "200mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(224, 184, 56)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/acv-2x.png",
+      "name": "Apple Cider Vinegar",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/acv-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/acv-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/acv-4x.png 4x",
+      "benefits": [
+        "Immunity",
+        "Weight management"
+      ],
+      "title": "Apple Cider Vinegar"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(219, 192, 147)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/ashwagandha-2x.png",
+      "name": "Ashwagandha Extract",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/ashwagandha-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/ashwagandha-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/ashwagandha-4x.png 4x",
+      "benefits": [
+        "Energy",
+        "Mind",
+        "Sleep"
+      ],
+      "title": "Ashwagandha Extract"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(255, 82, 136)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/beetroot-2x.png",
+      "name": "Beetroot",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/beetroot-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/beetroot-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/beetroot-4x.png 4x",
+      "benefits": [
+        "Energy",
+        "Recovery"
+      ],
+      "title": "Beetroot"
+    },
+    {
+      "amount": "50mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(156, 155, 211)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/beta-glucan-2x.png",
+      "name": "Beta Glucan",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/beta-glucan-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/beta-glucan-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/beta-glucan-4x.png 4x",
+      "benefits": [
+        "Immunity",
+        "Mind"
+      ],
+      "title": "Beta Glucan"
+    },
+    {
+      "amount": "33.33mg • NRV = N/A",
+      "category": "BIOTIC",
+      "color": "rgb(221, 158, 138)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/bpl1-ht-2x.png",
+      "name": "BPL1®",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/bpl1-ht-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/bpl1-ht-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/bpl1-ht-4x.png 4x",
+      "benefits": [
+        "Antioxidant",
+        "Digestion",
+        "Weight management"
+      ],
+      "title": "BPL1®"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(247, 202, 77)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/careflow-2x.png",
+      "name": "Careflow™ Mango Powder",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/careflow-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/careflow-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/careflow-4x.png 4x",
+      "benefits": [
+        "Antioxidant",
+        "Energy",
+        "Weight management"
+      ],
+      "title": "Careflow™ Mango Powder"
+    },
+    {
+      "amount": "30mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(244, 163, 66)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/coq10-2x.png",
+      "name": "CoQ10",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/coq10-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/coq10-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/coq10-4x.png 4x",
+      "benefits": [
+        "Energy",
+        "Hair, skin & nails",
+        "Heart health",
+        "Mind"
+      ],
+      "title": "CoQ10"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(188, 133, 77)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/cordyceps-2x.png",
+      "name": "Cordyceps",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/cordyceps-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/cordyceps-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/cordyceps-4x.png 4x",
+      "benefits": [
+        "Antioxidant",
+        "Energy"
+      ],
+      "title": "Cordyceps"
+    },
+    {
+      "amount": "400mcg • NRV = 200%",
+      "category": "VITAMIN",
+      "color": "rgb(144, 211, 153)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/folic-acid-2x.png",
+      "name": "Folic Acid",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/folic-acid-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/folic-acid-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/folic-acid-4x.png 4x",
+      "benefits": [
+        "Immunity",
+        "Prenatal",
+        "Womens health"
+      ],
+      "title": "Folic Acid"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(219, 202, 130)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/ginger-2x.png",
+      "name": "Ginger Extract",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/ginger-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/ginger-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/ginger-4x.png 4x",
+      "benefits": [
+        "Antioxidant",
+        "Energy",
+        "Immunity"
+      ],
+      "title": "Ginger Extract"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(202, 197, 162)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/ginseng-2x.png",
+      "name": "Ginseng",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/ginseng-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/ginseng-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/ginseng-4x.png 4x",
+      "benefits": [
+        "Antioxidant",
+        "Immunity",
+        "Mind"
+      ],
+      "title": "Ginseng"
+    },
+    {
+      "amount": "300mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(209, 209, 209)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/inositol-2x.png",
+      "name": "Inositol",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/inositol-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/inositol-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/inositol-4x.png 4x",
+      "benefits": [
+        "Weight management",
+        "Womens health"
+      ],
+      "title": "Inositol"
+    },
+    {
+      "amount": "150mcg • NRV = 100%",
+      "category": "MINERAL",
+      "color": "rgb(166, 132, 193)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/iodine-2x.png",
+      "name": "Iodine",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/iodine-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/iodine-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/iodine-4x.png 4x",
+      "benefits": [
+        "Mind",
+        "Prenatal",
+        "Womens health"
+      ],
+      "title": "Iodine"
+    },
+    {
+      "amount": "12mg • NRV = 85%",
+      "category": "MINERAL",
+      "color": "rgb(141, 164, 196)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/iron-2x.png",
+      "name": "Iron",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/iron-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/iron-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/iron-4x.png 4x",
+      "benefits": [
+        "Energy",
+        "Immunity",
+        "Mind"
+      ],
+      "title": "Iron"
+    },
+    {
+      "amount": "75mcg • NRV = 100%",
+      "category": "VITAMIN",
+      "color": "rgb(242, 104, 170)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/k2-vital-2x.png",
+      "name": "K2 Vital Delta™",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/k2-vital-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/k2-vital-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/k2-vital-4x.png 4x",
+      "benefits": [
+        "Bone & joints",
+        "Heart health",
+        "Immunity"
+      ],
+      "title": "K2 Vital Delta™"
+    },
+    {
+      "amount": "200M CFU • NRV = N/A",
+      "category": "BIOTIC",
+      "color": "rgb(204, 198, 76)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/lactospore-2x.png",
+      "name": "LactoSpore® Probiotic",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/lactospore-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/lactospore-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/lactospore-4x.png 4x",
+      "benefits": [
+        "Digestion",
+        "Immunity",
+        "Weight management"
+      ],
+      "title": "LactoSpore® Probiotic"
+    },
+    {
+      "amount": "12mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(239, 182, 67)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/lutemax-2x.png",
+      "name": "Lutemax 2020",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/lutemax-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/lutemax-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/lutemax-4x.png 4x",
+      "benefits": [
+        "Eye Health",
+        "Hair, skin & nails",
+        "Mind"
+      ],
+      "title": "Lutemax 2020"
+    },
+    {
+      "amount": "10mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(244, 122, 120)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/lycopene-2x.png",
+      "name": "Lycopene",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/lycopene-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/lycopene-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/lycopene-4x.png 4x",
+      "benefits": [
+        "Energy",
+        "Heart health",
+        "Immunity",
+        "Mind"
+      ],
+      "title": "Lycopene"
+    },
+    {
+      "amount": "50mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(229, 207, 112)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/maca-powder-2x.png",
+      "name": "Maca Powder",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/maca-powder-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/maca-powder-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/maca-powder-4x.png 4x",
+      "benefits": [
+        "Bone health",
+        "Energy",
+        "Mind"
+      ],
+      "title": "Maca Powder"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(232, 172, 234)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/milk-thistle-2x.png",
+      "name": "Milk Thistle Extract",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/milk-thistle-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/milk-thistle-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/milk-thistle-4x.png 4x",
+      "benefits": [
+        "Energy",
+        "Mind",
+        "Prenatal",
+        "Womens health"
+      ],
+      "title": "Milk Thistle Extract"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(105, 188, 121)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/greens-2x.png",
+      "name": "Nourished Greens™",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/greens-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/greens-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/greens-4x.png 4x",
+      "benefits": [
+        "Heart health",
+        "Immunity"
+      ],
+      "title": "Nourished Greens™"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(182, 180, 204)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/resveratrol-2x.png",
+      "name": "Resveratrol",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/resveratrol-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/resveratrol-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/resveratrol-4x.png 4x",
+      "benefits": [
+        "Heart health",
+        "Mind",
+        "Womens health"
+      ],
+      "title": "Resveratrol"
+    },
+    {
+      "amount": "20mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(206, 177, 242)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/scutellup-2x.png",
+      "name": "Scutell'Up",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/scutellup-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/scutellup-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/scutellup-4x.png 4x",
+      "benefits": [
+        "Antioxidant",
+        "Mind",
+        "Sleep"
+      ],
+      "title": "Scutell'Up"
+    },
+    {
+      "amount": "55mcg • NRV = 100%",
+      "category": "MINERAL",
+      "color": "rgb(133, 165, 132)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/selenium-2x.png",
+      "name": "Selenium",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/selenium-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/selenium-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/selenium-4x.png 4x",
+      "benefits": [
+        "Hair, skin & nails",
+        "Immunity"
+      ],
+      "title": "Selenium"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(204, 187, 176)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/silica-2x.png",
+      "name": "Silica",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/silica-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/silica-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/silica-4x.png 4x",
+      "benefits": [
+        "Bone & joints",
+        "Bone health",
+        "Hair, skin & nails"
+      ],
+      "title": "Silica"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(239, 135, 138)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/tart-cherry-2x.png",
+      "name": "Tart Cherry",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/tart-cherry-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/tart-cherry-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/tart-cherry-4x.png 4x",
+      "benefits": [
+        "Mind",
+        "Recovery",
+        "Sleep"
+      ],
+      "title": "Tart Cherry"
+    },
+    {
+      "amount": "2000IU • NRV = 1000%",
+      "category": "VITAMIN",
+      "color": "rgb(232, 174, 208)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-d3-2x.png",
+      "name": "Vegan Vitamin D3",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-d3-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-d3-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-d3-4x.png 4x",
+      "benefits": [
+        "Immunity"
+      ],
+      "title": "Vegan Vitamin D3"
+    },
+    {
+      "amount": "1600mcg • NRV = 200%",
+      "category": "VITAMIN",
+      "color": "rgb(231, 138, 155)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-a-2x.png",
+      "name": "Vitamin A",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-a-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-a-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-a-4x.png 4x",
+      "benefits": [
+        "Eye Health",
+        "Hair, skin & nails",
+        "Immunity"
+      ],
+      "title": "Vitamin A"
+    },
+    {
+      "amount": "2.5mcg • NRV = 104%",
+      "category": "VITAMIN",
+      "color": "rgb(158, 204, 204)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-b12-2x.png",
+      "name": "Vitamin B12 (Cyanocobalamin)",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-b12-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-b12-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-b12-4x.png 4x",
+      "benefits": [
+        "Energy",
+        "Heart health",
+        "Immunity",
+        "Mind"
+      ],
+      "title": "Vitamin B12 (Cyanocobalamin)"
+    },
+    {
+      "amount": "96mg • NRV = 120%",
+      "category": "VITAMIN",
+      "color": "rgb(255, 177, 107)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-c-2x.png",
+      "name": "Vitamin C",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-c-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-c-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-c-4x.png 4x",
+      "benefits": [
+        "Antioxidant",
+        "Hair, skin & nails"
+      ],
+      "title": "Vitamin C"
+    },
+    {
+      "amount": "24mg • NRV = 200%",
+      "category": "VITAMIN",
+      "color": "rgb(202, 190, 103)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-e-2x.png",
+      "name": "Vitamin E",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-e-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-e-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/vitamin-e-4x.png 4x",
+      "benefits": [
+        "Eye Health",
+        "Hair, skin & nails",
+        "Immunity"
+      ],
+      "title": "Vitamin E"
+    },
+    {
+      "amount": "100mg • NRV = N/A",
+      "category": "BOTANICAL",
+      "color": "rgb(206, 202, 183)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/white-kidney-bean-2x.png",
+      "name": "White Kidney Bean Extract",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/white-kidney-bean-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/white-kidney-bean-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/white-kidney-bean-4x.png 4x",
+      "benefits": [
+        "Digestion",
+        "Energy",
+        "Weight management"
+      ],
+      "title": "White Kidney Bean Extract"
+    },
+    {
+      "amount": "10mg • NRV = 100%",
+      "category": "MINERAL",
+      "color": "rgb(181, 196, 197)",
+      "image": "https://get-nourished.com/cdn/shop/t/33/assets/zinc-2x.png",
+      "name": "Zinc",
+      "sourceImageSet": "https://get-nourished.com/cdn/shop/t/33/assets/zinc-1x.png 1x, https://get-nourished.com/cdn/shop/t/33/assets/zinc-2x.png 2x, https://get-nourished.com/cdn/shop/t/33/assets/zinc-4x.png 4x",
+      "benefits": [
+        "Bone & joints",
+        "Eye Health",
+        "Hair, skin & nails"
+      ],
+      "title": "Zinc"
+    }
+  ]
+}

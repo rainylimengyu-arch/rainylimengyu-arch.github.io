@@ -1,0 +1,702 @@
+// Evidence-informed prototype rules. Product holds are not clinical contraindications.
+// Only FINAL elemental quantities may satisfy a dose condition; catalog references may not.
+export const pairingVersion = "2026-10-18.1";
+export const sources = {
+  zinc: {
+    label: "NIH ODS · Zinc",
+    url: "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+  },
+  iron: {
+    label: "NIH ODS · Iron",
+    url: "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
+  },
+  iodine: {
+    label: "NIH ODS · Iodine",
+    url: "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/",
+  },
+  magnesium: {
+    label: "NIH ODS · Magnesium",
+    url: "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+  },
+  vitaminK: {
+    label: "NIH ODS · Vitamin K",
+    url: "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/",
+  },
+  vitaminE: {
+    label: "NIH ODS · Vitamin E",
+    url: "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/",
+  },
+  folate: {
+    label: "NIH ODS · Folate",
+    url: "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/",
+  },
+  multivitamin: {
+    label: "NIH ODS · Multivitamin/mineral supplements",
+    url: "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/",
+  },
+  ashwagandha: {
+    label: "NCCIH · Ashwagandha",
+    url: "https://www.nccih.nih.gov/health/ashwagandha",
+  },
+  ginseng: {
+    label: "NCCIH · Asian ginseng",
+    url: "https://www.nccih.nih.gov/health/asian-ginseng",
+  },
+  sleep: {
+    label: "NCCIH · Sleep disorders",
+    url: "https://www.nccih.nih.gov/health/sleep-disorders-and-complementary-health-approaches",
+  },
+  turmeric: {
+    label: "MSK · Turmeric",
+    url: "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/turmeric",
+  },
+  htp: {
+    label: "MSK · 5-HTP",
+    url: "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/5-htp-01",
+  },
+  supplements: {
+    label: "NCCIH · Using supplements wisely",
+    url: "https://www.nccih.nih.gov/health/using-dietary-supplements-wisely",
+  },
+  coq10: {
+    label: "NCCIH · Coenzyme Q10",
+    url: "https://www.nccih.nih.gov/health/coenzyme-q10",
+  },
+  probiotics: {
+    label: "NCCIH · Probiotics",
+    url: "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety",
+  },
+  ginger: {
+    label: "NCCIH · Ginger",
+    url: "https://www.nccih.nih.gov/health/ginger",
+  },
+  cordyceps: {
+    label: "MSK · Cordyceps",
+    url: "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/cordyceps",
+  },
+  milkThistle: {
+    label: "MSK · Milk thistle",
+    url: "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/milk-thistle",
+  },
+  resveratrol: {
+    label: "MSK · Resveratrol",
+    url: "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/resveratrol",
+  },
+  maca: {
+    label: "MSK · Maca",
+    url: "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/maca",
+  },
+  lycopene: {
+    label: "MSK · Lycopene",
+    url: "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/lycopene",
+  },
+  theanine: {
+    label: "MSK · L-theanine",
+    url: "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/l-theanine",
+  },
+  exercise: {
+    label: "NIH ODS · Exercise supplements",
+    url: "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/",
+  },
+  weightLoss: {
+    label: "NIH ODS · Weight-loss supplements",
+    url: "https://ods.od.nih.gov/factsheets/WeightLoss-HealthProfessional/",
+  },
+  bpl1: {
+    label: "Pedret et al. · CECT 8145 trial",
+    url: "https://pubmed.ncbi.nlm.nih.gov/30262813/",
+  },
+  careflow: {
+    label: "Mangifera indica preparation · pilot study",
+    url: "https://pubmed.ncbi.nlm.nih.gov/28187466/",
+  },
+  collagen: {
+    label: "Fish collagen · allergy case report",
+    url: "https://pubmed.ncbi.nlm.nih.gov/27569115/",
+  },
+  eyes: {
+    label: "NEI · AREDS/AREDS2 FAQ",
+    url: "https://www.nei.nih.gov/eye-health-information/clinical-trials/age-related-eye-disease-studies-aredsareds2/aredsareds2-frequently-asked-questions",
+  },
+  silica: {
+    label: "EFSA · Silicon form-specific assessment",
+    url: "https://doi.org/10.2903/j.efsa.2016.4436",
+  },
+  vinegar: {
+    label: "High cider-vinegar intake · case report",
+    url: "https://pubmed.ncbi.nlm.nih.gov/9736833/",
+  },
+  omega3: {
+    label: "NIH ODS · Omega-3 fatty acids",
+    url: "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/",
+  },
+  tartCherry: {
+    label: "Losso et al. · Tart-cherry juice pilot trial",
+    url: "https://pubmed.ncbi.nlm.nih.gov/28901958/",
+  },
+  scutellaria: {
+    label: "Baicalein tablets · phase I study",
+    url: "https://pubmed.ncbi.nlm.nih.gov/33753147/",
+  },
+  inositol: {
+    label: "Myo-inositol · safety review",
+    url: "https://pubmed.ncbi.nlm.nih.gov/21845803/",
+  },
+};
+
+export const pairRules = [
+  {
+    id: "iron-zinc",
+    members: ["iron", "zinc"],
+    kind: "dose",
+    label: "Dose review needed",
+    evidence: "Human absorption evidence; dose dependent",
+    sourceIds: ["zinc"],
+    threshold: {
+      ingredient: "iron",
+      value: 25,
+      unit: "mg",
+      basis: "final elemental iron per serving",
+    },
+    message:
+      "Supplemental iron at 25 mg or more, taken with zinc, can reduce zinc absorption. Our final iron dose is not set, so this pairing is on hold. The reference amount is not the final dose.",
+    confirmedMessage:
+      "At this final iron dose (25 mg or more), iron and zinc are kept out of the same rainbow to avoid reduced zinc absorption.",
+    alternatives: ["vitamin-c", "vitamin-b12", "vitamin-d3"],
+  },
+  {
+    id: "iron-curcumin",
+    members: ["iron", "hydrocurc"],
+    kind: "review",
+    label: "Pairing review needed",
+    evidence:
+      "Limited evidence; high-dose turmeric case report, not a proven HydroCurc-specific interaction",
+    sourceIds: ["turmeric"],
+    message:
+      "High-dose turmeric has been linked to iron deficiency in a case report. This does not establish a risk at our reference amount. We hold iron + curcumin in this prototype until the exact formulation is reviewed.",
+    alternatives: ["vitamin-c", "vitamin-b12", "magnesium"],
+  },
+  {
+    id: "iodine-ashwagandha",
+    members: ["iodine", "ashwagandha"],
+    kind: "review",
+    label: "Thyroid review needed",
+    evidence:
+      "Precaution based on each ingredient; direct pair evidence not established",
+    sourceIds: ["iodine", "ashwagandha"],
+    message:
+      "Iodine intake and ashwagandha can each matter for thyroid health. Direct evidence on this exact pair is limited. We keep them out of one rainbow pending a formulation review.",
+    alternatives: ["magnesium", "vitamin-c", "vitamin-b12"],
+  },
+  ...["l-theanine", "ashwagandha", "scutellup", "tart-cherry"].map((id) => ({
+    id: `ginseng-${id}`,
+    members: ["ginseng", id],
+    kind: "routine",
+    label: "Different routines",
+    evidence: "VITA TAPE timing policy, not a clinical contraindication",
+    sourceIds: ["ginseng"],
+    message:
+      "Ginseng can cause insomnia. We keep it separate from ingredients chosen for an evening wind-down, because one rainbow is taken together. This is our routine policy, not proof that the pair is dangerous.",
+    alternatives: ["magnesium", "vitamin-c", "vitamin-d3", "coq10"],
+  })),
+];
+
+export const restrictedIngredients = [
+  {
+    id: "5-htp-review",
+    members: ["5-htp"],
+    kind: "review",
+    label: "Professional review first",
+    evidence: "Medication and serotonergic-supplement interaction warnings",
+    sourceIds: ["htp"],
+    message:
+      "5-HTP can interact with antidepressants and other products that affect serotonin. It is available to read about, but cannot be added through this self-service builder. Ask a pharmacist or clinician about suitability.",
+    alternatives: ["magnesium", "l-theanine", "tart-cherry"],
+  },
+];
+
+// Reserved rules are not current catalog ingredients. They must not appear as active matches.
+export const futureRules = [
+  {
+    id: "iron-calcium",
+    members: ["iron", "calcium"],
+    kind: "timing",
+    sourceIds: ["iron"],
+    note: "Separate supplemental calcium and iron; an indivisible rainbow cannot provide separate dosing times.",
+  },
+  {
+    id: "htp-sam-e",
+    members: ["5-htp", "sam-e"],
+    kind: "avoid",
+    sourceIds: ["htp"],
+    note: "Avoid unsupervised serotonergic supplement stacking.",
+  },
+  {
+    id: "htp-st-johns-wort",
+    members: ["5-htp", "st-johns-wort"],
+    kind: "avoid",
+    sourceIds: ["htp"],
+    note: "Avoid unsupervised serotonergic supplement stacking.",
+  },
+];
+
+const groups = [
+  [
+    [
+      "vitamin-d3",
+      "vitamin-c",
+      "vitamin-b12",
+      "zinc",
+      "selenium",
+      "vitamin-a",
+      "vitamin-e",
+      "folic-acid",
+    ],
+    "Total intake, chemical form and upper limits; no blanket ban on ordinary vitamin combinations.",
+    ["multivitamin"],
+  ],
+  [
+    ["magnesium"],
+    "Elemental dose and renal function matter; sleep efficacy evidence is limited.",
+    ["magnesium", "sleep"],
+  ],
+  [
+    ["iron"],
+    "No automatic iron recommendation for tiredness or age 60+; check need, elemental dose and interacting medicines.",
+    ["iron", "zinc"],
+  ],
+  [["iodine"], "Thyroid history and total intake require review.", ["iodine"]],
+  [
+    ["vitamin-k2"],
+    "Warfarin or similar vitamin K antagonists require clinician review; D3 + K2 is not a forbidden pair.",
+    ["vitaminK"],
+  ],
+  [
+    ["ashwagandha"],
+    "Pregnancy/breastfeeding, thyroid/autoimmune disease, liver concerns and interacting medicines need review.",
+    ["ashwagandha"],
+  ],
+  [
+    ["ginseng"],
+    "Insomnia, glucose control, clotting and interacting medicines; evening routine policy applies.",
+    ["ginseng"],
+  ],
+  [
+    ["hydrocurc"],
+    "Curcumin + black pepper is a compound ingredient: standardization, medicine interactions and liver/iron concerns need review.",
+    ["turmeric"],
+  ],
+  [
+    ["5-htp"],
+    "Professional review only; excluded from self-service selection and every starter rainbow.",
+    ["htp"],
+  ],
+  [
+    ["l-theanine", "tart-cherry", "scutellup"],
+    "Evening-theme candidate; exact preparation and dose are not cleared. Do not treat theme membership as evidence of insomnia treatment.",
+    ["sleep", "supplements"],
+  ],
+  [
+    [
+      "omega-3",
+      "collagen",
+      "probiotics",
+      "apple-cider-vinegar",
+      "beetroot",
+      "beta-glucan",
+      "bpl1",
+      "careflow",
+      "coq10",
+      "cordyceps",
+      "ginger",
+      "inositol",
+      "lutemax",
+      "lycopene",
+      "maca",
+      "milk-thistle",
+      "greens-blend",
+      "resveratrol",
+      "silica",
+      "white-kidney-bean",
+    ],
+    "Ingredient-specific interaction review remains open. Verify identity, standardization, allergens and amount. No matching rule does not establish safety.",
+    ["supplements"],
+  ],
+];
+const profileDetails = {
+  "vitamin-d3": {
+    reviewNoteZh:
+      "确认胆钙化醇的活性量以及 IU/微克换算；汇总所有来源的脂溶性维生素摄入，不因与 K2 同卷就推断已安全。",
+  },
+  "vitamin-c": {
+    reviewNoteZh:
+      "确认剂型和活性量、其他补剂重复量及胃肠耐受性；正常营养功能不等于对所有人额外补充都有获益。",
+  },
+  "vitamin-b12": {
+    reviewNoteZh:
+      "确认具体钴胺素形式；与 C 或叶酸不一律禁配。年龄、饮食和吸收情况决定是否需要补充。",
+  },
+  zinc: {
+    reviewNoteZh:
+      "确认元素锌量；同次铁达到 25 mg 或以上涉及吸收竞争。高锌长期摄入还需复核铜与镁平衡，不能将此写成普通剂量锌镁禁配。",
+  },
+  selenium: {
+    reviewNoteZh:
+      "确认化学形式、元素硒总量及复合原料重复；过量可能损害头发与指甲，不能按 beauty 主题无限叠加。",
+  },
+  "vitamin-a": {
+    reviewNoteZh:
+      "区分预成型视黄醇与类胡萝卜素、核实 RAE/RE 等单位；孕哺/备孕等个人适用性与脂溶性总量需复核，不进入默认 beauty 或 60+ 配方。",
+  },
+  "vitamin-e": {
+    reviewNoteZh:
+      "核实 alpha-tocopherol 形式与 mg/IU 单位，复核抗凝药及大剂量长期情形；不以名称直接禁止与 Omega-3 同卷。",
+  },
+  "folic-acid": {
+    sourceIds: ["folate"],
+    reviewNoteZh:
+      "确认叶酸化学形式与 DFE/微克口径；大剂量可能掩盖 B12 缺乏，但不代表与 B12 互斥。",
+  },
+  magnesium: {
+    reviewNoteZh:
+      "确认元素镁量与盐型；肾功能和用药情形需复核，上限区分食物来源与补剂/药物来源，助眠证据仍有限。",
+  },
+  iron: {
+    reviewNoteZh:
+      "确认是否有补铁需要、元素铁量和盐型；不因疲劳或年龄自动推荐；同时检查锌、姜黄素及相关用药。",
+  },
+  iodine: {
+    reviewNoteZh:
+      "核实活性碘量、其他来源和甲状腺情况；不能把海藻图案当作已确认的来源或含量。",
+  },
+  "vitamin-k2": {
+    reviewNoteZh:
+      "核实 MK-7/MK-4 等形式和实际活性量；华法林等用药需专业复核。D3＋K2 不属于一律禁配。",
+  },
+  ashwagandha: {
+    reviewNoteZh:
+      "孕哺、甲状腺/自身免疫疾病、肝脏情况、镇静药和其他用药需复核；核实根/叶及 withanolides 标准化量。",
+  },
+  ginseng: {
+    reviewNoteZh:
+      "确认 Panax 品种与人参皂苷规格；失眠、血糖、凝血与用药需复核。与晚间候选的拦截属于产品时段策略。",
+  },
+  hydrocurc: {
+    reviewNoteZh:
+      "展开姜黄素与黑胡椒两项活性成分，核实标准化与生物利用度；药物、肝脏及铁状态需复核，不能把高剂量病例直接外推到本参考量。",
+  },
+  "5-htp": {
+    reviewNoteZh:
+      "5-HTP 与血清素相关药物/补剂存在重要相互作用警告；仅保留资料，不通过自助流程加入，也不进入任何主题。",
+  },
+  "omega-3": {
+    sourceIds: ["omega3", "vitaminE"],
+    reviewNoteZh:
+      "确认鱼油/藻油、EPA/DHA 活性量与过敏原；抗凝/高剂量情形由专业人员复核。不能按名称直接断言与 E 禁配。",
+  },
+  collagen: {
+    sourceIds: ["collagen"],
+    reviewNoteZh:
+      "确认鱼/牛/猪或其他来源、肽规格与过敏原；鱼胶原过敏有病例，但不等于所有来源都相同。美容有效量与 tape 承载量待核。",
+  },
+  probiotics: {
+    sourceIds: ["probiotics"],
+    reviewNoteZh:
+      "确认菌株、食用时活菌数、保质期和工艺；免疫功能低下或重病者有更高风险。不能从某菌株研究推及所有益生菌。",
+  },
+  "apple-cider-vinegar": {
+    sourceIds: ["vinegar"],
+    reviewNoteZh:
+      "大剂量长期饮用苹果醋相关低钾仅有病例依据，不能外推为 200 mg 粉末的确定风险；确认乙酸/辅料和药物情形。",
+  },
+  beetroot: {
+    sourceIds: ["exercise"],
+    reviewNoteZh:
+      "核实硝酸盐标准化量；甜菜根粉重量不等于硝酸盐有效量，也不能照搬甜菜汁试验。",
+  },
+  "beta-glucan": {
+    sourceIds: ["weightLoss"],
+    reviewNoteZh:
+      "确认酵母/燕麦/其他来源、键型和纯度；不同 beta-glucan 不能互相套证据，可能有胃肠不适或来源过敏问题。",
+  },
+  bpl1: {
+    sourceIds: ["bpl1"],
+    reviewNoteZh:
+      "区分 CECT 8145 活菌与热灭活制剂、细胞量及研究制剂；33.33 mg 不能直接换算 CFU。人体研究本身未解决与其他膳食成分的配伍。",
+  },
+  careflow: {
+    sourceIds: ["careflow"],
+    reviewNoteZh:
+      "检索到的 Mangifera indica/Careless 研究不能自动视为 Careflow 等同制剂；需供应商确认品种/部位/标准化量、商标身份与研究桥接。不是 African mango。",
+  },
+  coq10: {
+    sourceIds: ["coq10"],
+    reviewNoteZh:
+      "华法林、胰岛素及部分癌症治疗需复核；可能有胃肠不适或失眠。辅酶 Q10 的生理作用不等于本剂量可改善疲劳。",
+  },
+  cordyceps: {
+    sourceIds: ["cordyceps"],
+    reviewNoteZh:
+      "确认物种及培养/提取规格；降糖药、抗凝药需复核，部分相互作用依据仅来自实验室与病例。不能把不同虫草原料等同。",
+  },
+  ginger: {
+    sourceIds: ["ginger"],
+    reviewNoteZh:
+      "用药者先复核；可能有烧心、腹部不适、腹泻等，生姜食物与标准化提取物不是同一暴露。",
+  },
+  inositol: {
+    sourceIds: ["inositol"],
+    reviewNoteZh:
+      "确认 myo-/D-chiro-inositol 或其他形式；安全综述仍提示证据不足。不能将 IP6/植酸的矿物螯合警告套到普通肌醇上；形式不明时不添加矿物禁配规则。",
+  },
+  lutemax: {
+    sourceIds: ["eyes"],
+    reviewNoteZh:
+      "展开叶黄素/玉米黄质等活性成分及各自含量；这是商标原料候选，不等于 AREDS2 整方，更不是所有 60+ 人群的眼病方案。",
+  },
+  lycopene: {
+    sourceIds: ["lycopene"],
+    reviewNoteZh:
+      "核实真实活性含量；动物机制和癌症研究不能改写成保健功效或普遍禁配。大量长期摄入可能有皮肤变色。",
+  },
+  maca: {
+    sourceIds: ["maca"],
+    reviewNoteZh:
+      "激素敏感疾病、孕哺和激素化验需专业复核；可能影响睾酮免疫测定。动物药物相互作用不当作确定人体结论。",
+  },
+  "milk-thistle": {
+    sourceIds: ["milkThistle"],
+    reviewNoteZh:
+      "菊科/豚草过敏、移植及特定药物需复核；CYP/UGT 证据并不一致，不能声称无药物相互作用或一律可护肝。",
+  },
+  "greens-blend": {
+    sourceIds: ["supplements", "vitaminK"],
+    reviewNoteZh:
+      "必须取得完整组成，展开维生素 K、碘等及过敏原；不能凭“绿粉”名称推算含量或作安全判断。",
+  },
+  resveratrol: {
+    sourceIds: ["resveratrol"],
+    reviewNoteZh:
+      "抗凝/抗血小板及药物代谢等潜在相互作用需专业复核；明确区分实验室、理论与人体证据。",
+  },
+  silica: {
+    sourceIds: ["silica"],
+    reviewNoteZh:
+      "Silica/硅/二氧化硅/正硅酸等并非可互换剂量；EFSA 的特定 MMST 用法评估不覆盖本库 100 mg 未定义原料。",
+  },
+  "white-kidney-bean": {
+    sourceIds: ["weightLoss"],
+    reviewNoteZh:
+      "确认标准化 alpha-amylase 抑制活性和加工质量；不能把原料重量视为有效量，也不能宣传可替代饮食/降糖治疗。",
+  },
+  "l-theanine": {
+    sourceIds: ["theanine", "sleep"],
+    reviewNoteZh:
+      "镇静/助眠药使用者先复核；动物叠加镇静研究不等于所有同卷搭配有确定危险，最终剂量仍待确认。",
+  },
+  "tart-cherry": {
+    sourceIds: ["tartCherry", "sleep"],
+    reviewNoteZh:
+      "小型试验使用酸樱桃汁，不能外推 100 mg 未标准化粉末的作用或安全性；核实糖分、提取物规格与晚间耐受性。",
+  },
+  scutellup: {
+    sourceIds: ["scutellaria", "supplements"],
+    reviewNoteZh:
+      "本次找到的 baicalein 单体片剂一期研究不能证明 Scutell'Up 商标提取物的安全性；需核实品种、标准化量、长期及药物相互作用证据。",
+  },
+};
+export const ingredientProfiles = groups.flatMap(
+  ([ids, reviewNote, sourceIds]) =>
+    ids.map((id) => ({
+      id,
+      reviewNote,
+      sourceIds,
+      finalAmountStatus: "pending",
+      formulationStatus: "not-cleared",
+      evidenceStatus: sourceIds.includes("supplements")
+        ? "ingredient-specific-review-open"
+        : "priority-screening-only",
+      ...profileDetails[id],
+      ...(profileDetails[id] && !["scutellup", "greens-blend"].includes(id)
+        ? { evidenceStatus: "priority-screening-only" }
+        : {}),
+    })),
+);
+
+export const starterRainbows = [
+  {
+    id: "energy",
+    title: "Energy Boost",
+    icon: "bolt",
+    color: "#f4dd9a",
+    time: "Daytime idea",
+    kicker: "For your everyday momentum",
+    description:
+      "A daytime starting point built around everyday nutrition. No caffeine, no automatic iron, no promise of an instant lift.",
+    ingredients: [
+      ["vitamin-b12", "Normal energy metabolism"],
+      ["magnesium", "Muscle & nerve function"],
+      ["vitamin-d3", "Everyday nutritional base"],
+      ["vitamin-c", "Normal energy metabolism"],
+      ["coq10", "Cellular-energy candidate"],
+      ["beetroot", "Daytime botanical candidate"],
+      ["zinc", "Normal nutrient metabolism"],
+    ],
+    rationale:
+      "B12, C and magnesium anchor the idea. CoQ10 and beetroot are optional candidates; their studied preparations and doses still need checking. Persistent fatigue needs assessment, not an iron guess.",
+    food: "Start with regular meals, beans, eggs or other protein foods, vegetables and adequate sleep.",
+    caveat:
+      "A complete seven-ingredient blend has not been clinically tested. Correcting an inadequate intake is different from boosting energy in a well-nourished person.",
+    sourceIds: ["multivitamin", "iron", "coq10", "exercise"],
+  },
+  {
+    id: "beauty",
+    title: "Beauty",
+    icon: "sprout",
+    color: "#efd4df",
+    time: "Daily idea",
+    kicker: "A little care, from within",
+    description:
+      "A nutrition-led skin, hair and nails concept, with a vitamin C foundation and no high-dose beauty claims.",
+    ingredients: [
+      ["vitamin-c", "Normal collagen formation"],
+      ["collagen", "Protein candidate; source pending"],
+      ["zinc", "Normal skin maintenance"],
+      ["selenium", "Normal hair & nail maintenance"],
+      ["vitamin-d3", "Everyday nutritional base"],
+      ["lycopene", "Carotenoid candidate"],
+      ["omega-3", "Dietary fatty-acid candidate"],
+    ],
+    rationale:
+      "Vitamin C supports normal collagen formation; that does not prove this tape improves appearance. Collagen source, dose and allergen suitability remain open. Excess selenium can harm hair and nails.",
+    food: "Prioritise protein foods, colourful vegetables, fruit, nuts and seeds before adding supplements.",
+    caveat:
+      "No skin, hair or nail outcome is established for this seven-ingredient concept. We do not add high-dose retinol by default.",
+    sourceIds: ["multivitamin", "collagen", "lycopene"],
+  },
+  {
+    id: "sixty-plus",
+    title: "60+",
+    icon: "sun",
+    color: "#dce6d0",
+    time: "Daily idea",
+    kicker: "An idea for your next chapter",
+    description:
+      "A starting point for adults 60+, with B12 at its centre. Age alone does not tell us what you need.",
+    ingredients: [
+      ["vitamin-b12", "B12 deserves attention after 60"],
+      ["vitamin-d3", "Normal bone maintenance"],
+      ["magnesium", "Normal muscle function"],
+      ["omega-3", "Dietary fatty-acid candidate"],
+      ["lutemax", "Lutein / zeaxanthin candidate"],
+      ["vitamin-c", "Everyday nutritional base"],
+      ["zinc", "Normal immune function"],
+    ],
+    rationale:
+      "B12 from fortified foods or supplements may be relevant in later life. We leave out routine iron, retinol, iodine and K2. This is not an AREDS formula or a treatment for eye or bone disease.",
+    food: "Build around protein foods, calcium-rich foods, vegetables and fortified foods where appropriate.",
+    caveat:
+      "Medicines, kidney function, existing supplements and individual needs must be reviewed before use. No formula is suitable for everyone over 60.",
+    sourceIds: ["multivitamin", "magnesium", "iron", "eyes"],
+  },
+  {
+    id: "mood-sleep",
+    title: "Mood & Sleep",
+    icon: "moon",
+    color: "#ded9ef",
+    time: "Evening concept",
+    kicker: "Make room to wind down",
+    description:
+      "An evening-themed daily nutrition concept. No melatonin, no 5-HTP, and no ginseng in the same rainbow.",
+    ingredients: [
+      ["magnesium", "Normal nervous-system function"],
+      ["l-theanine", "Wind-down candidate"],
+      ["tart-cherry", "Evening botanical candidate"],
+      ["vitamin-d3", "Daily nutrition, not a sedative"],
+      ["omega-3", "Daily nutrition, not a sedative"],
+      ["vitamin-b12", "Daily nutrition, not a sedative"],
+      ["vitamin-c", "Daily nutrition, not a sedative"],
+    ],
+    rationale:
+      "Only L-theanine and tart cherry are included as wind-down candidates. The other ingredients provide the daily-nutrition theme. Magnesium evidence for insomnia is limited; this blend is not a treatment for low mood or insomnia.",
+    food: "Keep a regular sleep schedule, reduce evening caffeine, and eat regular balanced meals.",
+    caveat:
+      "Seven ingredients are a design format, not seven proven sleep aids. Preparation, dose, tolerability and bedtime suitability remain to be reviewed.",
+    sourceIds: ["sleep", "theanine", "tartCherry"],
+  },
+  {
+    id: "everyday",
+    title: "Everyday Essentials",
+    icon: "heart",
+    color: "#eadfc8",
+    time: "Daily idea",
+    kicker: "Your daily starting point",
+    description:
+      "A simple foundation to explore alongside your diet. A shorter rainbow can be the right choice too.",
+    ingredients: [
+      ["vitamin-d3", "Normal bone maintenance"],
+      ["vitamin-b12", "Normal energy metabolism"],
+      ["vitamin-c", "Normal immune function"],
+      ["magnesium", "Normal muscle function"],
+      ["zinc", "Normal nutrient metabolism"],
+      ["omega-3", "Dietary fatty-acid candidate"],
+      ["probiotics", "Strain-specific culture candidate"],
+    ],
+    rationale:
+      "This is a broad nutrition concept, not evidence that every adult needs all seven. Probiotic strain, viable count at end of shelf life and tape-process stability remain unresolved.",
+    food: "A varied diet comes first; use fortified foods or supplements to address a relevant gap.",
+    caveat:
+      "No deficiency assessment or personal dose is provided. All final amounts remain pending.",
+    sourceIds: ["multivitamin", "probiotics"],
+  },
+  {
+    id: "active",
+    title: "Active Days",
+    icon: "bolt",
+    color: "#f0d5bd",
+    time: "Daytime idea",
+    kicker: "For the days you keep moving",
+    description:
+      "A movement-themed starting point with muscle, protein and everyday nutrition in mind.",
+    ingredients: [
+      ["magnesium", "Normal muscle function"],
+      ["vitamin-b12", "Normal energy metabolism"],
+      ["vitamin-d3", "Normal bone maintenance"],
+      ["vitamin-c", "Normal collagen formation"],
+      ["coq10", "Cellular-energy candidate"],
+      ["beetroot", "Activity-themed candidate"],
+      ["collagen", "Protein candidate; source pending"],
+    ],
+    rationale:
+      "Magnesium and D3 anchor the nutritional theme. Beetroot, CoQ10 and collagen are candidates, not a verified endurance or recovery claim at the reference quantities.",
+    food: "Prioritise adequate food, protein, fluid and recovery around physical activity.",
+    caveat:
+      "A tape cannot replace meals, hydration or recovery. Performance and recovery outcomes have not been established for this blend.",
+    sourceIds: ["magnesium", "exercise", "coq10", "collagen"],
+  },
+  {
+    id: "gut-immune",
+    title: "Gut & Immune",
+    icon: "shield",
+    color: "#d1e4df",
+    time: "Daily idea",
+    kicker: "Everyday care, thoughtfully considered",
+    description:
+      "A gut-and-immune themed idea, with everyday nutrients and two preparation-specific candidates.",
+    ingredients: [
+      ["probiotics", "Strain-specific culture candidate"],
+      ["beta-glucan", "Preparation-specific candidate"],
+      ["vitamin-c", "Normal immune function"],
+      ["vitamin-d3", "Normal immune function"],
+      ["zinc", "Normal immune function"],
+      ["vitamin-b12", "Everyday nutritional base"],
+      ["magnesium", "Everyday nutritional base"],
+    ],
+    rationale:
+      "Probiotic and beta-glucan effects depend on the exact preparation. We cannot transfer a study on one strain or extract to any tape bearing the same ingredient name.",
+    food: "Start with fibre-rich foods, a varied diet and fermented foods if tolerated.",
+    caveat:
+      "No infection-prevention or gut-disease treatment claim. Immunocompromised people need professional review before probiotic use.",
+    sourceIds: ["multivitamin", "probiotics", "weightLoss"],
+  },
+];

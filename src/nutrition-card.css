@@ -1,0 +1,315 @@
+.catalog-details-trigger {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+.catalog-details-trigger:focus-visible {
+  outline: 2px solid #314f46;
+  outline-offset: -3px;
+}
+.catalog-card:has(.catalog-details-trigger:hover) {
+  border-color: #70867988;
+  box-shadow: 0 4px 14px #101e2d0c;
+}
+.catalog-card-bottom {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+.catalog-card-bottom button {
+  pointer-events: auto;
+}
+.modal.nutrition-modal {
+  max-width: 760px;
+  padding: 30px;
+  overscroll-behavior: contain;
+}
+.modal.nutrition-modal h2 {
+  font-size: 36px;
+  line-height: 1.12;
+  max-width: 94%;
+}
+.nutrition-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  color: #6c786a;
+  font-size: 11px;
+  margin: 9px 0 22px;
+}
+.nutrition-card-meta > span:first-child {
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.nutrition-card-meta > span + span {
+  padding-left: 12px;
+  border-left: 1px solid #d5dbcf;
+}
+.nutrition-overview {
+  display: grid;
+  grid-template-columns: 178px minmax(0, 1fr);
+  gap: 25px;
+  align-items: start;
+}
+.nutrition-artwork {
+  border-radius: 15px;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px 14px 14px;
+  gap: 10px;
+}
+.nutrition-artwork img {
+  display: block;
+  width: 142px;
+  height: 142px;
+  object-fit: contain;
+  filter: drop-shadow(1px 5px 4px #3d35281a);
+}
+.nutrition-artwork > span {
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #41534a;
+}
+.nutrition-introduction > p {
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 0 0 17px;
+}
+.nutrition-identity {
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+.nutrition-identity dt {
+  font-size: 11px;
+  font-weight: 600;
+  color: #516750;
+  margin-bottom: 4px;
+}
+.nutrition-identity dd {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #51616b;
+}
+.nutrition-benefits {
+  margin-top: 24px;
+}
+.nutrition-modal h3 {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -.015em;
+  line-height: 1.3;
+}
+.nutrition-benefits ul {
+  padding-left: 18px;
+  margin: 11px 0 0;
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #51616b;
+}
+.nutrition-benefits li::marker {
+  color: #879f74;
+}
+.nutrition-quantity {
+  margin-top: 24px;
+  padding: 18px 20px;
+  border: 1px solid #dde3d3;
+  border-radius: 13px;
+  background: #f0f3e9;
+}
+.nutrition-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.nutrition-status {
+  font-size: 10px;
+  color: #657457;
+  background: #e2e9d7;
+  border-radius: 12px;
+  padding: 4px 9px;
+}
+.nutrition-quantity dl {
+  margin: 12px 0 0;
+}
+.nutrition-quantity dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 8px 0;
+  font-size: 12px;
+  border-top: 1px solid #d9e1cf;
+}
+.nutrition-quantity dt {
+  color: #596b59;
+}
+.nutrition-quantity dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+  max-width: 58%;
+}
+.nutrition-quantity .nutrition-nrv {
+  font-size: 11px;
+}
+.nutrition-quantity p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #64715f;
+  margin: 10px 0 0;
+}
+.nutrition-quantity .nutrition-amount-note {
+  color: #6f796b;
+}
+.nutrition-disclosure {
+  border-bottom: 1px solid #e1e2d8;
+  margin-top: 9px;
+}
+.nutrition-disclosure summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 16px 0;
+  cursor: pointer;
+}
+.nutrition-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+.nutrition-disclosure summary .icon {
+  height: 15px;
+  width: 15px;
+  flex-shrink: 0;
+}
+.nutrition-disclosure[open] summary .icon {
+  transform: rotate(45deg);
+}
+.nutrition-disclosure > div {
+  padding-bottom: 13px;
+}
+.nutrition-disclosure p {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #5f6d69;
+}
+.nutrition-disclosure .nutrition-sourcing-note,
+.nutrition-disclosure .artwork-note,
+.nutrition-sources > div > p {
+  font-size: 11px;
+  color: #778071;
+}
+.nutrition-sources ul {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+.nutrition-sources a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.nutrition-sources a .icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+.nutrition-sources small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #7e8975;
+}
+.nutrition-card-actions {
+  position: sticky;
+  bottom: -30px;
+  z-index: 3;
+  margin: 19px -30px -30px;
+  padding: 10px 30px 25px;
+  background: var(--cream);
+  border-top: 1px solid #e7e5dc;
+}
+.nutrition-card-actions .button {
+  margin-top: 5px;
+  justify-content: center;
+  min-height: 44px;
+}
+@media (max-width: 600px) {
+  .modal.nutrition-modal {
+    padding: 24px 20px;
+    width: calc(100% - 22px);
+    max-height: 92dvh;
+    border-radius: 16px;
+  }
+  .modal.nutrition-modal h2 {
+    font-size: 28px;
+  }
+  .nutrition-card-meta {
+    font-size: 10px;
+    margin-bottom: 18px;
+  }
+  .nutrition-overview {
+    grid-template-columns: 98px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+  }
+  .nutrition-artwork {
+    padding: 9px 6px;
+    min-height: 113px;
+    gap: 5px;
+    border-radius: 12px;
+  }
+  .nutrition-artwork img {
+    width: 82px;
+    height: 82px;
+  }
+  .nutrition-artwork > span {
+    font-size: 8px;
+    letter-spacing: .02em;
+  }
+  .nutrition-introduction {
+    display: contents;
+  }
+  .nutrition-introduction > p {
+    font-size: 12px;
+    margin: 0;
+  }
+  .nutrition-identity {
+    grid-column: 1 / -1;
+    gap: 14px;
+  }
+  .nutrition-quantity {
+    padding: 15px;
+    margin-top: 20px;
+  }
+  .nutrition-card-actions {
+    margin: 18px -20px -24px;
+    padding: 10px 20px 18px;
+    bottom: -24px;
+  }
+}

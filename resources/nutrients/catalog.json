@@ -1,0 +1,2637 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-18",
+  "referenceUrl": "https://get-nourished.com/pages/stack-builder",
+  "selectionLimit": 7,
+  "artworkManifest": "/assets/ingredients-v2/manifest.json",
+  "excludedIngredientIds": [
+    "melatonin"
+  ],
+  "quantityNotice": "Amounts marked Reference are the quantities displayed by Nourished UK, not finalized VITA TAPE specifications or personal intake advice.",
+  "sourceRecordCount": 35,
+  "designOnlyRecordCount": 4,
+  "items": [
+    {
+      "id": "vitamin-d3",
+      "name": "Vitamin D3",
+      "nameZh": "维生素 D3",
+      "summary": "Bone health & immunity",
+      "description": "Vitamin D contributes to normal calcium absorption, bone maintenance and immune function.",
+      "detail": "Vitamin D contributes to normal calcium absorption, bone maintenance and immune function.",
+      "category": "Vitamins",
+      "goals": [
+        "Immunity"
+      ],
+      "color": "#fff0bb",
+      "stripe": "#f5b34f",
+      "icon": "droplet",
+      "artwork": "/assets/ingredients-v2/vitamin-d3.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual oil droplet with D3 marker",
+      "artworkSubject": "金色油滴与 D3 标识",
+      "artworkRole": "concept",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": true,
+      "extended": false,
+      "amount": {
+        "display": "2000 IU",
+        "raw": "2000IU",
+        "status": "reference",
+        "sourceNrv": "1000%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Vegan Vitamin D3",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Immunity"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-d3-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A fat-soluble vitamin involved in calcium balance and normal bone, muscle and immune function.",
+        "form": "Vitamin D3 (cholecalciferol). Final carrier and finished-product grade are to be confirmed.",
+        "source": "The reference catalog describes an algae-derived vegan D3. This is a reference ingredient source, not a confirmed VITA TAPE supplier.",
+        "benefits": [
+          "Helps the body absorb calcium and maintain normal bones and teeth.",
+          "Contributes to normal muscle and immune function."
+        ],
+        "evidence": "These are established nutrient roles. Extra vitamin D is not a guaranteed immunity boost when intake is already adequate.",
+        "considerations": "Review total vitamin D across all supplements; a reference catalog amount is not a personal daily target.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminD-Consumer/",
+            "type": "independent"
+          },
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/vegan-vitamin-d3",
+            "type": "reference-catalog"
+          }
+        ],
+        "quantityNote": "IU is a vitamin activity unit. The amount and reference NRV shown here are retained from the source catalog.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "vitamin-c",
+      "name": "Vitamin C",
+      "nameZh": "维生素 C",
+      "summary": "Antioxidant support",
+      "description": "An essential vitamin involved in normal collagen formation and antioxidant protection.",
+      "detail": "An essential vitamin involved in normal collagen formation and antioxidant protection.",
+      "category": "Vitamins",
+      "goals": [
+        "Beauty",
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#ffd2b2",
+      "stripe": "#ff9145",
+      "icon": "droplet",
+      "artwork": "/assets/ingredients-v2/vitamin-c.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Orange half and wedge",
+      "artworkSubject": "鲜橙与橙瓣",
+      "artworkRole": "food-association",
+      "artworkNote": "Food-source illustration; this does not specify the final ingredient source.",
+      "homepage": true,
+      "extended": false,
+      "amount": {
+        "display": "96 mg",
+        "raw": "96mg",
+        "status": "reference",
+        "sourceNrv": "120%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Vitamin C",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Antioxidant",
+          "Hair, skin & nails"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-c-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A water-soluble vitamin needed for collagen formation and normal antioxidant defence.",
+        "form": "Vitamin C; the exact ascorbic acid / ascorbate grade has not been specified for VITA TAPE.",
+        "source": "Citrus fruit, peppers and other produce are food sources. The orange illustration does not mean this ingredient is extracted from oranges.",
+        "benefits": [
+          "Contributes to normal collagen formation for skin, cartilage and blood vessels.",
+          "Helps protect cells from oxidative stress and supports absorption of non-haem iron."
+        ],
+        "evidence": "Established nutrient roles; an antioxidant role does not demonstrate prevention or treatment of disease.",
+        "considerations": "Larger supplemental amounts can cause digestive discomfort. The final raw material and total daily amount need confirmation.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminC-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "vitamin-b12",
+      "name": "Vitamin B12",
+      "nameZh": "维生素 B12",
+      "summary": "Energy & metabolism",
+      "description": "The reference uses cyanocobalamin, a form of vitamin B12 involved in energy metabolism and nervous system function.",
+      "detail": "The reference uses cyanocobalamin, a form of vitamin B12 involved in energy metabolism and nervous system function.",
+      "category": "Vitamins",
+      "goals": [
+        "Focus",
+        "Immunity",
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#ffd8e2",
+      "stripe": "#ee86b9",
+      "icon": "droplet",
+      "artwork": "/assets/ingredients-v2/vitamin-b12.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual red B12 crystals with B12 marker",
+      "artworkSubject": "红色结晶粉末与 B12 标识",
+      "artworkRole": "concept",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": true,
+      "extended": false,
+      "amount": {
+        "display": "2.5 mcg",
+        "raw": "2.5mcg",
+        "status": "reference",
+        "sourceNrv": "104%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Vitamin B12 (Cyanocobalamin)",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Energy",
+          "Heart health",
+          "Immunity",
+          "Mind"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-b12-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A water-soluble vitamin needed for normal nerve function, red blood cell formation and DNA synthesis.",
+        "form": "Cyanocobalamin is the form named in the reference catalog; the final VITA TAPE form is not yet selected.",
+        "source": "B12 is made by microorganisms and commercial ingredients can be produced by fermentation. Animal foods and fortified foods are dietary sources; this is not a fruit-derived vitamin.",
+        "benefits": [
+          "Supports normal red blood cell formation and nervous system function.",
+          "Contributes to energy metabolism; correcting a deficiency differs from stimulating energy."
+        ],
+        "evidence": "Established nutrient roles. Extra B12 has not been shown to improve energy in people with adequate B12 status.",
+        "considerations": "Dietary intake and absorption both affect B12 status; this card cannot assess a deficiency.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminB12-Consumer/",
+            "type": "independent"
+          },
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/inner-vitality",
+            "type": "reference-catalog"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "magnesium",
+      "name": "Magnesium",
+      "nameZh": "镁",
+      "summary": "Calm mind & muscle support",
+      "description": "Magnesium contributes to normal muscle and nervous system function. This builder explores ingredients; it does not assess a deficiency or prescribe an intake.",
+      "detail": "Magnesium contributes to normal muscle and nervous system function. This builder explores ingredients; it does not assess a deficiency or prescribe an intake.",
+      "category": "Minerals",
+      "goals": [
+        "Sleep",
+        "Sleep & Calm",
+        "Focus",
+        "Wellness"
+      ],
+      "color": "#e9daf8",
+      "stripe": "#b393dd",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/magnesium.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual mineral crystals with Mg marker",
+      "artworkSubject": "浅色矿物晶体与 Mg 标识",
+      "artworkRole": "mineral-concept",
+      "artworkNote": "Mineral concept illustration; this is not the supplement form.",
+      "homepage": true,
+      "extended": false,
+      "amount": {
+        "display": "To be confirmed",
+        "raw": null,
+        "status": "pending",
+        "sourceNrv": null,
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Magnesium",
+        "url": null,
+        "publisher": "User-supplied VITA TAPE design",
+        "accessedAt": "2026-10-18",
+        "benefitTags": []
+      },
+      "contentStatus": "design-concept",
+      "profile": {
+        "overview": "An essential mineral used by enzymes involved in muscle function, nerve signalling and energy metabolism.",
+        "form": "Magnesium. No citrate, glycinate, oxide or other salt / chelate has been selected for this concept.",
+        "source": "Nuts, seeds, legumes and leafy greens are food sources. The mineral illustration is not an edible raw material or a specified supplement form.",
+        "benefits": [
+          "Contributes to normal muscle and nervous system function.",
+          "Supports normal energy metabolism and electrolyte balance."
+        ],
+        "evidence": "Established mineral roles. Evidence for sleep benefits depends on the population, magnesium status and preparation.",
+        "considerations": "Supplemental magnesium can interact with some medicines. People with impaired kidney function need individual advice.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/Magnesium-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "Final elemental magnesium content and the mass of its salt or chelate must be specified separately.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "omega-3",
+      "name": "Omega 3",
+      "nameZh": "Omega 3 脂肪酸",
+      "summary": "Heart & brain health",
+      "description": "Omega 3 describes a family of fatty acids. Effects and suitability depend on the type and amount. Final source, allergens and quantities will be confirmed on the product label.",
+      "detail": "Omega 3 describes a family of fatty acids. Effects and suitability depend on the type and amount. Final source, allergens and quantities will be confirmed on the product label.",
+      "category": "Essential fats",
+      "goals": [
+        "Heart",
+        "Wellness",
+        "Performance"
+      ],
+      "color": "#cce9fc",
+      "stripe": "#86b5e8",
+      "icon": "droplet",
+      "artwork": "/assets/ingredients-v2/omega-3.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual omega 3 oil droplets",
+      "artworkSubject": "金色油滴",
+      "artworkRole": "concept",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": true,
+      "extended": false,
+      "amount": {
+        "display": "To be confirmed",
+        "raw": null,
+        "status": "pending",
+        "sourceNrv": null,
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Omega 3",
+        "url": null,
+        "publisher": "User-supplied VITA TAPE design",
+        "accessedAt": "2026-10-18",
+        "benefitTags": []
+      },
+      "contentStatus": "design-concept",
+      "profile": {
+        "overview": "A family of fatty acids that includes ALA, EPA and DHA, with different dietary sources and functions.",
+        "form": "Omega-3 fatty acids. EPA, DHA and ALA composition, oil form and protective carrier have not yet been specified.",
+        "source": "Fish oil and microalgae can supply EPA / DHA; flax, chia and other plant foods supply ALA. No fish- or algae-based source has been confirmed for VITA TAPE.",
+        "benefits": [
+          "Omega-3 fats contribute to cell membrane structure.",
+          "EPA and DHA are studied for cardiovascular and other outcomes; benefits depend on type and amount."
+        ],
+        "evidence": "The fatty acid composition matters. Results for an EPA / DHA product cannot be assumed for an unspecified omega-3 blend.",
+        "considerations": "Final sourcing determines fish allergens and vegan suitability. Oil weight is not the same as EPA plus DHA content.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "The product specification must state individual EPA / DHA or ALA amounts, not just total oil mass.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "zinc",
+      "name": "Zinc",
+      "nameZh": "锌",
+      "summary": "Immunity & skin health",
+      "description": "An essential mineral involved in normal immune function and maintenance of skin, hair and nails.",
+      "detail": "An essential mineral involved in normal immune function and maintenance of skin, hair and nails.",
+      "category": "Minerals",
+      "goals": [
+        "Beauty",
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#e1efdd",
+      "stripe": "#a1bd99",
+      "icon": "star",
+      "artwork": "/assets/ingredients-v2/zinc.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual zinc mineral specimen with Zn marker",
+      "artworkSubject": "银色矿物与 Zn 标识",
+      "artworkRole": "mineral-concept",
+      "artworkNote": "Mineral concept illustration; this is not the supplement form.",
+      "homepage": true,
+      "extended": false,
+      "amount": {
+        "display": "10 mg",
+        "raw": "10mg",
+        "status": "reference",
+        "sourceNrv": "100%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Zinc",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Bone & joints",
+          "Eye Health",
+          "Hair, skin & nails"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/zinc-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "An essential trace mineral involved in enzyme activity, immune function and normal tissue maintenance.",
+        "form": "Zinc; citrate appears on a reference finished-product label. The VITA TAPE salt or chelate is not confirmed.",
+        "source": "A purified zinc ingredient is used in supplements. Meat, shellfish, beans and nuts are food sources; the metallic specimen is only an illustration.",
+        "benefits": [
+          "Contributes to normal immune function.",
+          "Helps maintain normal skin, hair and nails and supports DNA and protein synthesis."
+        ],
+        "evidence": "Established nutrient roles. Supplementing beyond need is not the same as improving immunity.",
+        "considerations": "Long-term high zinc intake can affect copper status and some medicines need spacing from zinc supplements.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/Zinc-Consumer/",
+            "type": "independent"
+          },
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/inner-vitality",
+            "type": "reference-catalog"
+          }
+        ],
+        "quantityNote": "Confirm elemental zinc content separately from the mass of zinc citrate or another zinc compound.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "collagen",
+      "name": "Collagen",
+      "nameZh": "胶原蛋白",
+      "summary": "Skin, hair & nails",
+      "description": "A structural protein ingredient shown in the supplied VITA TAPE design. Source, amount and suitability remain to be confirmed.",
+      "detail": "A structural protein ingredient shown in the supplied VITA TAPE design. Source, amount and suitability remain to be confirmed.",
+      "category": "Proteins",
+      "goals": [
+        "Beauty",
+        "Wellness"
+      ],
+      "color": "#fbd3df",
+      "stripe": "#e997b0",
+      "icon": "droplet",
+      "artwork": "/assets/ingredients-v2/collagen.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual collagen triple helix",
+      "artworkSubject": "胶原蛋白三股螺旋示意",
+      "artworkRole": "micro-concept",
+      "artworkNote": "Concept illustration, not an exact microscopic image or final product form.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "To be confirmed",
+        "raw": null,
+        "status": "pending",
+        "sourceNrv": null,
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Collagen",
+        "url": null,
+        "publisher": "User-supplied VITA TAPE design",
+        "accessedAt": "2026-10-18",
+        "benefitTags": []
+      },
+      "contentStatus": "design-concept",
+      "profile": {
+        "overview": "A structural protein found in connective tissue. Many oral products use hydrolysed collagen peptides.",
+        "form": "Collagen concept; peptide type, degree of hydrolysis and molecular weight have not been specified.",
+        "source": "Commercial collagen commonly comes from fish, bovine or porcine tissue. Species, tissue source, allergens and any alternative technology remain unconfirmed for VITA TAPE.",
+        "benefits": [
+          "Supplies amino acids and peptides rather than replacing collagen directly in skin.",
+          "Specific oral peptide preparations have been studied for skin hydration and joint-related outcomes."
+        ],
+        "evidence": "Human findings are preparation-dependent and mixed. A small concept amount cannot be assumed to reproduce a clinical study.",
+        "considerations": "Source and processing determine allergens and dietary suitability. This concept has no confirmed vegan claim.",
+        "sources": [
+          {
+            "label": "Memorial Sloan Kettering — About Herbs",
+            "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/collagen",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "probiotics",
+      "name": "Probiotics",
+      "nameZh": "益生菌",
+      "summary": "Digestive & immune balance",
+      "description": "A live bacterial ingredient in the reference catalog. Probiotic effects depend on strain, quantity and individual context.",
+      "detail": "A live bacterial ingredient in the reference catalog. Probiotic effects depend on strain, quantity and individual context.",
+      "category": "Biotics",
+      "goals": [
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#d9f3cc",
+      "stripe": "#98c786",
+      "icon": "flask",
+      "artwork": "/assets/ingredients-v2/probiotics.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual teal probiotic rods and a spore",
+      "artworkSubject": "青绿色杆菌与芽孢示意",
+      "artworkRole": "micro-concept",
+      "artworkNote": "Concept illustration, not an exact microscopic image or final product form.",
+      "homepage": true,
+      "extended": false,
+      "amount": {
+        "display": "200 M CFU",
+        "raw": "200M CFU",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "LactoSpore® Probiotic",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Digestion",
+          "Immunity",
+          "Weight management"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/lactospore-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "Live microorganisms whose effects depend on the strain, viable quantity and intended use.",
+        "form": "The reference is LactoSpore®, the spore-forming strain Heyndrickxia coagulans MTCC 5856, formerly Bacillus coagulans.",
+        "source": "Produced by controlled microbial fermentation, not by adding yogurt or generic mixed bacteria. VITA TAPE has not confirmed procurement or processing survival.",
+        "benefits": [
+          "Specific strains have been studied for digestive comfort and bowel-related outcomes.",
+          "Spore formation is a formulation characteristic; it does not guarantee a benefit in every product."
+        ],
+        "evidence": "Evidence is strain-specific. Finished-product viability and stability need verification before making product claims.",
+        "considerations": "People who are seriously ill or immunocompromised should seek advice before using live probiotic products.",
+        "sources": [
+          {
+            "label": "LactoSpore — strain identity",
+            "url": "https://lactospore.com/about-lactospore/heyndrickxia-coagulans",
+            "type": "ingredient-manufacturer"
+          },
+          {
+            "label": "Health Canada — LactoSpore assessment",
+            "url": "https://www.canada.ca/en/health-canada/services/food-nutrition/genetically-modified-foods-other-novel-foods/approved-products/lactospore/document.html",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "CFU means colony-forming units, not milligrams. A finished-product specification must confirm viable count through shelf life.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "l-theanine",
+      "name": "L-Theanine",
+      "nameZh": "茶氨酸",
+      "summary": "Calm focus",
+      "description": "L-theanine is an amino acid found in tea. This ingredient is shown for exploration; final source, amount and suitability are pending product review.",
+      "detail": "L-theanine is an amino acid found in tea. This ingredient is shown for exploration; final source, amount and suitability are pending product review.",
+      "category": "Botanicals",
+      "goals": [
+        "Sleep",
+        "Sleep & Calm",
+        "Focus",
+        "Wellness"
+      ],
+      "color": "#e5edd9",
+      "stripe": "#80b8a5",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/l-theanine.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Fresh green tea leaves",
+      "artworkSubject": "鲜绿茶嫩叶",
+      "artworkRole": "food-association",
+      "artworkNote": "Food-source illustration; this does not specify the final ingredient source.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "To be confirmed",
+        "raw": null,
+        "status": "pending",
+        "sourceNrv": null,
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "L-Theanine",
+        "url": null,
+        "publisher": "User-supplied VITA TAPE design",
+        "accessedAt": "2026-10-18",
+        "benefitTags": []
+      },
+      "contentStatus": "design-concept",
+      "profile": {
+        "overview": "A non-protein amino acid naturally present in tea leaves. It is different from caffeine and green tea extract.",
+        "form": "L-theanine; purity and whether the material is extracted, fermented or otherwise manufactured are not yet selected.",
+        "source": "Camellia sinensis tea leaves are a natural source. The tea image indicates that association, not a confirmed tea extraction process.",
+        "benefits": [
+          "Studied for relaxation and stress-related responses.",
+          "Attention studies often examine L-theanine with caffeine; those results do not establish the effect of this concept alone."
+        ],
+        "evidence": "Small human studies suggest some effects, but evidence is limited and a final product benefit is not established.",
+        "considerations": "Theanine content, caffeine content and extract identity are separate specifications.",
+        "sources": [
+          {
+            "label": "Memorial Sloan Kettering — About Herbs",
+            "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/l-theanine",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "ashwagandha",
+      "name": "Ashwagandha",
+      "nameZh": "南非醉茄",
+      "summary": "Stress resilience",
+      "description": "A traditional root extract, explored in the reference catalog for calm, sleep and everyday resilience.",
+      "detail": "A traditional root extract, explored in the reference catalog for calm, sleep and everyday resilience.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Performance",
+        "Sleep",
+        "Sleep & Calm",
+        "Wellness"
+      ],
+      "color": "#f4ecdf",
+      "stripe": "#dbc093",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/ashwagandha.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Dried ashwagandha roots",
+      "artworkSubject": "南非醉茄干根",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Ashwagandha Extract",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Energy",
+          "Mind",
+          "Sleep"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/ashwagandha-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A botanical ingredient from Withania somnifera, used in products researched for stress and sleep.",
+        "form": "Ashwagandha extract. Root-only versus root-and-leaf material, extraction ratio and withanolide standardisation remain unspecified.",
+        "source": "Withania somnifera plant material. The root illustration does not establish a root-only supply specification.",
+        "benefits": [
+          "Some preparations have been studied for perceived stress.",
+          "Some small trials have examined sleep-related outcomes."
+        ],
+        "evidence": "Results vary by preparation and study quality; they do not establish treatment of anxiety or insomnia.",
+        "considerations": "Avoid during pregnancy. Liver, thyroid and medicine-related precautions require review before use.",
+        "sources": [
+          {
+            "label": "NIH NCCIH ingredient guide",
+            "url": "https://www.nccih.nih.gov/health/ashwagandha",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "iron",
+      "name": "Iron",
+      "nameZh": "铁",
+      "summary": "Energy & oxygen support",
+      "description": "An essential mineral used in normal haemoglobin formation. Individual suitability should be assessed before supplementing.",
+      "detail": "An essential mineral used in normal haemoglobin formation. Individual suitability should be assessed before supplementing.",
+      "category": "Minerals",
+      "goals": [
+        "Focus",
+        "Immunity",
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#ffd8db",
+      "stripe": "#df8c9d",
+      "icon": "droplet",
+      "artwork": "/assets/ingredients-v2/iron.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual iron mineral specimen with Fe marker",
+      "artworkSubject": "深色矿物与 Fe 标识",
+      "artworkRole": "mineral-concept",
+      "artworkNote": "Mineral concept illustration; this is not the supplement form.",
+      "homepage": true,
+      "extended": false,
+      "amount": {
+        "display": "12 mg",
+        "raw": "12mg",
+        "status": "reference",
+        "sourceNrv": "85%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Iron",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Energy",
+          "Immunity",
+          "Mind"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/iron-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "An essential mineral used to make haemoglobin and myoglobin, which carry and store oxygen.",
+        "form": "Iron; the specific ferrous / ferric salt or chelate has not been confirmed for VITA TAPE.",
+        "source": "Purified iron compounds are used in supplements. Meat, seafood, legumes and fortified foods are dietary sources; the metal image is conceptual.",
+        "benefits": [
+          "Supports normal red blood cell formation and oxygen transport.",
+          "Contributes to normal energy metabolism and cognitive function."
+        ],
+        "evidence": "Established mineral roles. Fatigue does not by itself establish iron deficiency or a need for iron.",
+        "considerations": "Unnecessary iron can be harmful. Iron supplements must be kept out of reach of children.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/Iron-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "Elemental iron content and the mass of the iron compound are different measurements.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "hydrocurc",
+      "name": "HydroCurc™ & Black Pepper Extract",
+      "nameZh": "姜黄素与黑胡椒",
+      "summary": "Antioxidant & joint support",
+      "description": "A curcumin and black pepper extract combination, explored for antioxidant and joint support.",
+      "detail": "A curcumin and black pepper extract combination, explored for antioxidant and joint support.",
+      "category": "Botanicals",
+      "goals": [
+        "Wellness"
+      ],
+      "color": "#ffddcc",
+      "stripe": "#ff8e55",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/hydrocurc.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Turmeric rhizome and black peppercorns",
+      "artworkSubject": "姜黄根茎与黑胡椒粒",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "95 mg | 1 mg",
+        "raw": "95mg | 1mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "HydroCurc™ & Black Pepper Extract",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Antioxidant",
+          "Bone & joints",
+          "Digestion"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/hydrocurc-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A paired reference ingredient combining a formulated turmeric extract with a separate black pepper extract.",
+        "form": "HydroCurc® is a cold-water-dispersible Curcuma longa extract using LipiSperse®. Black pepper extract is listed separately in this catalog entry.",
+        "source": "Turmeric rhizome supplies curcuminoids; Piper nigrum supplies the separate pepper ingredient. HydroCurc itself does not contain piperine.",
+        "benefits": [
+          "Curcuminoids are researched for joint comfort and other outcomes.",
+          "Dispersion technology changes ingredient delivery; it is not itself evidence of a health outcome."
+        ],
+        "evidence": "Research depends on the curcumin preparation. Supplier absorption studies do not validate the final VITA TAPE formula.",
+        "considerations": "Pepper extract and concentrated curcumin can affect medicine use; the final combination requires review.",
+        "sources": [
+          {
+            "label": "Pharmako — HydroCurc ingredient specification",
+            "url": "https://www.pharmako.com.au/hydrocurc",
+            "type": "ingredient-manufacturer"
+          },
+          {
+            "label": "HydroCurc — formulation information",
+            "url": "https://www.hydrocurc.com/",
+            "type": "ingredient-manufacturer"
+          },
+          {
+            "label": "NIH NCCIH ingredient guide",
+            "url": "https://www.nccih.nih.gov/health/turmeric",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "The reference lists 95 mg HydroCurc and 1 mg black pepper extract separately. This is not 96 mg of pure curcumin.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "5-htp",
+      "name": "5-HTP",
+      "nameZh": "5-羟色氨酸",
+      "summary": "Mood & restful routines",
+      "description": "5-HTP is a serotonin precursor. The reference catalog groups it with mind and sleep ingredients.",
+      "detail": "5-HTP is a serotonin precursor. The reference catalog groups it with mind and sleep ingredients.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Sleep",
+        "Sleep & Calm",
+        "Wellness"
+      ],
+      "color": "#e8ebcd",
+      "stripe": "#b1bc58",
+      "icon": "moon",
+      "artwork": "/assets/ingredients-v2/5-htp.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Griffonia simplicifolia seeds and pod",
+      "artworkSubject": "加纳籽与豆荚",
+      "artworkRole": "botanical-association",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "200 mg",
+        "raw": "200mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "5-HTP",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Mind",
+          "Sleep",
+          "Weight management"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/5htp-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "5-hydroxytryptophan is a compound the body can convert into serotonin; it is not serotonin itself.",
+        "form": "5-HTP ingredient. Extract purity and its final raw-material specification are not yet selected.",
+        "source": "Griffonia simplicifolia seeds are a major commercial source. Final extraction method, supplier and origin have not been confirmed.",
+        "benefits": [
+          "Acts as a biochemical precursor in serotonin synthesis.",
+          "Has been investigated for mood and sleep; that research does not establish this concept as a treatment."
+        ],
+        "evidence": "Clinical evidence is limited. A biochemical mechanism is not proof of benefit at the reference catalog amount.",
+        "considerations": "Do not combine with serotonergic medicines without professional advice because of serotonin syndrome risk.",
+        "sources": [
+          {
+            "label": "Memorial Sloan Kettering — About Herbs",
+            "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/5-htp-01",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "apple-cider-vinegar",
+      "name": "Apple Cider Vinegar",
+      "nameZh": "苹果醋",
+      "summary": "An everyday botanical",
+      "description": "An apple-derived vinegar ingredient, listed in the reference catalog for metabolic wellness.",
+      "detail": "An apple-derived vinegar ingredient, listed in the reference catalog for metabolic wellness.",
+      "category": "Botanicals",
+      "goals": [
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#f6eac3",
+      "stripe": "#e0b838",
+      "icon": "droplet",
+      "artwork": "/assets/ingredients-v2/apple-cider-vinegar.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Apple and a clear glass cruet of apple cider vinegar",
+      "artworkSubject": "苹果与苹果醋玻璃壶",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "200 mg",
+        "raw": "200mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Apple Cider Vinegar",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Immunity",
+          "Weight management"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/acv-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "An apple-fermentation ingredient containing organic acids. A dried ingredient is different from drinking vinegar.",
+        "form": "Apple cider vinegar ingredient; the catalog does not specify drying method, carrier or acetic acid percentage.",
+        "source": "Apple sugars are fermented to alcohol and then vinegar. The illustrated liquid bottle does not establish the form used in a tape.",
+        "benefits": [
+          "Provides fermentation-derived organic acids when retained in the preparation.",
+          "Vinegar has been researched for meal-related metabolic responses."
+        ],
+        "evidence": "Evidence for liquid vinegar cannot be transferred directly to an unspecified dried ingredient or this reference amount.",
+        "considerations": "No weight-loss or blood-sugar treatment claim is established for this formula.",
+        "sources": [
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/apple-cider-vinegar",
+            "type": "reference-catalog"
+          }
+        ],
+        "quantityNote": "Milligrams of an apple cider vinegar ingredient do not specify its acetic acid content.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "beetroot",
+      "name": "Beetroot",
+      "nameZh": "甜菜根",
+      "summary": "Energy & performance",
+      "description": "A beetroot-derived botanical, explored for physical performance and recovery.",
+      "detail": "A beetroot-derived botanical, explored for physical performance and recovery.",
+      "category": "Botanicals",
+      "goals": [
+        "Performance"
+      ],
+      "color": "#ffcbdb",
+      "stripe": "#ff5288",
+      "icon": "bolt",
+      "artwork": "/assets/ingredients-v2/beetroot.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Beetroot with a sliced half",
+      "artworkSubject": "甜菜根与红色环纹切面",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Beetroot",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Energy",
+          "Recovery"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/beetroot-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A botanical ingredient from beetroot, a food that can contain nitrate and betalain pigments.",
+        "form": "Beetroot ingredient. Powder versus extract and nitrate standardisation are not specified in the current catalog record.",
+        "source": "Beta vulgaris root. Variety, growing conditions and processing can change the nitrate content.",
+        "benefits": [
+          "Dietary nitrate can participate in nitric oxide pathways.",
+          "Standardised beetroot juice preparations have been studied for exercise economy and endurance."
+        ],
+        "evidence": "Powder weight does not establish nitrate exposure. Juice-study results do not prove an effect from this tape concept.",
+        "considerations": "The amount of nitrate, not just the total beetroot ingredient mass, matters when comparing research.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "The 100 mg reference is ingredient mass; nitrate content is not provided.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "beta-glucan",
+      "name": "Beta Glucan",
+      "nameZh": "β-葡聚糖",
+      "summary": "Everyday immune support",
+      "description": "A polysaccharide ingredient listed in the reference catalog under immune support.",
+      "detail": "A polysaccharide ingredient listed in the reference catalog under immune support.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#e1e1f2",
+      "stripe": "#9c9bd3",
+      "icon": "shield",
+      "artwork": "/assets/ingredients-v2/beta-glucan.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual budding yeast cells",
+      "artworkSubject": "酵母出芽细胞示意",
+      "artworkRole": "micro-concept",
+      "artworkNote": "Concept illustration, not an exact microscopic image or final product form.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "50 mg",
+        "raw": "50mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Beta Glucan",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Immunity",
+          "Mind"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/beta-glucan-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A family of glucose-based polysaccharides whose structure and effects vary with their source.",
+        "form": "Beta-glucan ingredient. Linkage pattern, purity and exact source are not specified for VITA TAPE.",
+        "source": "Yeast, fungi, oats and barley contain different beta-glucans. The reference discusses yeast beta-glucan; the yeast image does not confirm a supplier.",
+        "benefits": [
+          "Yeast beta-glucans have been studied for immune-related responses.",
+          "Oat and barley beta-glucans are different soluble fibres with different research and amounts."
+        ],
+        "evidence": "Evidence is source- and structure-specific. Do not transfer an oat fibre claim to an unspecified yeast preparation.",
+        "considerations": "Final source, beta-glucan percentage and any cereal allergen status need confirmation.",
+        "sources": [
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/beta-glucan",
+            "type": "reference-catalog"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "bpl1",
+      "name": "BPL1®",
+      "nameZh": "BPL1 后生元",
+      "summary": "Digestive & metabolic balance",
+      "description": "A heat-treated B. lactis CECT8145 postbiotic ingredient. BPL1 is a third-party trademark.",
+      "detail": "A heat-treated B. lactis CECT8145 postbiotic ingredient. BPL1 is a third-party trademark.",
+      "category": "Biotics",
+      "goals": [
+        "Wellness"
+      ],
+      "color": "#f5e2dc",
+      "stripe": "#dd9e8a",
+      "icon": "flask",
+      "artwork": "/assets/ingredients-v2/bpl1.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual bifidobacteria and postbiotic fragments",
+      "artworkSubject": "紫色双歧杆菌与后生元碎片示意",
+      "artworkRole": "micro-concept",
+      "artworkNote": "Concept illustration, not an exact microscopic image or final product form.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "33.33 mg",
+        "raw": "33.33mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "BPL1®",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Antioxidant",
+          "Digestion",
+          "Weight management"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/bpl1-ht-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A strain-specific, heat-treated microbial preparation; the reference entry is a postbiotic rather than a live probiotic.",
+        "form": "Heat-treated Bifidobacterium animalis subsp. lactis CECT 8145, known as HT-BPL1™.",
+        "source": "A controlled bacterial culture followed by heat treatment. ADM identifies both live BPL1 and the separate heat-treated format; this record uses the latter.",
+        "benefits": [
+          "Researched for metabolic-health and body-composition-related outcomes.",
+          "A heat-treated format has different formulation needs from a live microbial ingredient."
+        ],
+        "evidence": "Research is specific to the strain and format. It does not establish weight loss or efficacy of this final formula.",
+        "considerations": "Live BPL1, heat-treated BPL1 and generic bifidobacteria are not interchangeable descriptions.",
+        "sources": [
+          {
+            "label": "ADM — HT-BPL1 ingredient overview",
+            "url": "https://www.adm.com/globalassets/products--services/human-nutrition/products/microbiome-solutions/postbiotics/htbpl1-postbiotic.pdf/",
+            "type": "ingredient-manufacturer"
+          }
+        ],
+        "quantityNote": "The 33.33 mg reference measures postbiotic ingredient mass. It must not be converted into viable CFU.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "careflow",
+      "name": "Careflow™ Mango Powder",
+      "nameZh": "芒果粉",
+      "summary": "Circulation & vitality",
+      "description": "A branded mango fruit powder, explored for circulation and physical performance.",
+      "detail": "A branded mango fruit powder, explored for circulation and physical performance.",
+      "category": "Botanicals",
+      "goals": [
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#fdefca",
+      "stripe": "#f7ca4d",
+      "icon": "droplet",
+      "artwork": "/assets/ingredients-v2/careflow.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Ripe mango cheek",
+      "artworkSubject": "芒果果肉",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Careflow™ Mango Powder",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Antioxidant",
+          "Energy",
+          "Weight management"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/careflow-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A branded mango fruit powder explored in ingredient-level circulation research.",
+        "form": "Careflow™ mango fruit powder; it is not a mango flavour or automatically a mangiferin-standardised extract.",
+        "source": "Mangifera indica fruit. Final grade, supplier agreement and country of manufacture are not confirmed for VITA TAPE.",
+        "benefits": [
+          "Ingredient studies have investigated microcirculation.",
+          "Other exploratory work has examined metabolic and physical-performance outcomes."
+        ],
+        "evidence": "Early ingredient-specific research; this is not proof of a cardiovascular or performance effect from the final tape.",
+        "considerations": "A branded ingredient reference does not establish VITA TAPE supply or trademark authorisation.",
+        "sources": [
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/careflow-mango-powder",
+            "type": "reference-catalog"
+          },
+          {
+            "label": "Careflow — ingredient technical data",
+            "url": "https://media.knowde.com/image/upload/v1631511747/production/Collateral/272420/Careflow_Technical_Data_Sheet.pdf",
+            "type": "ingredient-manufacturer"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "coq10",
+      "name": "CoQ10",
+      "nameZh": "辅酶 Q10",
+      "summary": "Cellular energy & heart",
+      "description": "A naturally occurring coenzyme explored for cellular energy and cardiovascular wellness.",
+      "detail": "A naturally occurring coenzyme explored for cellular energy and cardiovascular wellness.",
+      "category": "Botanicals",
+      "goals": [
+        "Beauty",
+        "Focus",
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#fce3c6",
+      "stripe": "#f4a342",
+      "icon": "heart",
+      "artwork": "/assets/ingredients-v2/coq10.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual orange CoQ10 powder with Q10 marker",
+      "artworkSubject": "橙黄色粉末与 Q10 标识",
+      "artworkRole": "concept",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "30 mg",
+        "raw": "30mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "CoQ10",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Energy",
+          "Hair, skin & nails",
+          "Heart health",
+          "Mind"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/coq10-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "Coenzyme Q10 is a compound used in mitochondrial electron transport and present in many tissues.",
+        "form": "CoQ10; ubiquinone versus ubiquinol, particle size and carrier have not been specified.",
+        "source": "The body makes CoQ10, and foods contain small quantities. The commercial production route for VITA TAPE has not been chosen.",
+        "benefits": [
+          "Participates in cellular energy production.",
+          "Has antioxidant activity; that mechanism does not establish a clinical benefit."
+        ],
+        "evidence": "Human results vary by condition and preparation. A normal biological role is not evidence of an energy boost in healthy users.",
+        "considerations": "CoQ10 can interact with warfarin and some other medicines.",
+        "sources": [
+          {
+            "label": "NIH NCCIH ingredient guide",
+            "url": "https://www.nccih.nih.gov/health/coenzyme-q10",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "cordyceps",
+      "name": "Cordyceps",
+      "nameZh": "虫草",
+      "summary": "Energy & endurance",
+      "description": "A fungi-derived ingredient explored for endurance and antioxidant support.",
+      "detail": "A fungi-derived ingredient explored for endurance and antioxidant support.",
+      "category": "Botanicals",
+      "goals": [
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#ebdaca",
+      "stripe": "#bc854d",
+      "icon": "bolt",
+      "artwork": "/assets/ingredients-v2/cordyceps.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Illustration of orange cordyceps fruiting bodies",
+      "artworkSubject": "橙色蛹虫草子实体",
+      "artworkRole": "botanical-association",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Cordyceps",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Antioxidant",
+          "Energy"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/cordyceps-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A fungal ingredient researched in different species, cultures and extract preparations.",
+        "form": "Cordyceps ingredient. Species, mycelium versus fruiting body, extraction ratio and marker content remain unconfirmed.",
+        "source": "Cordyceps-related fungi may be cultivated. The orange fruiting-body illustration is an association, not confirmation of species or sourcing.",
+        "benefits": [
+          "Studied for exercise-related and fatigue-related outcomes.",
+          "Fungal polysaccharides and other compounds are investigated in laboratory research."
+        ],
+        "evidence": "Human evidence is limited and preparations differ. Laboratory results do not establish a benefit for this formula.",
+        "considerations": "Immunosuppressant, anticoagulant and glucose-lowering medicine use requires review.",
+        "sources": [
+          {
+            "label": "Memorial Sloan Kettering — About Herbs",
+            "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/cordyceps",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "folic-acid",
+      "name": "Folic Acid",
+      "nameZh": "叶酸",
+      "summary": "Essential folate support",
+      "description": "A form of folate, a vitamin involved in normal cell division and maternal folate status.",
+      "detail": "A form of folate, a vitamin involved in normal cell division and maternal folate status.",
+      "category": "Vitamins",
+      "goals": [
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#def2e0",
+      "stripe": "#90d399",
+      "icon": "sun",
+      "artwork": "/assets/ingredients-v2/folic-acid.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Fresh spinach leaves as a folate food association",
+      "artworkSubject": "新鲜菠菜叶",
+      "artworkRole": "food-association",
+      "artworkNote": "Food-source illustration; this does not specify the final ingredient source.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "400 mcg",
+        "raw": "400mcg",
+        "status": "reference",
+        "sourceNrv": "200%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Folic Acid",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Immunity",
+          "Prenatal",
+          "Womens health"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/folic-acid-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "Folic acid is a manufactured form of folate, a B vitamin involved in cell division and DNA synthesis.",
+        "form": "Folic acid, as named in the reference catalog; this is not a confirmed methylfolate / 5-MTHF ingredient.",
+        "source": "Manufactured folic acid is used in supplements and fortified foods. Spinach is a natural folate food source, not the raw-material source claimed here.",
+        "benefits": [
+          "Contributes to normal blood formation and cell division.",
+          "Adequate folate before and during early pregnancy is important for neural tube development."
+        ],
+        "evidence": "Established nutrient roles. Pregnancy requirements need appropriate guidance; this builder is not a prenatal prescription.",
+        "considerations": "Large amounts of folic acid can mask signs of vitamin B12 deficiency.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/Folate-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "The displayed 400 mcg is the original folic acid reference quantity, not a calculated dietary folate equivalent.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "ginger",
+      "name": "Ginger Extract",
+      "nameZh": "生姜提取物",
+      "summary": "Digestive comfort",
+      "description": "A ginger-root extract traditionally used in digestive and everyday wellness routines.",
+      "detail": "A ginger-root extract traditionally used in digestive and everyday wellness routines.",
+      "category": "Botanicals",
+      "goals": [
+        "Immunity",
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#f4efda",
+      "stripe": "#dbca82",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/ginger.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Ginger rhizome and fresh slices",
+      "artworkSubject": "生姜根茎与切片",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Ginger Extract",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Antioxidant",
+          "Energy",
+          "Immunity"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/ginger-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A concentrated botanical ingredient from the ginger rhizome, rather than a piece of fresh ginger in the tape.",
+        "form": "Ginger root / rhizome extract. Extraction ratio, solvent and gingerol standardisation are not yet specified.",
+        "source": "Zingiber officinale rhizome. Final grower, ingredient manufacturer and country of origin remain unconfirmed.",
+        "benefits": [
+          "Has been investigated for nausea in specific settings.",
+          "Traditionally used in digestive-comfort routines."
+        ],
+        "evidence": "Evidence depends on the preparation and use. It does not establish a digestive benefit at this reference catalog amount.",
+        "considerations": "Concentrated ginger can cause digestive discomfort; discuss supplement use when taking medicines.",
+        "sources": [
+          {
+            "label": "NIH NCCIH ingredient guide",
+            "url": "https://www.nccih.nih.gov/health/ginger",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "The 100 mg reference is extract mass. A fresh-root equivalent cannot be calculated without the extraction ratio.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "ginseng",
+      "name": "Ginseng",
+      "nameZh": "人参",
+      "summary": "Clarity & vitality",
+      "description": "A traditional root ingredient, explored in the reference catalog for antioxidant and cognitive support.",
+      "detail": "A traditional root ingredient, explored in the reference catalog for antioxidant and cognitive support.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#efeee3",
+      "stripe": "#cac5a2",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/ginseng.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Whole Panax ginseng root with fine rootlets",
+      "artworkSubject": "完整人参根与细根须",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Ginseng",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Antioxidant",
+          "Immunity",
+          "Mind"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/ginseng-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A botanical ingredient associated with Panax ginseng root, distinct from ashwagandha or other plants called ginseng.",
+        "form": "Ginseng ingredient. Species confirmation, powder versus extract, processing and ginsenoside content remain unspecified.",
+        "source": "Panax ginseng root is the plant shown and discussed here. White / red processing, cultivation source and supplier require confirmation.",
+        "benefits": [
+          "Some studies have examined general fatigue and cognitive tasks.",
+          "Ginsenosides are among the compounds investigated in ginseng research."
+        ],
+        "evidence": "Human results are mixed. Ginseng has not consistently improved athletic performance.",
+        "considerations": "Insomnia and interactions with blood-thinning or glucose-lowering medicines are relevant considerations.",
+        "sources": [
+          {
+            "label": "NIH NCCIH ingredient guide",
+            "url": "https://www.nccih.nih.gov/health/asian-ginseng",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "inositol",
+      "name": "Inositol",
+      "nameZh": "肌醇",
+      "summary": "Everyday metabolic balance",
+      "description": "A naturally occurring compound, listed in the reference catalog for metabolic and women’s wellness.",
+      "detail": "A naturally occurring compound, listed in the reference catalog for metabolic and women’s wellness.",
+      "category": "Botanicals",
+      "goals": [
+        "Wellness"
+      ],
+      "color": "#f1f1f1",
+      "stripe": "#d1d1d1",
+      "icon": "droplet",
+      "artwork": "/assets/ingredients-v2/inositol.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual white inositol powder with IN marker",
+      "artworkSubject": "白色结晶粉末与 IN 标识",
+      "artworkRole": "concept",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "300 mg",
+        "raw": "300mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Inositol",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Weight management",
+          "Womens health"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/inositol-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A naturally occurring compound used in cell signalling; several forms of inositol exist.",
+        "form": "Inositol. Myo-inositol, D-chiro-inositol or a specified ratio has not been identified in the current record.",
+        "source": "Found in foods and made by the body. The commercial production route and purity for VITA TAPE have not been selected.",
+        "benefits": [
+          "Participates in cellular signalling pathways.",
+          "Myo-inositol and related preparations have been studied for metabolic and ovarian-function outcomes."
+        ],
+        "evidence": "Clinical findings depend on isomer, dose and population. They do not establish a benefit from an unspecified form or this concept.",
+        "considerations": "This card does not establish treatment for PCOS, infertility or diabetes.",
+        "sources": [
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/pre-blend-pcos-relief-stack",
+            "type": "reference-catalog"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "iodine",
+      "name": "Iodine",
+      "nameZh": "碘",
+      "summary": "Thyroid & cognitive function",
+      "description": "An essential mineral involved in normal thyroid hormone production and cognitive function.",
+      "detail": "An essential mineral involved in normal thyroid hormone production and cognitive function.",
+      "category": "Minerals",
+      "goals": [
+        "Focus",
+        "Wellness"
+      ],
+      "color": "#e4daec",
+      "stripe": "#a684c1",
+      "icon": "shield",
+      "artwork": "/assets/ingredients-v2/iodine.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Kelp fronds as an iodine food association",
+      "artworkSubject": "海带藻叶",
+      "artworkRole": "food-association",
+      "artworkNote": "Food-source illustration; this does not specify the final ingredient source.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "150 mcg",
+        "raw": "150mcg",
+        "status": "reference",
+        "sourceNrv": "100%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Iodine",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Mind",
+          "Prenatal",
+          "Womens health"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/iodine-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "An essential trace mineral needed to make thyroid hormones.",
+        "form": "Iodine. Potassium iodide, iodate, kelp-derived material or another form has not been confirmed.",
+        "source": "Seaweed, seafood, dairy and iodised salt can supply dietary iodine. The kelp image does not mean this ingredient is a kelp extract.",
+        "benefits": [
+          "Supports normal thyroid hormone production.",
+          "Contributes to normal energy metabolism and cognitive function."
+        ],
+        "evidence": "Established nutrient roles. Both insufficient and excessive iodine can affect thyroid function.",
+        "considerations": "Thyroid disease and thyroid medicine use require individual advice before adding iodine.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/Iodine-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "vitamin-k2",
+      "name": "K2 Vital Delta™",
+      "nameZh": "维生素 K2",
+      "summary": "Bone & heart support",
+      "description": "A branded vitamin K2 ingredient, explored for the maintenance of normal bones.",
+      "detail": "A branded vitamin K2 ingredient, explored for the maintenance of normal bones.",
+      "category": "Vitamins",
+      "goals": [
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#fbd2e6",
+      "stripe": "#f268aa",
+      "icon": "sun",
+      "artwork": "/assets/ingredients-v2/vitamin-k2.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual oil droplet with K2 marker",
+      "artworkSubject": "金色油滴与 K2 标识",
+      "artworkRole": "concept",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "75 mcg",
+        "raw": "75mcg",
+        "status": "reference",
+        "sourceNrv": "100%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "K2 Vital Delta™",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Bone & joints",
+          "Heart health",
+          "Immunity"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/k2-vital-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A member of the vitamin K family, which is involved in activating vitamin K-dependent proteins.",
+        "form": "The reference names K2VITAL™ DELTA: all-trans menaquinone-7 (MK-7) in a protected, double-microencapsulated preparation.",
+        "source": "A branded manufactured MK-7 ingredient from the K2VITAL range. Final grade and production route, including fermented versus other grades, are not confirmed for VITA TAPE.",
+        "benefits": [
+          "Vitamin K contributes to normal blood clotting.",
+          "Vitamin K is involved in proteins important to normal bone metabolism."
+        ],
+        "evidence": "Established vitamin K roles. Specific cardiovascular or fracture-prevention outcomes cannot be inferred for this formula.",
+        "considerations": "Vitamin K can significantly affect warfarin therapy; intake changes require professional advice.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminK-Consumer/",
+            "type": "independent"
+          },
+          {
+            "label": "Balchem — K2VITAL DELTA",
+            "url": "https://balchem.com/hnh/mn/k2vital/delta/",
+            "type": "ingredient-manufacturer"
+          }
+        ],
+        "quantityNote": "Confirm whether the final label declares active MK-7, rather than the total mass of an encapsulated carrier preparation.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "lutemax",
+      "name": "Lutemax 2020",
+      "nameZh": "叶黄素复合物",
+      "summary": "Eye health & visual comfort",
+      "description": "A branded carotenoid ingredient, explored for general eye health and visual comfort.",
+      "detail": "A branded carotenoid ingredient, explored for general eye health and visual comfort.",
+      "category": "Botanicals",
+      "goals": [
+        "Beauty",
+        "Focus",
+        "Wellness"
+      ],
+      "color": "#fae9c7",
+      "stripe": "#efb643",
+      "icon": "sun",
+      "artwork": "/assets/ingredients-v2/lutemax.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Orange marigold blossom",
+      "artworkSubject": "橙色万寿菊花",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "12 mg",
+        "raw": "12mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Lutemax 2020",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Eye Health",
+          "Hair, skin & nails",
+          "Mind"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/lutemax-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A branded carotenoid ingredient providing lutein and zeaxanthin isomers.",
+        "form": "Lutemax 2020® marigold extract; the exact powder or oil grade and active carotenoid percentages are not specified here.",
+        "source": "Tagetes erecta marigold flowers are the botanical source described by the ingredient manufacturer.",
+        "benefits": [
+          "Lutein and zeaxanthin are components of macular pigment in the eye.",
+          "Specific preparations have been studied for visual function and responses to light."
+        ],
+        "evidence": "Ingredient research does not prove improved vision or disease prevention from the final tape.",
+        "considerations": "Total extract mass and the individual amounts of lutein and zeaxanthin must be distinguished.",
+        "sources": [
+          {
+            "label": "Lutemax — source and ingredient information",
+            "url": "https://lutemax.com/faq/",
+            "type": "ingredient-manufacturer"
+          }
+        ],
+        "quantityNote": "The 12 mg catalog reference is retained as listed; the split between extract, lutein and zeaxanthin is not established by this record.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "lycopene",
+      "name": "Lycopene",
+      "nameZh": "番茄红素",
+      "summary": "Antioxidant & heart support",
+      "description": "A carotenoid found in red plants, explored for antioxidant and cardiovascular wellness.",
+      "detail": "A carotenoid found in red plants, explored for antioxidant and cardiovascular wellness.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Immunity",
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#fcd7d6",
+      "stripe": "#f47a78",
+      "icon": "heart",
+      "artwork": "/assets/ingredients-v2/lycopene.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Ripe tomato with sliced half",
+      "artworkSubject": "番茄与切面",
+      "artworkRole": "food-association",
+      "artworkNote": "Food-source illustration; this does not specify the final ingredient source.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "10 mg",
+        "raw": "10mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Lycopene",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Energy",
+          "Heart health",
+          "Immunity",
+          "Mind"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/lycopene-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A red carotenoid found in tomatoes and other foods; it is not converted into vitamin A.",
+        "form": "Lycopene ingredient. Isomer profile, concentration and carrier are not specified for VITA TAPE.",
+        "source": "Tomatoes are a familiar food source, while commercial ingredients can have different production routes. No tomato-derived supply has been confirmed.",
+        "benefits": [
+          "Acts as a carotenoid antioxidant in biological research.",
+          "Has been investigated for cardiovascular and other health-related outcomes."
+        ],
+        "evidence": "An antioxidant mechanism does not establish prevention or treatment of a disease.",
+        "considerations": "The tomato illustration is a food association, not a promise about the source or concentration of the final ingredient.",
+        "sources": [
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/lycopene",
+            "type": "reference-catalog"
+          },
+          {
+            "label": "NIH NCCIH ingredient guide",
+            "url": "https://www.nccih.nih.gov/health/antioxidant-supplements-what-you-need-to-know",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "maca",
+      "name": "Maca Powder",
+      "nameZh": "玛咖粉",
+      "summary": "Energy & everyday vitality",
+      "description": "A powdered root botanical listed in the reference catalog for energy and general wellness.",
+      "detail": "A powdered root botanical listed in the reference catalog for energy and general wellness.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#f7f1d4",
+      "stripe": "#e5cf70",
+      "icon": "bolt",
+      "artwork": "/assets/ingredients-v2/maca.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Maca roots with a sliced half",
+      "artworkSubject": "玛咖根与切面",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "50 mg",
+        "raw": "50mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Maca Powder",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Bone health",
+          "Energy",
+          "Mind"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/maca-powder-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A botanical powder from the swollen storage organ of Lepidium meyenii, commonly called maca root.",
+        "form": "Maca powder, as named in the reference catalog. Raw versus gelatinised processing and any extract concentration are unconfirmed.",
+        "source": "Lepidium meyenii root / hypocotyl. Final growing region, processing site and supplier are not specified.",
+        "benefits": [
+          "Traditionally included in food and vitality routines.",
+          "Human studies have investigated sexual well-being and other outcomes."
+        ],
+        "evidence": "Human evidence is limited and does not establish increased energy, hormone balance or endurance from this formula.",
+        "considerations": "Powder and concentrated extract are different preparations; an extract-equivalent claim requires a specification.",
+        "sources": [
+          {
+            "label": "Memorial Sloan Kettering — About Herbs",
+            "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/maca",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "milk-thistle",
+      "name": "Milk Thistle Extract",
+      "nameZh": "水飞蓟提取物",
+      "summary": "Botanical wellness support",
+      "description": "A plant extract listed in the reference catalog for liver and women’s wellness.",
+      "detail": "A plant extract listed in the reference catalog for liver and women’s wellness.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#f8e6f9",
+      "stripe": "#e8acea",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/milk-thistle.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Milk thistle flower and white-veined leaf",
+      "artworkSubject": "水飞蓟花与白纹刺叶",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Milk Thistle Extract",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Energy",
+          "Mind",
+          "Prenatal",
+          "Womens health"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/milk-thistle-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A botanical extract containing silymarin-related flavonolignans.",
+        "form": "Milk thistle extract. Silymarin percentage, extraction method and grade remain unconfirmed.",
+        "source": "Silybum marianum fruits, often called seeds, are the usual extract material. The flower image identifies the plant, not the extracted plant part.",
+        "benefits": [
+          "Silymarin compounds are investigated for antioxidant activity.",
+          "Milk thistle has been studied in liver-related settings."
+        ],
+        "evidence": "Results for liver conditions are conflicting or insufficient. A detox or liver-treatment effect is not established.",
+        "considerations": "People allergic to related plants may react. This ingredient should not replace assessment of abnormal liver tests.",
+        "sources": [
+          {
+            "label": "NIH NCCIH ingredient guide",
+            "url": "https://www.nccih.nih.gov/health/milk-thistle",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "greens-blend",
+      "name": "Greens Blend",
+      "nameZh": "复合蔬菜粉",
+      "summary": "A greener daily ritual",
+      "description": "The reference blend combines broccoli, spinach, kale, kiwi and spirulina. VITA TAPE’s blend composition is not yet finalized.",
+      "detail": "The reference blend combines broccoli, spinach, kale, kiwi and spirulina. VITA TAPE’s blend composition is not yet finalized.",
+      "category": "Botanicals",
+      "goals": [
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#d2ebd7",
+      "stripe": "#69bc79",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/greens-blend.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Illustrative kale, spinach and wheatgrass blend",
+      "artworkSubject": "羽衣甘蓝、菠菜与小麦草",
+      "artworkRole": "food-association",
+      "artworkNote": "Food-source illustration; this does not specify the final ingredient source.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Nourished Greens™",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Heart health",
+          "Immunity"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/greens-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A blend category combining plant-derived ingredients rather than one defined nutrient.",
+        "form": "Greens blend; individual powders, extracts, proportions and processing remain unspecified for VITA TAPE.",
+        "source": "The reference Nourished Greens blend lists broccoli, spinach, kale, kiwi and spirulina. The VITA TAPE illustration is generic and does not define its final recipe.",
+        "benefits": [
+          "Can contribute plant compounds depending on the actual ingredients and amounts.",
+          "No specific vitamin, mineral or fibre content can be inferred from a blend name alone."
+        ],
+        "evidence": "A small blend amount is not nutritionally equivalent to a serving of vegetables, and benefits are not established for this concept.",
+        "considerations": "Final composition, allergen status and nutrient testing need to be confirmed.",
+        "sources": [
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/nourished-greens",
+            "type": "reference-catalog"
+          }
+        ],
+        "quantityNote": "The 100 mg reference is total blend mass; individual component quantities are not disclosed in this record.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "resveratrol",
+      "name": "Resveratrol",
+      "nameZh": "白藜芦醇",
+      "summary": "Antioxidant & circulation",
+      "description": "A plant polyphenol explored for antioxidant and cardiovascular wellness.",
+      "detail": "A plant polyphenol explored for antioxidant and cardiovascular wellness.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Wellness"
+      ],
+      "color": "#e9e8f0",
+      "stripe": "#b6b4cc",
+      "icon": "heart",
+      "artwork": "/assets/ingredients-v2/resveratrol.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Purple grapes with a split grape",
+      "artworkSubject": "紫葡萄与葡萄皮",
+      "artworkRole": "food-association",
+      "artworkNote": "Food-source illustration; this does not specify the final ingredient source.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Resveratrol",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Heart health",
+          "Mind",
+          "Womens health"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/resveratrol-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A plant polyphenol investigated for cell signalling and antioxidant-related effects.",
+        "form": "Resveratrol ingredient. Trans-resveratrol percentage, extraction route and carrier remain unspecified.",
+        "source": "Grape skins and Japanese knotweed are known botanical sources. The grape illustration does not confirm grape-derived extraction.",
+        "benefits": [
+          "Studied in cell-signalling and antioxidant pathways.",
+          "Human studies have explored metabolic and cardiovascular markers."
+        ],
+        "evidence": "Laboratory findings and changes in markers do not establish anti-ageing, weight-loss or disease-prevention benefits.",
+        "considerations": "Blood-thinning medicines and other drug interactions require review; final purity and source matter.",
+        "sources": [
+          {
+            "label": "Memorial Sloan Kettering — About Herbs",
+            "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/resveratrol",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "scutellup",
+      "name": "Scutell'Up",
+      "nameZh": "黄芩提取物",
+      "summary": "Calm & mental clarity",
+      "description": "A branded botanical ingredient, listed in the reference catalog for calm, cognitive and sleep routines.",
+      "detail": "A branded botanical ingredient, listed in the reference catalog for calm, cognitive and sleep routines.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Sleep",
+        "Sleep & Calm",
+        "Wellness"
+      ],
+      "color": "#f0e8fb",
+      "stripe": "#ceb1f2",
+      "icon": "moon",
+      "artwork": "/assets/ingredients-v2/scutellup.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Dried Scutellaria baicalensis roots",
+      "artworkSubject": "黄芩根与黄色切面",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "20 mg",
+        "raw": "20mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Scutell'Up",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Antioxidant",
+          "Mind",
+          "Sleep"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/scutellup-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A branded flavone-rich extract from Chinese skullcap root.",
+        "form": "SCUTELL’UP® Scutellaria baicalensis root extract powder. The supplier describes a grade containing at least 85% baicalin; VITA TAPE grade and assay are unconfirmed.",
+        "source": "Scutellaria baicalensis root, not American skullcap leaf. Manufacturer information identifies the reference botanical material.",
+        "benefits": [
+          "Has been investigated in stress-related biological pathways.",
+          "Ingredient-specific research explores perceived calm and related outcomes."
+        ],
+        "evidence": "Much of the mechanism evidence is preliminary. Supplier claims do not establish treatment of anxiety or effects of this formula.",
+        "considerations": "Botanical identity, liver-safety considerations and medicine use need review before a final product specification.",
+        "sources": [
+          {
+            "label": "Green Plants Extracts — SCUTELL’UP technical data",
+            "url": "https://greenplantsextracts.com/products/scutellup/",
+            "type": "ingredient-manufacturer"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "selenium",
+      "name": "Selenium",
+      "nameZh": "硒",
+      "summary": "Hair, skin & immunity",
+      "description": "An essential mineral involved in normal immune function and antioxidant protection.",
+      "detail": "An essential mineral involved in normal immune function and antioxidant protection.",
+      "category": "Minerals",
+      "goals": [
+        "Beauty",
+        "Immunity"
+      ],
+      "color": "#dae4da",
+      "stripe": "#85a584",
+      "icon": "shield",
+      "artwork": "/assets/ingredients-v2/selenium.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual selenium mineral granules with Se marker",
+      "artworkSubject": "深银色矿物与 Se 标识",
+      "artworkRole": "mineral-concept",
+      "artworkNote": "Mineral concept illustration; this is not the supplement form.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "55 mcg",
+        "raw": "55mcg",
+        "status": "reference",
+        "sourceNrv": "100%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Selenium",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Hair, skin & nails",
+          "Immunity"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/selenium-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "An essential trace mineral incorporated into selenoproteins.",
+        "form": "Selenium. Selenomethionine, selenite, selenium yeast or another form has not been selected for VITA TAPE.",
+        "source": "Food sources include seafood, meat and some nuts. The mineral granule image is only conceptual; commercial source and form are unconfirmed.",
+        "benefits": [
+          "Contributes to normal antioxidant defence through selenoproteins.",
+          "Supports normal thyroid and immune function."
+        ],
+        "evidence": "Established nutrient roles. More selenium does not mean stronger antioxidant protection.",
+        "considerations": "Excess intake can be toxic; total intake across foods and supplements matters.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/Selenium-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "silica",
+      "name": "Silica",
+      "nameZh": "二氧化硅",
+      "summary": "Hair, skin & nails",
+      "description": "A silicon-containing ingredient explored in the reference catalog for connective tissue, hair and nails.",
+      "detail": "A silicon-containing ingredient explored in the reference catalog for connective tissue, hair and nails.",
+      "category": "Botanicals",
+      "goals": [
+        "Beauty",
+        "Wellness"
+      ],
+      "color": "#f0ebe7",
+      "stripe": "#ccbbb0",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/silica.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Conceptual quartz crystals representing silica",
+      "artworkSubject": "无色石英晶体",
+      "artworkRole": "mineral-concept",
+      "artworkNote": "Mineral concept illustration; this is not the supplement form.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Silica",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Bone & joints",
+          "Bone health",
+          "Hair, skin & nails"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/silica-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A silicon-containing ingredient; different silicon compounds have different properties and absorption.",
+        "form": "Silica / silicon-containing ingredient. Silicon dioxide versus other forms and the active silicon content are unconfirmed.",
+        "source": "The reference product describes a bamboo-derived silica ingredient. Final VITA TAPE sourcing remains unconfirmed; the quartz illustration does not mean edible quartz is added.",
+        "benefits": [
+          "Silicon has been investigated in connective-tissue biology.",
+          "Some specific preparations have been studied for hair, nails or skin-related outcomes."
+        ],
+        "evidence": "Evidence is limited and preparation-specific. No established beauty benefit can be inferred from this generic entry.",
+        "considerations": "Silica mass and elemental silicon content are different; source and chemical form need confirmation.",
+        "sources": [
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/silica",
+            "type": "reference-catalog"
+          }
+        ],
+        "quantityNote": "The catalog lists 100 mg of the named ingredient; it does not establish 100 mg of elemental silicon.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "tart-cherry",
+      "name": "Tart Cherry",
+      "nameZh": "酸樱桃",
+      "summary": "Recovery & restful evenings",
+      "description": "A cherry-derived botanical, explored in the reference catalog for recovery and sleep routines.",
+      "detail": "A cherry-derived botanical, explored in the reference catalog for recovery and sleep routines.",
+      "category": "Botanicals",
+      "goals": [
+        "Focus",
+        "Performance",
+        "Sleep",
+        "Sleep & Calm",
+        "Wellness"
+      ],
+      "color": "#fadbdc",
+      "stripe": "#ef878a",
+      "icon": "moon",
+      "artwork": "/assets/ingredients-v2/tart-cherry.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Tart cherries with stems and a cut half",
+      "artworkSubject": "酸樱桃与切面",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Tart Cherry",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Mind",
+          "Recovery",
+          "Sleep"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/tart-cherry-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A botanical ingredient from sour cherry, containing a mix of fruit-derived compounds.",
+        "form": "Tart cherry ingredient. Powder versus extract, concentration and anthocyanin content remain unspecified.",
+        "source": "Prunus cerasus fruit. Final cultivar, processing method and ingredient supplier are not confirmed.",
+        "benefits": [
+          "Some juice and concentrate preparations have been studied for exercise recovery.",
+          "Small studies have examined sleep-related outcomes."
+        ],
+        "evidence": "Findings for juice or standardised concentrates do not establish an effect from this ingredient mass or final formula.",
+        "considerations": "This is a cherry ingredient, not added melatonin; fruit imagery does not specify a melatonin quantity.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "vitamin-a",
+      "name": "Vitamin A",
+      "nameZh": "维生素 A",
+      "summary": "Vision & immune support",
+      "description": "An essential vitamin involved in the maintenance of normal vision and immune function.",
+      "detail": "An essential vitamin involved in the maintenance of normal vision and immune function.",
+      "category": "Vitamins",
+      "goals": [
+        "Beauty",
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#f8dce1",
+      "stripe": "#e78a9b",
+      "icon": "sun",
+      "artwork": "/assets/ingredients-v2/vitamin-a.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Carrots as a provitamin A food association",
+      "artworkSubject": "胡萝卜与切面",
+      "artworkRole": "food-association",
+      "artworkNote": "Food-source illustration; this does not specify the final ingredient source.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "1600 mcg",
+        "raw": "1600mcg",
+        "status": "reference",
+        "sourceNrv": "200%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Vitamin A",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Eye Health",
+          "Hair, skin & nails",
+          "Immunity"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-a-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A fat-soluble vitamin important for vision, immune function and cell differentiation.",
+        "form": "Vitamin A. Retinol / retinyl esters versus provitamin A carotenoids have not been identified in the current VITA TAPE record.",
+        "source": "Animal foods supply preformed vitamin A, while carrots and some other plants supply provitamin A carotenoids. The carrot image does not specify a beta-carotene formulation.",
+        "benefits": [
+          "Contributes to normal vision and immune function.",
+          "Supports normal skin and cell differentiation."
+        ],
+        "evidence": "Established nutrient roles. Preformed vitamin A and beta-carotene have different safety considerations.",
+        "considerations": "Excess preformed vitamin A is especially relevant during pregnancy. High-dose beta-carotene is unsuitable for some smokers.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminA-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "The reference 1600 mcg is retained as listed. Final form and activity-equivalent labelling require confirmation.",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "vitamin-e",
+      "name": "Vitamin E",
+      "nameZh": "维生素 E",
+      "summary": "Cell protection & skin",
+      "description": "An essential vitamin involved in protection of cells from oxidative stress.",
+      "detail": "An essential vitamin involved in protection of cells from oxidative stress.",
+      "category": "Vitamins",
+      "goals": [
+        "Beauty",
+        "Immunity",
+        "Wellness"
+      ],
+      "color": "#efecd1",
+      "stripe": "#cabe67",
+      "icon": "sun",
+      "artwork": "/assets/ingredients-v2/vitamin-e.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "Almonds and an oil droplet as a vitamin E food association",
+      "artworkSubject": "杏仁与油滴",
+      "artworkRole": "food-association",
+      "artworkNote": "Food-source illustration; this does not specify the final ingredient source.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "24 mg",
+        "raw": "24mg",
+        "status": "reference",
+        "sourceNrv": "200%",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "Vitamin E",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Eye Health",
+          "Hair, skin & nails",
+          "Immunity"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/vitamin-e-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A fat-soluble vitamin family; alpha-tocopherol is the form used to meet human vitamin E requirements.",
+        "form": "Vitamin E. Natural / synthetic stereochemistry, tocopherol form and ester preparation are not specified.",
+        "source": "Vegetable oils, nuts and seeds are food sources. The almond image does not establish an almond-derived ingredient or its allergen status.",
+        "benefits": [
+          "Helps protect cells from oxidative damage.",
+          "Contributes to normal immune function."
+        ],
+        "evidence": "Established nutrient roles. Antioxidant activity does not establish anti-ageing or cardiovascular-disease prevention.",
+        "considerations": "High supplemental intakes can increase bleeding-related concerns, especially with blood-thinning medicines.",
+        "sources": [
+          {
+            "label": "NIH Office of Dietary Supplements",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminE-Consumer/",
+            "type": "independent"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    },
+    {
+      "id": "white-kidney-bean",
+      "name": "White Kidney Bean Extract",
+      "nameZh": "白芸豆提取物",
+      "summary": "Digestive & metabolic support",
+      "description": "A bean-derived botanical listed in the reference catalog for digestive and metabolic wellness.",
+      "detail": "A bean-derived botanical listed in the reference catalog for digestive and metabolic wellness.",
+      "category": "Botanicals",
+      "goals": [
+        "Performance",
+        "Wellness"
+      ],
+      "color": "#f0efe9",
+      "stripe": "#cecab7",
+      "icon": "sprout",
+      "artwork": "/assets/ingredients-v2/white-kidney-bean.webp",
+      "artworkKind": "original-ingredient",
+      "artworkAlt": "White kidney beans",
+      "artworkSubject": "白芸豆",
+      "artworkRole": "botanical",
+      "artworkNote": "Ingredient illustration; final sourcing and product form may differ.",
+      "homepage": false,
+      "extended": true,
+      "amount": {
+        "display": "100 mg",
+        "raw": "100mg",
+        "status": "reference",
+        "sourceNrv": "N/A",
+        "vitaTapeAmount": null
+      },
+      "reference": {
+        "name": "White Kidney Bean Extract",
+        "url": "https://get-nourished.com/pages/stack-builder",
+        "publisher": "Nourished UK",
+        "accessedAt": "2026-10-18",
+        "benefitTags": [
+          "Digestion",
+          "Energy",
+          "Weight management"
+        ],
+        "imageUrl": "https://get-nourished.com/cdn/shop/t/33/assets/white-kidney-bean-2x.png"
+      },
+      "contentStatus": "reference-prototype",
+      "profile": {
+        "overview": "A concentrated ingredient from white kidney bean, different from eating cooked beans.",
+        "form": "White kidney bean extract. Alpha-amylase inhibitory activity, extraction method and standardisation are not specified.",
+        "source": "Phaseolus vulgaris seeds. The supplier, country of origin and processing conditions are not yet confirmed.",
+        "benefits": [
+          "Some standardised extracts can inhibit alpha-amylase, an enzyme involved in starch digestion.",
+          "Weight-management studies use particular extracts and dietary settings."
+        ],
+        "evidence": "Results cannot be generalised to an unspecified extract or this reference amount; it does not cancel carbohydrate intake.",
+        "considerations": "Bean allergy, digestive effects and glucose-lowering medicines are relevant considerations.",
+        "sources": [
+          {
+            "label": "Nourished ingredient reference",
+            "url": "https://get-nourished.com/products/white-kidney-extract",
+            "type": "reference-catalog"
+          }
+        ],
+        "quantityNote": "",
+        "reviewedAt": "2026-10-18",
+        "status": "reference-profile",
+        "supplierStatus": "unconfirmed"
+      }
+    }
+  ],
+  "profileNotice": "Ingredient profiles explain reference forms and general sources. Final VITA TAPE form, supplier, origin, allergens and amounts are not yet confirmed."
+}

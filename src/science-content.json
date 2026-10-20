@@ -1,0 +1,356 @@
+{
+  "source": "resources/science/our-science-source.md",
+  "disclaimer": "VITA TAPE is presented as an academic venture simulation. Starred product features, quality systems and academic R&D arrangements represent proposed capabilities, not independently validated product performance or established institutional partnerships. References to published research do not imply endorsement by the researchers or institutions concerned.",
+  "sections": [
+    {
+      "title": "Science in every serving.",
+      "id": "science-in-every-serving",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**Pure by choice. Precise by design. Fresh by science.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Better nutrition doesn't begin with more ingredients. It begins with better decisions: what goes in, how much is needed, how ingredients work together, and how their quality is protected."
+        },
+        {
+          "type": "paragraph",
+          "text": "At VITA TAPE, we bring together nutritional science, ingredient quality and advanced edible-material engineering to create an entirely new daily supplement experience.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Seven selected nutrients. One precisely defined daily ribbon.***"
+        },
+        {
+          "type": "paragraph",
+          "text": "*Discover the Science →*"
+        }
+      ]
+    },
+    {
+      "title": "01. FORMULATION SCIENCE",
+      "id": "01-formulation-science",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**An intelligent formula is more than a list of ingredients.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Different nutrients have different roles, recommended intakes and formulation requirements. More is not always better, and not every combination is equally suitable."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our science-led formulation framework considers:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Evidence-based dosing** — guided by established nutritional reference values and appropriate intake limits.",
+            "**Ingredient compatibility** — evaluating how selected nutrients may interact within a formula.",
+            "**Form and stability** — considering the characteristics of each nutrient and its suitability for the delivery format.",
+            "**Balanced selection** — helping avoid unnecessary overlap with existing supplements.*"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "**The right ingredients. The right amounts. A formula with a reason.***"
+        }
+      ],
+      "subtitle": "Better together. By design."
+    },
+    {
+      "title": "02. PRECISION DOSING",
+      "id": "02-precision-dosing",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**Precision should be measured, not assumed.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Every VITA TAPE daily serving is designed around a defined nutrient specification. Seven individual colour lanes come together in one connected ribbon, with each transverse tear line marking a complete daily portion.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "Our precision framework connects three essential elements:"
+        },
+        {
+          "type": "paragraph",
+          "text": "**01 — Controlled Formulation**  \nThe intended nutrient content is defined before production.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**02 — Consistent Portioning**  \nEach daily segment is designed to contain the specified amount of each selected nutrient.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**03 — Analytical Verification**  \nFinished-product testing forms part of the quality framework, helping assess nutrient identity, content and consistency.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Not just seven colours. Seven considered formulations. One complete daily serving.***"
+        }
+      ],
+      "subtitle": "One tear. One defined daily serving."
+    },
+    {
+      "title": "03. INGREDIENT PURITY",
+      "id": "03-ingredient-purity",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**What goes into your supplement matters as much as what it delivers.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Our ingredient philosophy places quality, traceability and scientific evaluation before marketing trends."
+        },
+        {
+          "type": "paragraph",
+          "text": "The VITA TAPE ingredient quality framework is designed around four principles:*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Verified Identity**  \nClearly defined ingredient identity and composition."
+        },
+        {
+          "type": "paragraph",
+          "text": "**High-Purity Sourcing**  \nRaw materials selected against ingredient-specific purity and potency specifications."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Contaminant Control**  \nAppropriate screening for potential contaminants, including relevant heavy metals and microbiological risks."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Traceable Quality**  \nSupplier documentation, batch traceability and laboratory quality records."
+        },
+        {
+          "type": "paragraph",
+          "text": "We believe a cleaner formula is not simply one with fewer ingredients. It is one where every ingredient has a purpose and meets a defined quality standard."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Nothing unnecessary. Nothing left to guesswork.***"
+        }
+      ],
+      "subtitle": "Purity is a standard. Not a slogan."
+    },
+    {
+      "title": "04. EDIBLE MATERIAL SCIENCE",
+      "id": "04-edible-material-science",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**Not a tablet. Not an ordinary gummy.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "VITA TAPE reimagines supplement delivery through an engineered edible matrix: a soft, flexible structure designed to carry selected nutrients in one connected, chewable ribbon.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "The material system is developed around multiple performance requirements:"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Flexibility** — designed to roll without losing its intended form."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Cohesion** — designed to keep the connected ribbon intact during normal handling."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Portionability** — designed for a clean, complete daily serving."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Texture** — a soft, enjoyable chew."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Formulation compatibility** — considering the interaction between the edible matrix and incorporated nutrients."
+        },
+        {
+          "type": "paragraph",
+          "text": "Scientific advances in food-grade gels, food rheology and multi-material fabrication provide the foundations for exploring this new delivery format."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Material science you can see. Nutrition you can enjoy.***"
+        }
+      ],
+      "subtitle": "Advanced nutrition needs advanced materials."
+    },
+    {
+      "title": "05. ZERO-SUGAR TASTE TECHNOLOGY",
+      "id": "05-zero-sugar-taste-technology",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**A daily supplement should be something you look forward to.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Creating an enjoyable chewable supplement without relying on sugar requires more than removing sweetness."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our sugar-free formulation concept brings together flavour design, sweetness balance and edible-material science to create a satisfying taste and texture experience.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Sugar-Free Formulation**  \nDesigned to meet applicable sugar-free labelling requirements.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Thoughtful Flavour Design**  \nFruit-inspired flavour profiles developed around the characteristics of the nutritional ingredients.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Balanced Taste**  \nSweetness, acidity and ingredient flavour carefully considered together.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Enjoyable Texture**  \nA flexible, satisfying chew designed for everyday use.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**All the ritual. None of the added sugar.***"
+        },
+        {
+          "type": "paragraph",
+          "text": "*Sugar-free is not the same as calorie-free. Final nutritional declarations depend on formulation, testing and applicable market requirements.*"
+        }
+      ],
+      "subtitle": "0g Sugar. Full of flavour.*"
+    },
+    {
+      "title": "06. FRESHNESS ENGINEERING",
+      "id": "06-freshness-engineering",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**Nutritional quality doesn't end when manufacturing is complete.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vitamins and other nutritional ingredients can respond differently to oxygen, moisture, light and temperature. Protecting a formula therefore requires a coordinated approach to material selection, storage and packaging."
+        },
+        {
+          "type": "paragraph",
+          "text": "VITA TAPE introduces a weekly refill concept designed around seven days of use.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Seven Daily Portions**  \nOne weekly refill contains seven intended daily servings."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Individually Sealed Refills**  \nFour separate weekly refills form a 28-day supply, allowing unopened refills to remain sealed until needed.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Protective Packaging Design**  \nPackaging is designed with oxygen, moisture and light exposure in mind.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Stability-Led Development**  \nNutrient retention, product texture and real-world opening conditions are considered within the product validation framework.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**A fresh start, every seven days.***"
+        }
+      ],
+      "subtitle": "Freshness deserves its own technology."
+    },
+    {
+      "title": "TECHNOLOGY & ACADEMIC R&D*",
+      "id": "technology-academic-r-d",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "VITA TAPE's technology roadmap brings together relevant disciplines in nutrition science, food materials, precision manufacturing and functional ingredient development."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our proposed academic R&D ecosystem draws on areas of research associated with leading universities in Asia.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Nanyang Technological University (NTU), Singapore**  \nEdible hydrogel engineering, biofabrication and multi-material food printing."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Singapore University of Technology and Design (SUTD)**  \nPrecision multi-material food fabrication, edible material flow and advanced forming technologies."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Jiangnan University, China**  \nFood colloids, edible gel systems, food texture engineering and functional food manufacturing."
+        },
+        {
+          "type": "paragraph",
+          "text": "**National University of Singapore (NUS)**  \nFood bioactive compounds, functional ingredient science and edible biomanufacturing."
+        },
+        {
+          "type": "paragraph",
+          "text": "**From established scientific principles to the next generation of edible nutrition.**"
+        }
+      ],
+      "subtitle": "Where scientific research meets a new generation of nutrition."
+    },
+    {
+      "title": "RESEARCH FOUNDATIONS",
+      "id": "research-foundations",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Our approach draws on published research and recognised nutritional and quality frameworks covering:"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Nutritional Reference Standards**  \nEvidence-based dietary intake references and upper intake considerations."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Supplement Quality Science**  \nIngredient identity, purity, strength, composition and contaminant control."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Multi-Material Food Engineering**  \nResearch on the controlled formation and arrangement of multiple edible materials."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Nutrient Stability**  \nStudies examining the effects of formulation, moisture, oxygen, light and storage conditions on nutrient retention."
+        },
+        {
+          "type": "paragraph",
+          "text": "*Explore Research References →*"
+        }
+      ],
+      "subtitle": "Inspired by science. Designed for what comes next."
+    },
+    {
+      "title": "THE FUTURE OF DAILY NUTRITION",
+      "id": "the-future-of-daily-nutrition",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "One formula. One daily serving. One effortless ritual.*"
+        },
+        {
+          "type": "paragraph",
+          "text": "**VITA TAPE — Your Daily Nutrition. On a Roll.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Build Your Rainbow →**"
+        }
+      ],
+      "subtitle": "Beautifully simple. Scientifically considered."
+    }
+  ]
+}
