@@ -1,0 +1,15 @@
+{
+  "asset": "collagen-art.png",
+  "tool": "built-in image_gen.imagegen",
+  "use_case": "stylized-concept",
+  "original_path": "/Users/admin/.codex/generated_images/01a14aa4-411c-7d51-8161-30ecc8fec874/exec-92be62d7-21d8-445c-909f-243f6a87ca49.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "bit_depth": 8,
+  "png_color_type": 6,
+  "alpha_preserved": true,
+  "prompt": "Use case: stylized-concept. Asset type: transparent ingredient artwork for a VITA TAPE nutrient selection card. Create ONE premium photorealistic 3D collagen concept object: a delicate pale rose translucent rounded gel bead, a softly glossy orb with realistic liquid highlights and refraction and a faint pink pearlescent body. Two much smaller soft rounded gel droplets may sit beside the main bead. Natural studio daylight from upper left, controlled soft contact shadow only beneath object. Square canvas at least 512 pixels. Crisp object silhouette readable at 90 pixels. Centered isolated object with 8 percent transparent margin, suitable for placing in top-right of a pale blush UI card. Genuine transparent background and preserved alpha. No card background, no words, no labels, no logo, no bottle, no person, no hard plastic, no medical claims, no border, no watermark.",
+  "quality_notes": "Inspected visually. Single rose gel orb and two smaller droplets with natural window highlight and subtle refraction. Genuine alpha preserved. No labels or packaging."
+}

@@ -1,0 +1,16 @@
+{
+  "asset": "ashwagandha-art.png",
+  "tool": "built-in image_gen.imagegen",
+  "mode": "generate",
+  "use_case": "product-mockup",
+  "original_path": "/Users/admin/.codex/generated_images/01a14aa4-1d68-7e21-9019-0985ec958971/exec-6891e312-21d6-4ee8-ab78-7e03d9d438ff.png",
+  "final_path": "/Users/admin/Documents/ChatGPT/vita tape/website/public/assets/library/ashwagandha-art.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "transparent_background": true,
+  "alpha_verified": "sips hasAlpha: yes",
+  "prompt": "Use case: product-mockup. Asset type: transparent ingredient cutout for the top-right corner of a peach pastel nutrient card on a premium cream and navy nutrition website. Primary request: one compact airy cluster of dried ashwagandha roots. Delicate pale honey-beige fibrous roots arranged diagonally from lower left to upper right, natural botanical shape, tactile finely ridged fibrous detail, clean crisp product photography. Subject should occupy about 80% of a square canvas and remain clearly legible at 90px. Warm neutral soft studio light from upper left, subtle soft self-shadow, no large cast shadow. Actual transparent background with clean alpha edges. No card, no text, no letters, no logo, no hands, no bottle, no container, no decorative background, no gummy, no hexagon.",
+  "inspection": "Crisp isolated warm beige fibrous roots on transparent background; diagonal composition; no text or extra objects."
+}
