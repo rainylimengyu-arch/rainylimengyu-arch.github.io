@@ -1,27 +1,33 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import { createHash } from "node:crypto";
+import { createRequire } from "node:module";
 import {
   createDraftReport,
   formIssues,
-  initialAnswers,
-  intakeQuestions,
-  healthOptions,
-  maxFileBytes,
+  reportView,
   reportText,
+  questionPlan,
+  localQuestion,
+  reconcileAnswers,
+  validateQuestion,
+  getSafetyDisposition,
+  toggleOption,
+  selectionConflict,
   selectAttachments,
+  maxFileBytes,
 } from "../src/personalisation.js";
-
-const valid = () => ({
-  ...initialAnswers,
-  goals: ["energy"],
-  age: "30–44",
-  diet: "Mixed diet",
-  b12Foods: "Rarely either",
-  calciumFoods: "Less than two servings most days",
-  fish: "I do not eat fish",
-  sunlight: "Rarely outdoors or usually covered",
-  health: ["none"],
-  consent: true,
+import { buildRecommendationReport } from "../src/bubu/engine.js";
+const fixtures = JSON.parse(
+  fs.readFileSync(new URL("./bubu-fixtures.json", import.meta.url)),
+);
+const data = JSON.parse(
+  fs.readFileSync(new URL("../src/nutrient-library.json", import.meta.url)),
+);
+const profile = (kind = "mixed", overrides = {}) => ({
+  ...structuredClone(fixtures[kind]),
+  ...overrides,
 });
 const file = (name = "report.pdf", overrides = {}) => ({
   name,
@@ -30,382 +36,492 @@ const file = (name = "report.pdf", overrides = {}) => ({
   lastModified: 1,
   ...overrides,
 });
+const ids = (r) => r.cards.map((x) => x.id);
+const sparsePlants = {
+  vegetables: "zero",
+  fruit: "zero",
+  whole_grains: "zero",
+  beans: "zero",
+  nuts: "zero",
+};
+const sparseTypes = { greens: "rare", orange: "rare", potato: "rare" };
 
-test("required answers and adult eligibility are enforced before report creation", () => {
-  assert.deepEqual(Object.keys(formIssues(initialAnswers)), [
-    "goals",
-    "age",
-    "diet",
-    "b12Foods",
-    "calciumFoods",
-    "fish",
-    "sunlight",
-    "health",
-    "consent",
+// The imported BUBU source is the user's source of truth, not a look-alike rewrite.
+test("BUBU source snapshots match recorded hashes and the bundled engine preserves its recommendations", () => {
+  const manifest = JSON.parse(
+    fs.readFileSync(
+      new URL("../resources/bubu-source/provenance.json", import.meta.url),
+    ),
+  );
+  for (const entry of manifest.files) {
+    const bytes = fs.readFileSync(
+      new URL("../resources/bubu-source/" + entry.path, import.meta.url),
+    );
+    assert.equal(
+      createHash("sha256").update(bytes).digest("hex"),
+      entry.sha256,
+      entry.path,
+    );
+  }
+  const require = createRequire(import.meta.url),
+    source = require("../resources/bubu-source/engine/recommendations-v6.js");
+  for (const kind of ["balanced", "mixed"]) {
+    const a = reconcileAnswers(profile(kind));
+    assert.deepEqual(
+      buildRecommendationReport(a),
+      source.buildRecommendationReport(a),
+    );
+  }
+});
+test("a normal sleep and training profile produces the broad BUBU shortlist, not only three nutrients", () => {
+  const r = createDraftReport(profile());
+  assert.deepEqual(ids(r), [
+    "vitamin_d",
+    "calcium",
+    "omega3",
+    "creatine",
+    "magnesium_glycinate",
+    "theanine",
+    "turmeric",
   ]);
-  assert.throws(() => createDraftReport(initialAnswers, []));
-  assert.match(
-    formIssues({ ...valid(), age: "Under 18" }).age,
-    /adults aged 18/,
+  assert.equal(r.needsReview, false);
+  assert.equal(reportView(r, "zh").programs.length, 4);
+});
+test("complete coverage includes all vitamins, minerals, macros and all 39 live Tape ingredients", () => {
+  const r = createDraftReport(profile()),
+    rows = r.coverage.flatMap((g) => g.items),
+    v = reportView(r, "en");
+  assert.equal(rows.length, 37);
+  assert.equal(new Set(rows.map((x) => x.id)).size, 37);
+  for (const id of [
+    "vitamin_a",
+    "vitamin_c",
+    "vitamin_d",
+    "vitamin_e",
+    "vitamin_k",
+    "b1",
+    "b2",
+    "b3",
+    "b5",
+    "b6",
+    "b7",
+    "b9",
+    "b12",
+    "calcium",
+    "magnesium",
+    "potassium",
+    "iron",
+    "zinc",
+    "iodine",
+    "selenium",
+    "copper",
+    "manganese",
+    "phosphorus",
+    "sodium_chloride",
+    "molybdenum",
+    "chromium",
+    "fluoride",
+    "choline",
+    "protein",
+    "carbohydrate",
+    "fat",
+    "fiber",
+    "water",
+    "energy",
+    "omega3",
+    "omega6",
+    "ala",
+  ])
+    assert.ok(
+      rows.some((r) => r.id === id),
+      id,
+    );
+  assert.deepEqual(
+    v.catalog.map((x) => x.id),
+    data.items.map((x) => x.id),
   );
   assert.ok(
-    formIssues({ ...valid(), goals: ["everyday", "energy", "sleep", "gut"] })
-      .goals,
+    v.catalog.every(
+      (x) => x.reason && x.evidence && x.reference.url.startsWith("https://"),
+    ),
   );
-  assert.deepEqual(formIssues(valid()), {});
-});
-
-test("Plus reports remain optional and BUBU professional review stays pending", () => {
-  const report = createDraftReport(valid(), [], { tier: "plus" });
-  assert.equal(report.status, "Pending BUBU nutritionist review");
-  assert.match(report.reviewNote, /does not establish suitability/);
-  assert.deepEqual(report.attachments, []);
-  const text = reportText(report);
-  assert.match(text, /No review request has been sent/);
-  assert.match(
-    text,
-    /not a diagnosis, approved plan or supplement prescription/,
+  assert.equal(
+    v.catalog.some((x) => x.id === "melatonin"),
+    false,
   );
-  assert.match(text, /BUBU REVIEWER SIGN-OFF: Not yet reviewed/);
-  assert.match(text, /report upload is optional/);
 });
-
-test("health concerns require professional discussion and report holds an immutable answer snapshot", () => {
-  const answers = {
-    ...valid(),
-    health: ["medicines", "pregnancy"],
-    notes: "Example test note",
+test("stable food sources do not force a seven-ingredient stack", () => {
+  const r = createDraftReport(profile("balanced"));
+  assert.deepEqual(r.cards, []);
+  assert.equal(r.coverageCount, 37);
+  assert.equal(reportView(r, "zh").catalog.length, 39);
+});
+test("vegan B12 priority requires lack of a reliable source; regular fortification prevents duplication", () => {
+  const a = profile("balanced", {
+    diet_style: "vegan",
+    dairy_food: {
+      kind: "none",
+      amount: "zero",
+      tofu: "regular",
+      tofu_kind: "calcium",
+    },
+    animal_food: { fish: "zero", meat: "zero", red_meat: "rare", eggs: "rare" },
+    fortified: ["none"],
+  });
+  const first = createDraftReport(a);
+  assert.ok(ids(first).includes("b12"));
+  assert.equal(first.cards[0].id, "b12");
+  assert.equal(first.cards[0].essential, true);
+  const fortified = createDraftReport({
+    ...a,
+    fortified: ["b12", "vitamin_d"],
+  });
+  assert.equal(ids(fortified).includes("b12"), false);
+});
+test("a prolonged broad dietary restriction can match one basic multi even when functional options are declined", () => {
+  const r = createDraftReport(
+    profile("balanced", {
+      diet_habits: {
+        meals: "one_two",
+        restriction: "many_foods",
+        duration: "long",
+      },
+      plant_food: sparsePlants,
+      plant_types: sparseTypes,
+      animal_food: {
+        fish: "zero",
+        meat: "small",
+        red_meat: "rare",
+        eggs: "rare",
+      },
+      dairy_food: {
+        kind: "none",
+        amount: "zero",
+        tofu: "zero",
+        tofu_kind: "none",
+      },
+      fortified: ["none"],
+      supplement_scope: { functional: "no", botanicals: "no" },
+    }),
+  );
+  assert.ok(ids(r).includes("multivitamin"));
+  assert.equal(
+    ids(r).some((id) =>
+      ["ginseng", "theanine", "turmeric", "creatine"].includes(id),
+    ),
+    false,
+  );
+});
+test("food-first preference prevents automatic supplement candidates while retaining full review", () => {
+  const a = profile();
+  a.preferences.approach = "food";
+  const r = createDraftReport(a);
+  assert.deepEqual(r.cards, []);
+  assert.equal(r.coverageCount, 37);
+  assert.ok(r.foodActions.length);
+});
+test("known existing ingredients are not recommended again", () => {
+  const r = createDraftReport(
+    profile("mixed", {
+      existing_sources: [
+        "vitamin_d",
+        "calcium",
+        "omega3",
+        "creatine",
+        "magnesium",
+        "theanine",
+        "turmeric",
+      ],
+    }),
+  );
+  for (const id of [
+    "vitamin_d",
+    "calcium",
+    "omega3",
+    "creatine",
+    "magnesium",
+    "magnesium_glycinate",
+    "theanine",
+    "turmeric",
+  ])
+    assert.equal(ids(r).includes(id), false, id);
+});
+for (const [label, patch] of [
+  [
+    "medicines",
+    {
+      safety: ["medication"],
+      health_detail: { conditions: ["none"], medicines: ["other"] },
+    },
+  ],
+  [
+    "kidney restrictions",
+    {
+      safety: ["medical_food_restriction_quick"],
+      health_detail: { conditions: ["kidney"], medicines: ["none"] },
+    },
+  ],
+  [
+    "pregnancy",
+    { profile: { ...fixtures.mixed.profile, life_stage: "pregnant" } },
+  ],
+  [
+    "planning pregnancy",
+    { profile: { ...fixtures.mixed.profile, life_stage: "planning" } },
+  ],
+  ["abnormal tests", { labs: ["d_low"] }],
+  ["unknown safety", { safety: ["unknown"] }],
+  ["unknown supplement", { existing_sources: ["unknown"] }],
+  ["unknown allergy", { exclusions: ["unknown"] }],
+  [
+    "unintentional weight change",
+    { profile: { ...fixtures.mixed.profile, weight_change: "unintentional" } },
+  ],
+  [
+    "fluid restriction",
+    {
+      nutrition_basics: {
+        staples: "regular",
+        protein: "regular",
+        water: "restricted",
+        salty: "less",
+      },
+    },
+  ],
+])
+  test(`${label} pauses personal supplement selection and retains full nutrient coverage`, () => {
+    const r = createDraftReport(profile("mixed", patch));
+    assert.equal(r.needsReview, true);
+    assert.deepEqual(r.cards, []);
+    assert.equal(r.coverageCount, 37);
+    assert.equal(reportView(r, "zh").catalog.length, 39);
+  });
+test("contradictory vegan food records require correction before recommendations", () => {
+  const r = createDraftReport(
+    profile("mixed", {
+      diet_style: "vegan",
+      animal_food: {
+        fish: "often",
+        meat: "regular",
+        red_meat: "some",
+        eggs: "often",
+      },
+    }),
+  );
+  assert.equal(r.needsReview, true);
+  assert.deepEqual(r.cards, []);
+  assert.ok(r.checks.some((x) => x.id === "diet_consistency"));
+});
+test("urgent symptoms and minors never produce an adult supplement report", () => {
+  const urgent = profile("mixed", { safety: ["urgent_chest_breathing"] });
+  assert.equal(getSafetyDisposition(urgent).status, "stop");
+  assert.throws(() => createDraftReport(urgent));
+  assert.throws(() =>
+    createDraftReport(profile("mixed", { audience: "minor_under_18" })),
+  );
+  assert.deepEqual(
+    questionPlan({ audience: "minor_under_18" }).map((q) => q.id),
+    ["audience"],
+  );
+});
+test("sleep timing does not introduce melatonin into the VITA TAPE recommendations", () => {
+  const a = profile();
+  a.goal_context.sleep_timing = "jetlag";
+  const r = createDraftReport(a);
+  assert.equal(ids(r).includes("melatonin"), false);
+});
+test("botanical medicine and liver flags exclude botanical options without inventing a substitute", () => {
+  const r = createDraftReport(
+    profile("mixed", { botanical_safety: ["liver_gallbladder"] }),
+  );
+  assert.equal(ids(r).includes("turmeric"), false);
+  assert.equal(ids(r).includes("ginseng"), false);
+  assert.ok(r.checks.some((x) => x.id === "botanical_review"));
+});
+test("persistent sleep disruption does not become an automatic magnesium or relaxation stack", () => {
+  const a = profile();
+  a.sleep_context = {
+    hours: "enough",
+    frequency: "often",
+    duration: "long",
+    interference: ["snoring"],
   };
-  const attachment = file();
-  const report = createDraftReport(answers, [attachment], { tier: "plus" });
-  answers.goals.push("gut");
-  answers.health.push("allergies");
-  attachment.name = "changed.pdf";
-  assert.deepEqual(report.profile.goals, ["energy"]);
-  assert.equal(report.healthContext.length, 2);
-  assert.match(report.reviewNote, /treating clinician or pharmacist/);
-  assert.equal(report.attachments[0].name, "report.pdf");
-  assert.match(
-    reportText(report),
-    /selected locally, not uploaded or analysed/,
+  a.impact = "persistent_impairing";
+  const r = createDraftReport(a);
+  assert.equal(ids(r).includes("magnesium_glycinate"), false);
+  assert.equal(ids(r).includes("theanine"), false);
+});
+test("fibre and ginseng branches use their own context rather than selecting from a goal label alone", () => {
+  const gut = profile("balanced", {
+    goals: ["gut"],
+    goal_priority: "gut",
+    goal_detail: { gut: "constipation" },
+    goal_context: { gut_safety: "none" },
+  });
+  assert.ok(ids(createDraftReport(gut)).includes("psyllium"));
+  const unsafe = { ...gut, goal_context: { gut_safety: "swallowing" } };
+  assert.equal(ids(createDraftReport(unsafe)).includes("psyllium"), false);
+  const energy = profile("balanced", {
+    goals: ["fatigue"],
+    goal_priority: "fatigue",
+    sleep_detail: ["none"],
+    goal_context: { energy: "occasional" },
+    sleep_context: {
+      hours: "enough",
+      frequency: "rare",
+      duration: "short",
+      interference: ["none"],
+    },
+  });
+  assert.ok(ids(createDraftReport(energy)).includes("ginseng"));
+});
+test("skin appearance option respects vegan diet and fish / shellfish exclusions", () => {
+  const a = profile("balanced", {
+    goals: ["skin"],
+    goal_priority: "skin",
+    goal_detail: { skin: "appearance" },
+  });
+  assert.ok(ids(createDraftReport(a)).includes("collagen"));
+  assert.equal(
+    ids(createDraftReport({ ...a, exclusions: ["fish"] })).includes("collagen"),
+    false,
   );
 });
-
-test("Standard completes with questionnaire only and cannot include Plus attachments or promise a review", () => {
-  const report = createDraftReport(valid(), [file("ignored-standard.pdf")]);
-  assert.equal(report.isPlus, false);
-  assert.equal(report.status, "Self-guided supplement suggestions");
-  assert.deepEqual(report.attachments, []);
-  const text = reportText(report);
-  assert.match(text, /Standard experience: questionnaire only/);
-  assert.match(text, /No professional review is included/);
+test("discussion selections never silently replace overlapping alternatives", () => {
+  const r = createDraftReport(profile());
+  assert.equal(
+    selectionConflict(r, ["magnesium_glycinate"], "theanine"),
+    "magnesium_glycinate",
+  );
+  assert.equal(selectionConflict(r, ["vitamin_d"], "creatine"), null);
+  assert.equal(selectionConflict(r, [], "melatonin"), "unavailable");
+});
+test("changed goals prune stale follow-up answers and exclusive choices remain exclusive", () => {
+  const a = profile();
+  a.goals = ["gut"];
+  a.goal_detail = { gut: "bloating" };
+  a.goal_context = { gut_safety: "none" };
+  const r = reconcileAnswers(a);
+  assert.equal(r.sleep_detail, undefined);
+  assert.equal(r.sleep_context, undefined);
+  assert.equal(r.goal_context.energy, undefined);
+  assert.deepEqual(toggleOption(["medication"], "none"), ["none"]);
+  assert.deepEqual(toggleOption(["none"], "medication"), ["medication"]);
+  assert.deepEqual(toggleOption(["unknown"], "medication"), ["medication"]);
+});
+test("English question copy covers every supported adult branch and validates no guessed defaults", () => {
+  const cases = [
+    profile(),
+    profile("balanced"),
+    profile("mixed", {
+      safety: ["medication"],
+      health_detail: { conditions: ["none"], medicines: ["other"] },
+    }),
+    profile("balanced", {
+      goals: ["skin", "eyes", "gut", "joint", "fatigue", "stress", "sleep"],
+      goal_priority: "joint",
+      goal_detail: { skin: "appearance", eyes: "screen", gut: "bloating" },
+      goal_context: {
+        joint: "exercise",
+        energy: "occasional",
+        stress: "mild",
+        sleep_timing: "none",
+        gut_safety: "none",
+      },
+    }),
+  ];
+  for (const a of cases)
+    for (const q of questionPlan(a)) {
+      const english = localQuestion(q, "en");
+      assert.doesNotMatch(
+        JSON.stringify({
+          title: english.title,
+          helper: english.helper,
+          options: english.options,
+          fields: english.fields,
+          rows: english.rows,
+          choices: english.choices,
+        }),
+        /[\u3400-\u9fff]/,
+        q.id,
+      );
+    }
+  assert.ok(Object.keys(formIssues({})).length > 10);
+  const q = questionPlan({}).find((q) => q.id === "nutrition_basics");
+  assert.equal(validateQuestion(q, {}, {}).valid, false);
+});
+test("Standard excludes all files; Plus files stay optional, local, uninterpreted and pending", () => {
+  const a = profile();
+  const standard = createDraftReport(a, [file("ignored.pdf")]);
+  assert.deepEqual(standard.attachments, []);
   assert.doesNotMatch(
-    text,
-    /BUBU|HEALTH REPORTS|REVIEWER SIGN-OFF|ignored-standard/,
+    reportText(standard),
+    /ignored.pdf|No files were uploaded|Reviewer sign-off/,
   );
-  assert.doesNotMatch(report.foodFirst, /nutritionist will review/);
+  const plus = createDraftReport(a, [], { tier: "plus" });
+  assert.equal(plus.isPlus, true);
+  assert.match(reportText(plus), /Pending BUBU nutritionist review/);
+  assert.match(reportText(plus), /No files were uploaded or analysed/);
+  assert.match(reportText(plus), /files are optional/);
+  assert.deepEqual(ids(plus), ids(standard));
 });
-
-test("attachments reject unsupported and mismatched file types, empty and oversize files", () => {
-  const result = selectAttachments(
+test("both report languages include every recommendation, all 37 coverage rows and all 39 catalogue decisions", () => {
+  const r = createDraftReport(profile(), [file("Private 原文件名.pdf")], {
+    tier: "plus",
+    notes: "Original English note 真实备注",
+  });
+  for (const language of ["en", "zh"]) {
+    const v = reportView(r, language),
+      text = reportText(r, language, ["creatine"]);
+    for (const item of [
+      ...v.cards,
+      ...v.coverage.flatMap((g) => g.items),
+      ...v.catalog,
+    ])
+      assert.ok(text.includes(item.name), item.name);
+    assert.ok(text.includes("Original English note 真实备注"));
+    assert.ok(text.includes("Private 原文件名.pdf"));
+    assert.ok(text.includes("https://"));
+  }
+  assert.match(reportText(r, "zh"), /完整营养评估/);
+  assert.match(reportText(r, "zh"), /待 BUBU补补营养师审核/);
+  assert.match(reportText(r, "en", ["creatine"]), /In discussion shortlist/);
+});
+test("a generated report keeps an immutable snapshot, strips unused body-size data and never prescribes doses", () => {
+  const a = profile(),
+    attachment = file();
+  const r = createDraftReport(a, [attachment], { tier: "plus" });
+  a.goals.push("skin");
+  a.profile.life_stage = "pregnant";
+  attachment.name = "changed.pdf";
+  assert.equal(r.answers.goals.includes("skin"), false);
+  assert.equal(r.answers.profile.life_stage, "usual");
+  assert.equal(r.attachments[0].name, "report.pdf");
+  assert.equal(r.answers.profile.height_cm, undefined);
+  assert.equal(r.answers.profile.weight_kg, undefined);
+  assert.match(reportText(r), /does not diagnose deficiency, prescribe doses/);
+});
+test("attachment type, MIME, byte limit, duplicate and count rules are retained", () => {
+  const bad = selectAttachments(
     [],
     [
-      file("script.svg", { type: "image/svg+xml" }),
+      file("bad.svg", { type: "image/svg+xml" }),
       file("fake.pdf", { type: "text/html" }),
       file("large.pdf", { size: maxFileBytes + 1 }),
       file("empty.pdf", { size: 0 }),
       file("safe.PNG", { type: "image/png" }),
-      file("no-mime.jpg", { type: "" }),
     ],
   );
-  assert.equal(result.files.length, 2);
-  assert.equal(result.errors.length, 4);
-});
-
-test("attachments preserve existing selections, deduplicate and enforce the three-file limit", () => {
-  const current = [file("one.pdf")];
-  const result = selectAttachments(current, [
-    file("one.pdf"),
-    file("two.pdf"),
-    file("three.pdf"),
-    file("four.pdf"),
-  ]);
-  assert.deepEqual(
-    result.files.map((item) => item.name),
-    ["one.pdf", "two.pdf", "three.pdf"],
-  );
+  assert.equal(bad.files.length, 1);
+  assert.equal(bad.errors.length, 4);
+  const current = [file("one.pdf")],
+    r = selectAttachments(current, [
+      file("one.pdf"),
+      file("two.pdf"),
+      file("three.pdf"),
+      file("four.pdf"),
+    ]);
+  assert.equal(r.files.length, 3);
+  assert.equal(r.errors.length, 2);
   assert.equal(current.length, 1);
-  assert.equal(result.errors.length, 2);
-  assert.match(result.errors.join(" "), /already added/);
-  assert.match(result.errors.join(" "), /up to 3 files/);
-});
-
-test("Chinese Standard export translates canonical answers and keeps the self-guided boundary", () => {
-  const answers = {
-    ...valid(),
-    plants: "Most meals",
-    activity: "Moderately active",
-    sleep: "Good",
-    notes: "Mixed diet is my own English note",
-  };
-  const report = createDraftReport(answers, []);
-  const text = reportText(report, "zh");
-  assert.match(text, /你的补充剂建议报告/);
-  assert.match(text, /自助补充剂参考建议/);
-  assert.match(text, /饮食方式：混合饮食/);
-  assert.match(text, /植物性食物：大多数餐次；活动量：中等活动量；睡眠：良好/);
-  assert.match(text, /精力与活力/);
-  assert.match(text, /不包含专业审核/);
-  assert.match(text, /不能判定营养缺乏/);
-  assert.match(text, /备注（选填）：Mixed diet is my own English note/);
-  assert.doesNotMatch(text, /BUBU|体检报告|营养师审核/);
-  assert.equal(report.profile.diet, "Mixed diet");
-  assert.equal(report.profile.activity, "Moderately active");
-  assert.equal(reportText(report, "en"), reportText(report));
-});
-
-test("Chinese Plus export keeps reports optional and professional approval pending", () => {
-  const report = createDraftReport(
-    { ...valid(), health: ["medicines", "pregnancy"] },
-    [],
-    { tier: "plus" },
-  );
-  const text = reportText(report, "zh");
-  assert.match(text, /待 BUBU补补营养师审核/);
-  assert.match(text, /尚未发送审核申请/);
-  assert.match(text, /我正在服用处方药或非处方药/);
-  assert.match(text, /我正处于孕期、哺乳期或备孕期/);
-  assert.match(text, /报告上传为选填，Plus 用户也可选择不上传/);
-  assert.match(text, /BUBU补补审核签署：尚未审核/);
-  assert.match(text, /主诊医生或药师/);
-  assert.doesNotMatch(
-    text,
-    /Pending|YOUR EVERYDAY|Not provided|No files added/,
-  );
-  assert.equal(report.status, "Pending BUBU nutritionist review");
-});
-
-test("Chinese report download preserves user notes and attachment names without translating them", () => {
-  const note = "Good; Under 18; My private note 真实备注";
-  const filename = "Good health report 体检.pdf";
-  const report = createDraftReport(
-    { ...valid(), notes: note },
-    [file(filename)],
-    { tier: "plus" },
-  );
-  const text = reportText(report, "zh");
-  assert.ok(text.includes(note));
-  assert.ok(text.includes(`${filename} — 仅在本地选择，尚未上传或分析`));
-  assert.match(text, /健康背景或尚未审核的备注进行专业沟通/);
-  assert.match(text, /最终建议及用量均须经专业审核/);
-  assert.deepEqual(report.attachments, [{ name: filename, size: 2000 }]);
-});
-
-test("new intake questions and required health choices have complete Chinese copy", async () => {
-  const { hasTranslation, translateText } = await import("../src/i18n-core.js");
-  const copy = [
-    ...intakeQuestions.flatMap((question) => [
-      question.label,
-      question.hint,
-      ...question.options,
-    ]),
-    ...healthOptions.map(([, label]) => label),
-    ...Object.values(formIssues(initialAnswers)),
-    ...Object.values(formIssues({ ...valid(), health: ["none", "medicines"] })),
-  ];
-  for (const source of copy) {
-    assert.equal(hasTranslation(source), true, source);
-    assert.match(translateText(source, "zh"), /\p{Script=Han}/u, source);
-    assert.equal(translateText(source, "en"), source);
-  }
-});
-
-test("Chinese supplement reports cover low intake, adequate intake, uncertain answers and review holds", async () => {
-  const { hasTranslation, translateText } = await import("../src/i18n-core.js");
-  const cases = [
-    valid(),
-    { ...valid(), goals: ["sleep", "beauty", "gut"] },
-    {
-      ...valid(),
-      b12Foods: "Animal foods most days",
-      calciumFoods: "At least two servings most days",
-      fish: "Oily fish weekly",
-      sunlight: "Regular time outdoors",
-    },
-    {
-      ...valid(),
-      b12Foods: "B12-fortified foods regularly",
-      fish: "Less than weekly",
-    },
-    {
-      ...valid(),
-      b12Foods: "Not sure",
-      calciumFoods: "Not sure",
-      fish: "Not sure",
-      sunlight: "Not sure",
-    },
-    { ...valid(), health: ["medicines"] },
-    { ...valid(), notes: "My unchanged English note" },
-  ];
-  const seen = new Set();
-  for (const answers of cases) {
-    for (const tier of ["standard", "plus"]) {
-      const report = createDraftReport(answers, [], { tier });
-      const exported = reportText(report, "zh");
-      const copy = [
-        report.status,
-        report.overview,
-        report.foodFirst,
-        report.reviewNote,
-        ...report.followUp,
-        ...[...report.recommendations, ...report.discussionItems].flatMap(
-          (item) => [
-            item.name,
-            item.priority,
-            item.reason,
-            item.food,
-            item.caution,
-            item.next,
-            item.source.title,
-          ],
-        ),
-        ...report.notSelected.flatMap((item) => [
-          item.name,
-          item.reason,
-          ...(item.source ? [item.source.title] : []),
-        ]),
-      ];
-      for (const source of copy) {
-        seen.add(source);
-        assert.equal(hasTranslation(source), true, source);
-        assert.notEqual(translateText(source, "zh"), source, source);
-        // reportText uses the personalisation dictionary directly: verify that
-        // export follows the same translation as the visible report UI.
-        if (
-          ![...report.recommendations, ...report.discussionItems].some(
-            (item) => item.priority === source,
-          ) ||
-          !report.needsReview
-        )
-          assert.ok(exported.includes(translateText(source, "zh")), source);
-      }
-      assert.doesNotMatch(
-        exported,
-        /YOUR SUPPLEMENT|SUPPLEMENTS TO DISCUSS|Worth considering|No personal dose|Not sure|Animal foods|Your answers do not yet/,
-      );
-      assert.equal(reportText(report, "en"), reportText(report));
-      if (answers.notes) assert.ok(exported.includes(answers.notes));
-    }
-  }
-  assert.ok(seen.size > 40, "all recommendation and review branches exercised");
-});
-
-test("supplement shortlist responds to food evidence rather than assigning a goal-based stack", () => {
-  const low = createDraftReport(valid(), []);
-  assert.deepEqual(
-    low.recommendations.map((item) => item.name),
-    ["Vitamin B12", "Vitamin D", "Calcium"],
-  );
-  assert.equal(low.needsReview, false);
-  assert.deepEqual(low.discussionItems, []);
-  for (const item of low.recommendations) {
-    assert.ok(item.reason && item.food && item.caution && item.next);
-    assert.ok(item.source.url.startsWith("https://ods.od.nih.gov/"));
-    assert.ok(reportText(low).includes(item.reason));
-  }
-  const adequate = createDraftReport(
-    {
-      ...valid(),
-      b12Foods: "Animal foods most days",
-      calciumFoods: "At least two servings most days",
-      fish: "Oily fish weekly",
-      sunlight: "Regular time outdoors",
-      goals: ["sleep", "beauty", "gut"],
-      sleep: "Poor",
-    },
-    [],
-  );
-  assert.deepEqual(adequate.recommendations, []);
-  assert.match(adequate.overview, /do not yet support/);
-  assert.ok(
-    adequate.notSelected.some(
-      (item) => item.name === "Magnesium / sleep blends",
-    ),
-  );
-  assert.ok(
-    adequate.notSelected.some((item) => item.name === "Biotin / beauty blends"),
-  );
-  assert.ok(adequate.notSelected.some((item) => item.name === "Probiotics"));
-});
-
-test("vegan diets with reliable fortified B12 do not get automatic extra B12", () => {
-  const report = createDraftReport(
-    { ...valid(), diet: "Vegan", b12Foods: "B12-fortified foods regularly" },
-    [],
-  );
-  assert.equal(
-    report.recommendations.some((item) => item.id === "vitamin-b12"),
-    false,
-  );
-  assert.ok(report.notSelected.some((item) => item.name === "Vitamin B12"));
-  // Not eating fish alone must never become a routine fish-oil recommendation.
-  assert.equal(
-    report.recommendations.some((item) => /omega/i.test(item.name)),
-    false,
-  );
-});
-
-test("every safety flag and unreviewed notes pause personal supplement recommendations", () => {
-  for (const flag of [
-    "medicines",
-    "supplements",
-    "pregnancy",
-    "conditions",
-    "allergies",
-    "private",
-  ]) {
-    const report = createDraftReport({ ...valid(), health: [flag] }, []);
-    assert.equal(report.needsReview, true, flag);
-    assert.deepEqual(report.recommendations, [], flag);
-    assert.equal(report.discussionItems.length, 3, flag);
-    assert.match(reportText(report), /SUPPLEMENTS TO DISCUSS AFTER REVIEW/);
-    assert.match(reportText(report), /Review before use/);
-    assert.doesNotMatch(reportText(report), /YOUR SUPPLEMENT SUGGESTIONS/);
-  }
-  const note = createDraftReport(
-    { ...valid(), notes: "I have a health detail to discuss" },
-    [],
-  );
-  assert.equal(note.needsReview, true);
-  assert.deepEqual(note.recommendations, []);
-});
-
-test("uncertain answers remain unanswered evidence, not presumed deficiency or automatic supplements", () => {
-  const report = createDraftReport(
-    {
-      ...valid(),
-      b12Foods: "Not sure",
-      calciumFoods: "Not sure",
-      fish: "Not sure",
-      sunlight: "Not sure",
-    },
-    [],
-  );
-  assert.equal(report.recommendations.length, 0);
-  assert.equal(report.followUp.length, 4);
-  assert.ok(reportText(report).includes("CHECK BEFORE DECIDING"));
-  assert.ok(formIssues({ ...valid(), health: [] }).health);
-  assert.ok(formIssues({ ...valid(), health: ["none", "medicines"] }).health);
-  assert.ok(formIssues({ ...valid(), b12Foods: "unrecognised" }).b12Foods);
-});
-
-test("Plus files do not alter supplement matching or claim document analysis", () => {
-  const answers = valid();
-  const noFiles = createDraftReport(answers, [], { tier: "plus" });
-  const withFiles = createDraftReport(answers, [file()], { tier: "plus" });
-  assert.deepEqual(noFiles.recommendations, withFiles.recommendations);
-  assert.equal(withFiles.status, "Pending BUBU nutritionist review");
-  assert.match(reportText(withFiles), /not uploaded or analysed/);
-  assert.match(reportText(withFiles), /No personal dose/);
-  assert.match(reportText(withFiles), /No ingredients have been added/);
 });

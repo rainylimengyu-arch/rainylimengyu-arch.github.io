@@ -1,0 +1,47 @@
+{
+  "source": "BUBU mini-program/pages/questionnaire",
+  "copiedAt": "2026-10-20",
+  "authorization": "User explicitly requested reusing BUBU questionnaire and report logic",
+  "files": [
+    {
+      "path": "engine/flow-v6.js",
+      "sha256": "d7aa03d4747f1a861adb35004e508546c3cfb09f91854e4069f47d44ad281e0f"
+    },
+    {
+      "path": "engine/flow-v5.js",
+      "sha256": "574506c2e076c38ca13d886e3e9b559eb309fbd2ac0634db63a7d86858bb571a"
+    },
+    {
+      "path": "engine/matcher.js",
+      "sha256": "d729cc3737ad1f326f469dd31d2332657e9ddc324454ccd1c35afe67ae34e29d"
+    },
+    {
+      "path": "engine/intake-screening.js",
+      "sha256": "c20b269ee59fee17291932cd20cc52fd930ea4ad81e34fec1e6a7a60764857fc"
+    },
+    {
+      "path": "engine/recommendations-v5.js",
+      "sha256": "3062a62768f5e1931244255f761f96072e07ccb4d549bf724f1d8c71d94f2657"
+    },
+    {
+      "path": "engine/recommendations-v6.js",
+      "sha256": "943a12789e04ebcc6286435c64668fe537e7ffbc4a7f2d1eaf28fcc532250476"
+    },
+    {
+      "path": "data/questions.js",
+      "sha256": "54dd2d1aa3a51836fff99570e71014a61bce67d31dd528da789ab05aa0970818"
+    },
+    {
+      "path": "data/questions-v5.js",
+      "sha256": "5ca883f1139d35ee8867bdd2dd90285d714e59927829390a6d375ff925fb5201"
+    },
+    {
+      "path": "data/questions-v6.js",
+      "sha256": "e9596000ee544a9ea304c196ba4fc11ee418fc01a759837ba3dbd057722dc2b6"
+    },
+    {
+      "path": "data/intake-questions.js",
+      "sha256": "e4ae429437c1198ec779fa3efe158dc92b48af1ac8dec7d795dda36d9377f8fa"
+    }
+  ]
+}

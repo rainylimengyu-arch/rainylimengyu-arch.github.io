@@ -107,7 +107,15 @@ Science 页面保留用户全文及完整学术创业模拟说明，六个章节
 成分量、供货、检测、制造和服务承诺需以真实产品资料确认；本版本不提供诊断或个人剂量建议。2026-10-19 的 V7 首页与独立页图文正文落实记录见 `design-qa.md`；该报告集中记录源码设计对比、浏览器验证、截图和适用边界，以报告中的具体检查结果为准。此次已获用户明确授权编程，先前设计稿阶段的“待实施”状态由本次实现取代；网站仍未公开发布。
 
 视觉方向以用户提供的 VITA TAPE 设计为准。用户最新决定保留直接的最终 Tape 预览，已覆盖参考图中的进度条设计。
-# GitHub Pages
+# Public hosting
+
+Primary website: https://rainylimengyu-arch.github.io/
+
+The user requested returning to GitHub Pages on 2026-10-22 after reporting the Cloudflare address could not open. `main` contains the website source and `gh-pages` contains the generated public client. Keep all six directory route indexes so the full BUBU questionnaire and other pages can be opened directly and refreshed.
+
+Previous Cloudflare address: https://vitatape.pages.dev/ (not the primary entry). Pages project: `vitatape` (Direct Upload), published on 2026-10-21 with production deployment `8f378b07-5a1f-4f1a-a621-9f46dbf77370`. The 2026-10-21 archive and its SHA256 metadata are in `../output/publish-2026-10-21/`. Mainland carrier access was not verified and the user subsequently reported access failure. GitHub and Cloudflare publications do not automatically synchronize.
+
+## GitHub Pages publication
 
 Website: https://rainylimengyu-arch.github.io/
 

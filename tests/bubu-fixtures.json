@@ -1,0 +1,292 @@
+{
+  "balanced": {
+    "audience": "adult_18_64",
+    "profile": {
+      "sex": "female",
+      "age": "35",
+      "height_cm": "165",
+      "weight_kg": "60",
+      "life_stage": "usual",
+      "weight_change": "stable"
+    },
+    "safety": [
+      "none"
+    ],
+    "health_detail": {
+      "conditions": [
+        "none"
+      ],
+      "medicines": [
+        "none"
+      ]
+    },
+    "scenes": [
+      "knowledge_work"
+    ],
+    "daily_load": [
+      "none"
+    ],
+    "goals": [
+      "diet_coverage"
+    ],
+    "goal_priority": "equal",
+    "diet_style": "mixed",
+    "exclusions": [
+      "none"
+    ],
+    "diet_habits": {
+      "meals": "regular",
+      "restriction": "no",
+      "duration": "long"
+    },
+    "quick_food": {
+      "calcium": "often",
+      "fish": "often",
+      "b12": "often",
+      "magnesium": "often",
+      "vegetables": "often",
+      "fruit": "often"
+    },
+    "dairy_food": {
+      "kind": "dairy",
+      "amount": "regular",
+      "tofu": "regular",
+      "tofu_kind": "calcium"
+    },
+    "calcium_alternatives": [
+      "none"
+    ],
+    "calcium_label": {},
+    "animal_food": {
+      "fish": "often",
+      "meat": "regular",
+      "red_meat": "some",
+      "eggs": "often"
+    },
+    "plant_food": {
+      "vegetables": "regular",
+      "fruit": "regular",
+      "whole_grains": "regular",
+      "beans": "regular",
+      "nuts": "regular"
+    },
+    "plant_types": {
+      "greens": "often",
+      "orange": "often",
+      "potato": "often"
+    },
+    "fortified": [
+      "vitamin_d",
+      "b12"
+    ],
+    "cooking": {
+      "salt": "iodized",
+      "oil": "plant"
+    },
+    "daylight": "regular",
+    "menstrual": "usual",
+    "labs": [
+      "unknown"
+    ],
+    "training_detail": {
+      "frequency": "zero",
+      "types": [],
+      "duration": "not_applicable",
+      "protein_access": "not_applicable",
+      "stable": "none",
+      "sweat": "no"
+    },
+    "sleep_detail": [
+      "none"
+    ],
+    "sleep_context": {
+      "hours": "enough",
+      "frequency": "rare",
+      "duration": "short",
+      "interference": [
+        "none"
+      ]
+    },
+    "impact": "education_only",
+    "goal_detail": {
+      "skin": "none",
+      "eyes": "none",
+      "gut": "none"
+    },
+    "existing_sources": [
+      "none"
+    ],
+    "preferences": {
+      "approach": "if_needed",
+      "fish": "yes",
+      "calcium": "yes"
+    },
+    "supplement_scope": {
+      "functional": "yes",
+      "botanicals": "yes"
+    },
+    "botanical_safety": [
+      "none"
+    ],
+    "goal_context": {
+      "energy": "occasional",
+      "stress": "mild",
+      "joint": "exercise",
+      "sleep_timing": "none",
+      "gut_safety": "none"
+    },
+    "nutrition_basics": {
+      "staples": "regular",
+      "protein": "regular",
+      "water": "regular",
+      "salty": "less"
+    }
+  },
+  "mixed": {
+    "audience": "adult_18_64",
+    "profile": {
+      "sex": "female",
+      "age": "35",
+      "height_cm": "165",
+      "weight_kg": "60",
+      "life_stage": "usual",
+      "weight_change": "stable"
+    },
+    "safety": [
+      "none"
+    ],
+    "health_detail": {
+      "conditions": [
+        "none"
+      ],
+      "medicines": [
+        "none"
+      ]
+    },
+    "scenes": [
+      "knowledge_work"
+    ],
+    "daily_load": [
+      "none"
+    ],
+    "goals": [
+      "sleep",
+      "stress",
+      "strength",
+      "endurance"
+    ],
+    "goal_priority": "sleep",
+    "diet_style": "mixed",
+    "exclusions": [
+      "none"
+    ],
+    "diet_habits": {
+      "meals": "regular",
+      "restriction": "no",
+      "duration": "long"
+    },
+    "quick_food": {
+      "calcium": "often",
+      "fish": "often",
+      "b12": "often",
+      "magnesium": "often",
+      "vegetables": "often",
+      "fruit": "often"
+    },
+    "dairy_food": {
+      "kind": "none",
+      "amount": "zero",
+      "tofu": "zero",
+      "tofu_kind": "none"
+    },
+    "calcium_alternatives": [
+      "none"
+    ],
+    "calcium_label": {},
+    "animal_food": {
+      "fish": "zero",
+      "meat": "regular",
+      "red_meat": "some",
+      "eggs": "often"
+    },
+    "plant_food": {
+      "vegetables": "regular",
+      "fruit": "regular",
+      "whole_grains": "regular",
+      "beans": "regular",
+      "nuts": "regular"
+    },
+    "plant_types": {
+      "greens": "often",
+      "orange": "often",
+      "potato": "often"
+    },
+    "fortified": [
+      "none"
+    ],
+    "cooking": {
+      "salt": "iodized",
+      "oil": "plant"
+    },
+    "daylight": "little",
+    "menstrual": "usual",
+    "labs": [
+      "unknown"
+    ],
+    "training_detail": {
+      "frequency": "three_four",
+      "types": [
+        "strength"
+      ],
+      "duration": "45_to_75",
+      "protein_access": "adequate",
+      "stable": "stable",
+      "sweat": "no"
+    },
+    "sleep_detail": [
+      "sleep_hard_to_start"
+    ],
+    "sleep_context": {
+      "hours": "enough",
+      "frequency": "some",
+      "duration": "short",
+      "interference": [
+        "none"
+      ]
+    },
+    "impact": "education_only",
+    "goal_detail": {
+      "skin": "none",
+      "eyes": "none",
+      "gut": "none"
+    },
+    "existing_sources": [
+      "none"
+    ],
+    "preferences": {
+      "approach": "if_needed",
+      "fish": "yes",
+      "calcium": "yes"
+    },
+    "supplement_scope": {
+      "functional": "yes",
+      "botanicals": "yes"
+    },
+    "botanical_safety": [
+      "none"
+    ],
+    "goal_context": {
+      "energy": "occasional",
+      "stress": "mild",
+      "joint": "exercise",
+      "sleep_timing": "none",
+      "gut_safety": "none"
+    },
+    "nutrition_basics": {
+      "staples": "regular",
+      "protein": "regular",
+      "water": "regular",
+      "salty": "less"
+    }
+  }
+}

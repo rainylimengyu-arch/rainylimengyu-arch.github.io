@@ -1,20 +1,31 @@
-# Questionnaire supplement suggestions
+# Comprehensive BUBU questionnaire and report
 
-Rule version: 2026-10-20. Official references checked 2026-10-20. This is an educational local prototype, not a validated clinical recommendation model. A professional has not approved its screening thresholds, products or a combined Tape formula.
+Updated: 2026-10-20. This replaces the former three-nutrient shortlist. User requested the BUBU mini-program questionnaire/report, comprehensive nutrient coverage and a review of competing quiz formats.
 
-The result must answer which supplements are worth considering and why. Generic goal summaries remain supporting context. The current scoped shortlist covers vitamin B12, vitamin D and conditional calcium; it does not purport to assess all 39 catalog ingredients or all possible nutritional needs.
+## Actual source reuse
 
-| Input | Output | Evidence and limits |
-| --- | --- | --- |
-| Few animal foods AND few B12-fortified foods | Consider B12 if a reliable food source is impractical | [NIH ODS B12](https://ods.od.nih.gov/factsheets/VitaminB12-Consumer/). Regular fortified sources prevent a vegan-diet label alone from triggering extra B12. No fatigue-to-deficiency inference. |
-| Rare outdoor exposure or usually covered skin | Consider vitamin D with dietary and local guidance review | [NIH ODS vitamin D](https://ods.od.nih.gov/factsheets/VitaminD-Consumer/). Exposure is a risk-context proxy, not a blood level or dose calculation. Regular outdoor time does not prove sufficiency. No region is inferred; no UK seasonal advice is applied globally. |
-| Fewer than two calcium-rich servings on most days | Consider calcium only if food changes still leave a shortfall | [NIH ODS calcium](https://ods.od.nih.gov/factsheets/Calcium-Consumer/). Two servings is a product screening prompt, NOT an official adequacy threshold or a calculated deficit. Actual labels, portions and total intake must be checked. Calcium may fall outside the current Tape ingredient catalog. |
-| Little/no oily fish | Food-source review; no routine fish/algal oil recommendation | [NIH ODS omega-3](https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/). Low fish frequency does not alone establish supplement need. |
-| Sleep, beauty, gut or energy goal | Explain why a goal alone does not select a supplement | [NCCIH sleep](https://www.nccih.nih.gov/health/sleep-disorders-and-complementary-health-approaches), [NIH ODS biotin](https://ods.od.nih.gov/factsheets/Biotin-Consumer/), [NCCIH probiotics](https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety). No automatic iron, magnesium, biotin or probiotic. |
-| Not sure | Named follow-up checks; no presumed deficiency | Unknowns never become low-intake answers. A valid outcome is no supplement shortlist. |
+The user-authorized snapshot is `resources/bubu-source/` with SHA-256 provenance. It contains the BUBU v6 question plan, validations, v5 source-coverage assessment and v6 goal-based recommendations, not a re-creation from screenshots. `node scripts/build-bubu-engine.mjs` bundles that snapshot into `src/bubu/engine.js`. Tests compare the generated engine against the snapshot.
 
-Health acknowledgement is required but users can choose unsure/private without disclosing details. Medicines, existing supplements, pregnancy/planning/breastfeeding, conditions, allergies, unsure/private, or nonempty unreviewed notes pause the personal shortlist. Food-linked items remain visibly labelled discussion-only, with no start instruction. Under-18s are ineligible. Selecting none clears other health choices and vice versa; server-independent validation also rejects contradictory answers.
+The website adapter preserves canonical answer IDs and adds the energy/protein/water/salt baseline, adult-only eligibility, stricter review of contradictory vegan records, fluid restrictions, the existing VITA TAPE exclusion of melatonin, and 39 live-catalog decisions. Height and weight are not collected. Report input is deep-copied; stale answers to hidden follow-up questions are pruned.
 
-Every candidate includes the input-linked reason, food options, caution, next step and official reference. Standard is independent of Plus, needs no upload, and offers self-guided suggestions rather than an approved prescription. Plus remains pending BUBU review; no actual reviewer is assigned. Files are optional for Plus, excluded from Standard, never interpreted by this rule engine and never uploaded. No personal amount or duration is generated and no ingredients are added to the builder. Product-form/amount confirmation and combination checks remain separate.
+## Coverage and actual recommendations
 
-English and Chinese UI/export share the same report object and translation dictionary. User notes and attachment names are preserved verbatim. Answers and files remain in page memory only.
+- 13 vitamin rows: A, C, D, E, K and B1/B2/B3/B5/B6/B7/B9/B12.
+- 14 mineral assessment rows: calcium, magnesium, potassium, iron, zinc, iodine, selenium, copper, manganese, phosphorus, sodium/chloride together, molybdenum, chromium and fluoride. Chromium and fluoride do not trigger routine supplementation; the limits of questionnaire assessment are explicit.
+- 10 other nutrition/food rows: choline, EPA/DHA, fibre, protein, carbohydrate, total fat, omega-6, ALA, water and food energy.
+- These total 37 review directions. Source presence is not proof of adequate intake or absorption. No food-frequency answer is converted into a precise nutrient deficit. The optional calcium-label calculation concerns only the labelled drink, never total dietary adequacy.
+- The BUBU candidate families include B12, D, calcium, magnesium, EPA/DHA, C, basic iron-free multi, creatine, protein, hydration/electrolytes, magnesium bisglycinate, L-theanine, ginseng, turmeric/curcumin, psyllium and optional collagen discussion. Conditions, preferences, existing products and evidence determine which appear. They are not all recommended to every person.
+- Goals alone do not diagnose deficiencies. Sleep, persistent symptoms, botanical consent, training stability, swallowing/obstruction context, food practicality and existing ingredient records affect matching. The full source table remains available even when automatic supplementation is paused or no candidates match.
+- All 39 current Tape catalog ingredients receive a decision with a reason and source. A related nutrient/form match is not proof that a final branded Tape preparation, amount, carrier or combination is appropriate. Off-catalog supplement types are identified explicitly. AREDS2 is not inferred from screen time; probiotic strains are not inferred from a general gut goal; 5-HTP remains held for review.
+
+## Safety and interaction boundaries
+
+Urgent symptom answers stop the supplement report; under-18s do not receive the adult plan. Medicines, relevant health/life-stage context, abnormal tests, uncertain product/allergy information, fluid restrictions and contradictory diet records pause personal candidate selection for professional review. Actual dietary restrictions are retained. Existing known ingredients are not suggested again.
+
+Within the discussion shortlist, sleep alternatives and a basic multi versus overlapping singles require an explicit choice. A conflicting click leaves the prior selection unchanged and displays the reason at the clicked card; nothing is silently replaced. This is not a dose-complete combined Tape formula or a clinical interaction clearance. No ingredients are automatically added to the builder and no order is created.
+
+Standard completes independently without an email or upload. Plus files are optional, kept only in page memory and excluded from Standard reports. File names and user notes are preserved, not translated or interpreted. No file OCR, lab interpretation, reviewer identity, professional approval or actual review submission is fabricated. Plus sign-off remains pending.
+
+## Research used
+
+Full comparison and direct links are in `questionnaire-research-2026-10-20.md`. Nutrient links come from NIH ODS; functional claims are bounded by the referenced primary studies / official evidence pages. The rules, screening portions and product forms have not been independently clinically validated. No personal supplement amount or treatment duration is generated.

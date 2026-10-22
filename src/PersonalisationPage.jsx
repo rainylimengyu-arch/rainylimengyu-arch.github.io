@@ -4,87 +4,32 @@ import { ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
 import { UploadSimple } from "@phosphor-icons/react/dist/csr/UploadSimple";
 import { FileText } from "@phosphor-icons/react/dist/csr/FileText";
 import { X } from "@phosphor-icons/react/dist/csr/X";
-import { LockSimple } from "@phosphor-icons/react/dist/csr/LockSimple";
 import { Clock } from "@phosphor-icons/react/dist/csr/Clock";
 import { ListChecks } from "@phosphor-icons/react/dist/csr/ListChecks";
 import { Leaf } from "@phosphor-icons/react/dist/csr/Leaf";
 import { ShieldCheck } from "@phosphor-icons/react/dist/csr/ShieldCheck";
 import { Header } from "./App";
 import { PageFooter } from "./LandingHero";
-import { Modal } from "./components";
+import { useI18n } from "./i18n";
+import { choose } from "./bubu/report-copy";
 import {
-  goals,
-  healthOptions,
-  ageRanges,
-  diets,
   initialAnswers,
-  intakeQuestions,
+  questionPlan,
+  localQuestion,
+  reconcileAnswers,
+  validateQuestion,
+  toggleOption,
+  getSafetyDisposition,
+  createDraftReport,
+  reportView,
+  reportText,
   formIssues,
   selectAttachments,
-  createDraftReport,
-  reportText,
+  selectionConflict,
+  answerLines,
 } from "./personalisation";
-import { useI18n } from "./i18n";
 import "./personalisation.css";
-
-const sections = [
-  ["goals", "Your goals"],
-  ["everyday", "Your everyday"],
-  ["health", "Your health context"],
-  ["review", "Your supplement report"],
-];
-
-function SectionTitle({ number, children, id }) {
-  return (
-    <h2 id={id} className="needs-section-title">
-      <span>{number}</span>
-      {children}
-    </h2>
-  );
-}
-
-function Choices({
-  label,
-  name,
-  options,
-  value,
-  onChange,
-  error,
-  hint,
-  segmented = false,
-}) {
-  const { t } = useI18n();
-  return (
-    <fieldset
-      className={`needs-choice-field ${segmented ? "is-segmented" : ""}`}
-    >
-      <legend>{t(label)}</legend>
-      {hint && <p className="needs-field-hint">{t(hint)}</p>}
-      <div className="needs-radio-options">
-        {options.map((option) => (
-          <label key={option} className={value === option ? "is-selected" : ""}>
-            <input
-              type="radio"
-              name={name}
-              value={option}
-              checked={value === option}
-              onChange={() => onChange(name, option)}
-              aria-invalid={!!error}
-              aria-describedby={error ? `${name}-error` : undefined}
-            />
-            <span>{t(option)}</span>
-          </label>
-        ))}
-      </div>
-      {error && (
-        <p className="needs-error" id={`${name}-error`}>
-          {t(error)}
-        </p>
-      )}
-    </fieldset>
-  );
-}
-
+import "./bubu-questionnaire.css";
 function translateAttachmentError(error, t, language) {
   if (language !== "zh") return error;
   const suffixes = [
@@ -259,114 +204,248 @@ function NutritionistReview() {
   );
 }
 
-function SupplementReport({ report }) {
-  const { t } = useI18n();
-  const items = report.needsReview
-    ? report.discussionItems
-    : report.recommendations;
+function AnswerOptions({
+  id,
+  options,
+  value,
+  multiple = false,
+  exclusive,
+  onChange,
+  error,
+}) {
   return (
-    <>
-      <section className="needs-supplement-results">
-        <h3>
-          {t(
-            report.needsReview
-              ? "Supplements to discuss after review"
-              : "Your supplement suggestions",
-          )}
-        </h3>
-        <p className={report.needsReview ? "needs-review-hold" : ""}>
-          {t(report.overview)}
-        </p>
-        <div className="needs-supplement-list">
-          {items.map((item, index) => (
-            <article className="needs-supplement-card" key={item.id}>
-              <div className="needs-supplement-heading">
-                <span className="needs-supplement-number" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h4>{t(item.name)}</h4>
-                <span className="needs-supplement-priority">
-                  {t(report.needsReview ? "Review before use" : item.priority)}
-                </span>
-              </div>
-              <p>
-                <strong>{t("Why this matches")}</strong>
-                <br />
-                {t(item.reason)}
-              </p>
-              <details>
-                <summary>{t("Food options, safety & next step")}</summary>
-                <dl>
-                  <dt>{t("Food first")}</dt>
-                  <dd>{t(item.food)}</dd>
-                  <dt>{t("Before you start")}</dt>
-                  <dd>{t(item.caution)}</dd>
-                  <dt>{t("Next step")}</dt>
-                  <dd>{t(item.next)}</dd>
-                </dl>
-              </details>
-              <a
-                className="needs-evidence-link"
-                href={item.source.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t(item.source.title)} ↗
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
-      {report.followUp.length > 0 && (
-        <section>
-          <h3>{t("Check before deciding")}</h3>
-          <ul>
-            {report.followUp.map((item) => (
-              <li key={item}>{t(item)}</li>
-            ))}
-          </ul>
-        </section>
-      )}
-      {report.notSelected.length > 0 && (
-        <section>
-          <h3>{t("Not automatically suggested")}</h3>
-          <ul className="needs-report-priorities">
-            {report.notSelected.map((item) => (
-              <li key={item.name}>
-                <strong>{t(item.name)}</strong>
-                <p>{t(item.reason)}</p>
-                {item.source && (
-                  <a
-                    className="needs-evidence-link"
-                    href={item.source.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {t(item.source.title)} ↗
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-      <section>
-        <h3>{t("Amounts & combinations")}</h3>
-        <p>
-          {t(
-            "No personal dose, treatment duration or combined Tape formula is prescribed. Check all existing products for overlap; final VITA TAPE forms and amounts remain unconfirmed.",
-          )}
-        </p>
-      </section>
-    </>
+    <div className="bubu-options">
+      {options.map((option) => {
+        const checked = multiple
+          ? Array.isArray(value) && value.includes(option.id)
+          : value === option.id;
+        return (
+          <label key={option.id} className={checked ? "is-selected" : ""}>
+            <input
+              type={multiple ? "checkbox" : "radio"}
+              name={id}
+              value={option.id}
+              checked={checked}
+              onChange={() =>
+                onChange(
+                  multiple
+                    ? toggleOption(value, option.id, exclusive)
+                    : option.id,
+                )
+              }
+              aria-invalid={!!error}
+              aria-describedby={error ? "bubu-question-error" : undefined}
+            />
+            <span>{option.label}</span>
+          </label>
+        );
+      })}
+    </div>
   );
 }
-
-function DraftReport({ report, onClose }) {
-  const { t, language } = useI18n();
+function QuestionFields({ question, value, onChange, error }) {
+  const { language } = useI18n();
+  const rows = question.fields || question.rows;
+  if (!rows)
+    return (
+      <AnswerOptions
+        id={question.id}
+        options={question.options}
+        value={value}
+        multiple={question.type === "multi"}
+        exclusive={question.exclusiveIds || ["none", "unknown"]}
+        onChange={onChange}
+        error={error}
+      />
+    );
+  function update(field, next) {
+    let patch = { ...(value || {}), [field.id]: next };
+    if (
+      question.id === "training_detail" &&
+      field.id === "frequency" &&
+      next === "zero"
+    )
+      patch = {
+        ...patch,
+        types: [],
+        duration: "not_applicable",
+        protein_access: "not_applicable",
+        stable: "none",
+      };
+    onChange(patch);
+  }
+  return (
+    <div className="bubu-fields">
+      {rows.map((field) => {
+        const title = field.title || field.label;
+        const inactive =
+          question.id === "training_detail" &&
+          value?.frequency === "zero" &&
+          ["types", "duration", "protein_access", "stable"].includes(field.id);
+        if (inactive) return null;
+        return (
+          <fieldset key={field.id} className="bubu-field">
+            <legend>
+              {title}
+              {field.type === "number" ? null : (
+                <span>
+                  {field.type === "multi"
+                    ? choose(language, " · select all that apply", " · 可多选")
+                    : ""}
+                </span>
+              )}
+            </legend>
+            {field.type === "number" ? (
+              <div className="bubu-number">
+                <input
+                  aria-label={title}
+                  name={`${question.id}.${field.id}`}
+                  type="number"
+                  inputMode="decimal"
+                  value={value?.[field.id] ?? ""}
+                  min={field.min}
+                  max={field.max}
+                  step={field.id === "age" ? 1 : "any"}
+                  placeholder={choose(language, "Optional", "可留空")}
+                  onChange={(event) => update(field, event.target.value)}
+                  aria-invalid={!!error}
+                />
+                <span>{field.unit}</span>
+              </div>
+            ) : (
+              <AnswerOptions
+                id={`${question.id}.${field.id}`}
+                options={field.options || field.choices || question.choices}
+                value={value?.[field.id]}
+                multiple={field.type === "multi"}
+                exclusive={field.exclusiveIds || ["none", "unknown"]}
+                onChange={(next) => update(field, next)}
+                error={error}
+              />
+            )}
+          </fieldset>
+        );
+      })}
+    </div>
+  );
+}
+function Sources({ sources }) {
+  const { language } = useI18n();
+  return (
+    <div className="bubu-sources">
+      {sources.map((source, index) => (
+        <a
+          key={source.url + index}
+          href={source.url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {choose(language, "Evidence", "参考依据")} {index + 1} ↗
+        </a>
+      ))}
+    </div>
+  );
+}
+function CandidateCard({
+  item,
+  selected,
+  onSelect,
+  held = false,
+  conflict = false,
+}) {
+  const { language } = useI18n();
+  const C = (en, zh) => choose(language, en, zh);
+  return (
+    <article className={`bubu-candidate ${held ? "is-held" : ""}`}>
+      <div className="bubu-candidate-top">
+        <span className="bubu-rank">
+          {String(item.rank || "•").padStart(2, "0")}
+        </span>
+        <span className="bubu-tag">{item.status}</span>
+      </div>
+      <h4>{item.name}</h4>
+      <p className="bubu-benefit">{item.benefit}</p>
+      <strong className="bubu-small-label">
+        {C("Why this matches", "推荐依据")}
+      </strong>
+      <p>{item.reason}</p>
+      <p className="bubu-caution">
+        <strong>{C("Before use: ", "使用前：")}</strong>
+        {item.caution}
+      </p>
+      <details>
+        <summary>
+          {C(
+            "Matched answers, food options & evidence",
+            "对应答案、饮食替代与证据",
+          )}
+        </summary>
+        <dl>
+          {item.matchedAnswers.map((a, i) => (
+            <div key={i}>
+              <dt>{a.label}</dt>
+              <dd>{a.value}</dd>
+            </div>
+          ))}
+        </dl>
+        <h5>{C("Food first", "饮食替代")}</h5>
+        <p>{item.food}</p>
+        {item.details.map((d, i) => (
+          <div key={i}>
+            <h5>{d.title}</h5>
+            <p>{d.body}</p>
+          </div>
+        ))}
+        <p className="bubu-availability">{item.availability}</p>
+        <Sources sources={item.references} />
+      </details>
+      {!held && (
+        <button
+          type="button"
+          className={`bubu-select ${selected ? "is-selected" : ""}`}
+          aria-pressed={selected}
+          onClick={onSelect}
+        >
+          {selected
+            ? C("Remove from discussion shortlist", "移出讨论清单")
+            : C("Add to discussion shortlist", "加入讨论清单")}{" "}
+          <span aria-hidden="true">{selected ? "−" : "+"}</span>
+        </button>
+      )}
+      {conflict && (
+        <p className="bubu-error" role="alert">
+          {C(
+            "These options overlap or belong to the same alternative group. Remove the existing choice first; nothing has been silently replaced.",
+            "这些选项存在重复或属于同组替代方案。请先移除原选择，系统未自动替换任何项目。",
+          )}
+        </p>
+      )}
+    </article>
+  );
+}
+function NutritionReport({ report, onEdit }) {
+  const { language } = useI18n();
+  const C = (en, zh) => choose(language, en, zh);
+  const [selected, setSelected] = useState([]),
+    [selectionError, setSelectionError] = useState(false),
+    [catalogFilter, setCatalogFilter] = useState("all");
+  const view = reportView(report, language);
+  function toggle(id) {
+    if (selected.includes(id)) {
+      setSelected((previous) => previous.filter((x) => x !== id));
+      setSelectionError(false);
+      return;
+    }
+    if (selectionConflict(report, selected, id)) {
+      setSelectionError(id);
+      return;
+    }
+    setSelected((previous) => [...previous, id]);
+    setSelectionError(false);
+  }
   function download() {
     const url = URL.createObjectURL(
-      new Blob([reportText(report, language)], {
+      new Blob([reportText(report, language, selected)], {
         type: "text/plain;charset=utf-8",
       }),
     );
@@ -374,689 +453,733 @@ function DraftReport({ report, onClose }) {
     link.href = url;
     link.download =
       language === "zh"
-        ? report.isPlus
-          ? "VITA-TAPE-Plus-营养报告草稿.txt"
-          : "VITA-TAPE-补剂建议报告.txt"
-        : report.isPlus
-          ? "VITA-TAPE-Plus-draft-nutrition-report.txt"
-          : "VITA-TAPE-supplement-recommendations.txt";
+        ? "VITA-TAPE-BUBU-完整营养报告.txt"
+        : "VITA-TAPE-BUBU-complete-nutrition-report.txt";
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
+  const catalog = view.catalog.filter(
+    (x) => catalogFilter === "all" || x.state === catalogFilter,
+  );
   return (
-    <Modal
-      title={t(
-        report.isPlus
-          ? t("Your nutrition report")
-          : t("Your supplement recommendation report"),
-      )}
-      onClose={onClose}
-      className="nutrition-report-modal"
-    >
-      <span
-        className={`needs-pending ${report.isPlus ? "" : "needs-summary-status"}`}
-      >
-        {report.isPlus ? (
-          <Clock size={17} aria-hidden="true" />
-        ) : (
-          <ListChecks size={17} aria-hidden="true" />
-        )}
-        {t(report.status)}
-      </span>
-      <p className="needs-report-notice">
-        {report.isPlus
-          ? t(
-              "Plus with BUBU补补 · Draft supplement suggestions pending review. No review request has been sent, and this is not an approved plan.",
-            )
-          : t(
-              "Standard · Supplement suggestions based on your questionnaire. This is not medical advice, and no professional review is included.",
-            )}
+    <section className="bubu-result" aria-labelledby="bubu-result-title">
+      <div className="bubu-report-header">
+        <div>
+          <p className="bubu-eyebrow">
+            {C("YOUR NUTRITION, IN CONTEXT", "把营养放回你的生活")}
+          </p>
+          <h2 id="bubu-result-title" tabIndex={-1}>
+            {view.title}
+          </h2>
+          <span className="bubu-status">{view.status}</span>
+        </div>
+        <div className="bubu-report-actions">
+          <button type="button" className="button" onClick={download}>
+            {C("Download report", "下载完整报告")} <ArrowRight size={17} />
+          </button>
+          <button
+            type="button"
+            className="needs-text-button"
+            onClick={() => onEdit()}
+          >
+            {C("Edit answers", "修改答案")}
+          </button>
+        </div>
+      </div>
+      <p className={`bubu-report-intro ${report.needsReview ? "is-held" : ""}`}>
+        {view.overview}
       </p>
-      <SupplementReport report={report} />
-      <section>
-        <h3>{t("Your everyday")}</h3>
+      <div className="bubu-metrics">
+        <div>
+          <strong>{report.coverageCount}</strong>
+          <span>
+            {C("nutrition & food directions reviewed", "项营养与饮食方向")}
+          </span>
+        </div>
+        <div>
+          <strong>{view.catalog.length}</strong>
+          <span>{C("Tape ingredient decisions", "种 Tape 成分决策")}</span>
+        </div>
+        <div>
+          <strong>{view.cards.length}</strong>
+          <span>{C("matched supplement options", "项匹配的补充选项")}</span>
+        </div>
+      </div>
+      <p className="bubu-note">
+        {C(
+          "Food-source screening is not a deficiency diagnosis. A complete review does not mean you need every supplement.",
+          "食物来源筛查不等于营养缺乏诊断。覆盖全面，不代表每种都需要补。",
+        )}
+      </p>
+      {view.checks.length > 0 && (
+        <section className="bubu-review-box">
+          <h3>{C("Check these before starting", "补充前，先确认这些情况")}</h3>
+          {view.checks.map((item) => (
+            <details key={item.id}>
+              <summary>{item.name}</summary>
+              <p>{item.reason}</p>
+              <p>{item.action}</p>
+            </details>
+          ))}
+        </section>
+      )}
+      {view.programs.map((program) => (
+        <section className="bubu-report-section" key={program.id}>
+          <div className="bubu-section-heading">
+            <h3>{program.name}</h3>
+            <span>
+              {program.items.length} {C("options", "项")}
+            </span>
+          </div>
+          <div className="bubu-candidate-grid">
+            {program.items.map((item) => (
+              <CandidateCard
+                key={item.id}
+                item={item}
+                selected={selected.includes(item.id)}
+                conflict={selectionError === item.id}
+                onSelect={() => toggle(item.id)}
+              />
+            ))}
+          </div>
+        </section>
+      ))}
+      {!view.cards.length && (
+        <div className="bubu-empty">
+          <h3>
+            {C(
+              "Your next step is specific, even without a new stack",
+              "暂不新增补剂，也有明确的下一步",
+            )}
+          </h3>
+          <p>{view.overview}</p>
+        </div>
+      )}
+      {view.discussion.length > 0 && (
+        <section className="bubu-report-section">
+          <h3>
+            {C(
+              "Discussion items · review first",
+              "可讨论的方向 · 先核查适用性",
+            )}
+          </h3>
+          <div className="bubu-candidate-grid">
+            {view.discussion.map((item) => (
+              <CandidateCard key={item.id} item={item} held />
+            ))}
+          </div>
+        </section>
+      )}
+      {view.foodActions.length > 0 && (
+        <section className="bubu-report-section">
+          <h3>
+            {C("Make the food changes practical", "把饮食调整变得可执行")}
+          </h3>
+          <div className="bubu-food-actions">
+            {view.foodActions.map((item) => (
+              <article key={item.id}>
+                <Leaf size={24} aria-hidden="true" />
+                <h4>{item.name}</h4>
+                <p>{item.reason}</p>
+                <p>{item.action}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+      <section className="bubu-report-section">
+        <div className="bubu-section-heading">
+          <div>
+            <h3>{C("Your complete nutrition review", "完整营养评估")}</h3>
+            <p>
+              {C(
+                "Each item has a source decision and a next action. Unknowns stay unknown.",
+                "每项列出来源判断和下一步，未确认的信息会标出。食物来源用于科普，实际选择请避开过敏食物并遵循已有医嘱。",
+              )}
+            </p>
+          </div>
+        </div>
+        {view.coverage.map((group) => (
+          <details className="bubu-coverage-group" key={group.id} open>
+            <summary>
+              {group.name}
+              <span>
+                {group.items.length} {C("items", "项")}
+              </span>
+            </summary>
+            <div className="bubu-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>{C("Nutrient / direction", "营养素／方向")}</th>
+                    <th>{C("Source decision", "来源判断")}</th>
+                    <th>{C("Food sources & next step", "食物来源与下一步")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {group.items.map((item) => (
+                    <tr key={item.id}>
+                      <th scope="row">{item.name}</th>
+                      <td>
+                        <span className={`bubu-row-status state-${item.state}`}>
+                          {item.status}
+                        </span>
+                        <p>{item.reason}</p>
+                      </td>
+                      <td>
+                        <p>{item.food}</p>
+                        <p>{item.action}</p>
+                        <Sources sources={[item.reference]} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </details>
+        ))}
+      </section>
+      <section className="bubu-report-section">
+        <h3>
+          {C(
+            "Every Tape ingredient has a decision",
+            "每一种 Tape 成分，都有本次决策",
+          )}
+        </h3>
         <p>
-          {t(report.profile.age)}
-          {t(" · ")}
-          {t(report.profile.diet)}
+          {C(
+            "A related ingredient is not confirmation of the final Tape form, dose or a safe combined formula.",
+            "相关成分匹配，不代表 Tape 的最终形态、剂量或组合配方已确认。",
+          )}
         </p>
+        <div
+          className="bubu-catalog-filters"
+          role="group"
+          aria-label={C("Filter ingredient decisions", "筛选成分决策")}
+        >
+          {[
+            ["all", "All ingredients", "全部成分"],
+            ["matched", "Related match", "相关匹配"],
+            ["review", "Review first", "先核查"],
+            ["not_selected", "Not selected", "本次未选"],
+          ].map(([id, en, zh]) => (
+            <button
+              type="button"
+              key={id}
+              aria-pressed={catalogFilter === id}
+              onClick={() => setCatalogFilter(id)}
+            >
+              {C(en, zh)}
+            </button>
+          ))}
+        </div>
+        <div className="bubu-catalog-grid">
+          {catalog.map((item) => (
+            <details key={item.id}>
+              <summary>
+                {item.name}
+                <span>
+                  {item.state === "matched"
+                    ? C("Related match", "相关匹配")
+                    : item.state === "review"
+                      ? C("Review", "需核查")
+                      : item.state === "existing"
+                        ? C("Existing", "已补充")
+                        : C("Not selected", "本次未选")}
+                </span>
+              </summary>
+              <p>{item.reason}</p>
+              <p>{item.evidence}</p>
+              <Sources sources={[item.reference]} />
+            </details>
+          ))}
+        </div>
+      </section>
+      <section className="bubu-report-section">
+        <h3>{C("Your discussion shortlist", "你的讨论清单")}</h3>
         <p>
-          {t("Plant foods: ")}
-          {t(report.profile.plants || "Not provided")}
-          <br />
-          {t("Activity: ")}
-          {t(report.profile.activity || "Not provided")}
-          <br />
-          {t("Sleep: ")}
-          {t(report.profile.sleep || "Not provided")}
+          {selected.length
+            ? view.cards
+                .filter((c) => selected.includes(c.id))
+                .map((c) => c.name)
+                .join(language === "zh" ? "、" : ", ")
+            : C(
+                "Add the options you want to discuss. Nothing is added automatically.",
+                "可加入希望进一步讨论的选项，系统不会默认全选。",
+              )}
         </p>
-        <dl className="needs-intake-snapshot">
-          {intakeQuestions.map((question) => (
-            <div key={question.name}>
-              <dt>{t(question.label)}</dt>
-              <dd>{t(report.profile[question.name])}</dd>
+        <p className="bubu-note">
+          {C(
+            "This shortlist is not a daily dosing plan or a checked Tape formula. No order is created.",
+            "讨论清单不是每日服用方案或已核查的 Tape 配方，不会自动下单。",
+          )}
+        </p>
+      </section>
+      <details className="bubu-answer-review">
+        <summary>{C("Your questionnaire record", "查看本次问卷记录")}</summary>
+        <dl>
+          {answerLines(report.answers, language).map((a, i) => (
+            <div key={i}>
+              <dt>{a.label}</dt>
+              <dd>{a.value}</dd>
             </div>
           ))}
         </dl>
-      </section>
-      <section>
-        <h3>{t("Your priorities")}</h3>
-        <ul className="needs-report-priorities">
-          {report.priorities.map((item) => (
-            <li key={item.id}>
-              <strong>{t(item.label)}</strong>
-              <p>{t(item.discussion)}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section>
-        <h3>{t("Food-first opportunities")}</h3>
-        <p>{t(report.foodFirst)}</p>
-      </section>
-      <section>
-        <h3>
-          {report.isPlus ? t("Health & reports") : t("Your health context")}
-        </h3>
-        <p>
-          {report.healthContext.length
-            ? report.healthContext.map((label) => t(label)).join(t("; "))
-            : t("Optional health context not provided.")}
+      </details>
+      {report.notes && (
+        <p className="bubu-user-notes">
+          {C(
+            "Your notes (not automatically interpreted): ",
+            "你的备注（未自动解读）：",
+          )}
+          {report.notes}
         </p>
-        {report.profile.notes && (
-          <p className="needs-report-user-notes">
-            {t("Your notes: ")}
-            {report.profile.notes}
+      )}
+      {report.isPlus && (
+        <section className="bubu-review-box">
+          <h3>
+            {C(
+              "BUBU reviewer sign-off: not yet reviewed",
+              "BUBU补补审核签署：尚未审核",
+            )}
+          </h3>
+          <p>
+            {C(
+              "No reviewer has been assigned and no review request was sent. Optional files are selected locally, not uploaded or analysed.",
+              "尚未指派审核人员，也未发送审核申请。选填文件仅在本地选择，未上传或分析。",
+            )}
           </p>
-        )}
-        {report.isPlus && (
           <ul>
             {report.attachments.length ? (
-              report.attachments.map((file, index) => (
-                <li key={index}>
-                  {file.name}
-                  {t(" — selected locally, not uploaded or analysed")}
-                </li>
-              ))
+              report.attachments.map((f, i) => <li key={i}>{f.name}</li>)
             ) : (
               <li>
-                {t(
-                  "No health reports added. Uploading a report is optional for Plus members too.",
+                {C(
+                  "No files added; upload is optional.",
+                  "未添加文件，上传为选填。",
                 )}
               </li>
             )}
           </ul>
-        )}
-      </section>
-      <section>
-        <h3>{t("Suitability & safety check")}</h3>
-        <p>{t(report.reviewNote)}</p>
-      </section>
-      {report.isPlus && (
-        <div className="needs-report-approval">
-          <ShieldCheck size={26} aria-hidden="true" />
-          <div>
-            <strong>{t("BUBU reviewer sign-off: not yet reviewed")}</strong>
-            <p>
-              {t(
-                "Reviewer identity and credentials will appear with a professionally reviewed report. Final suitability and amounts require professional sign-off.",
-              )}
-            </p>
-          </div>
-        </div>
+        </section>
       )}
-      <div className="needs-report-actions">
-        <button className="button" onClick={download}>
-          {report.isPlus
-            ? t("Download Demo Draft")
-            : t("Download My Supplement Report")}{" "}
-          <ArrowRight size={18} aria-hidden="true" />
+      <p className="bubu-final-notice">{view.disclaimer}</p>
+      <div className="bubu-report-actions">
+        <button type="button" className="button" onClick={download}>
+          {C("Download complete report", "下载完整报告")}{" "}
+          <ArrowRight size={17} />
         </button>
-        <button className="needs-text-button" onClick={onClose}>
-          {t("Edit My Answers")}
-        </button>
+        <a className="needs-text-button" href="/ingredient-library">
+          {C("Explore the ingredient library", "查看成分库")}
+        </a>
       </div>
-      <p className="needs-field-hint">
-        {t("No ingredients have been added to your Tape.")}
-      </p>
-    </Modal>
+    </section>
   );
 }
-
 export function PersonalisationPage() {
-  const { t } = useI18n();
-  const [tier, setTier] = useState("standard");
-  const isPlus = tier === "plus";
-  const [answers, setAnswers] = useState(initialAnswers);
-  const [files, setFiles] = useState([]);
-  const [fileErrors, setFileErrors] = useState([]);
-  const [issues, setIssues] = useState({});
-  const [report, setReport] = useState(null);
-  const form = useRef(null);
+  const { language, t } = useI18n();
+  const C = (en, zh) => choose(language, en, zh);
+  const [answers, setAnswers] = useState(initialAnswers),
+    [stepId, setStepId] = useState("audience"),
+    [tier, setTier] = useState("standard"),
+    [files, setFiles] = useState([]),
+    [fileErrors, setFileErrors] = useState([]),
+    [error, setError] = useState(""),
+    [consent, setConsent] = useState(false),
+    [notes, setNotes] = useState(""),
+    [report, setReport] = useState(null);
+  const top = useRef(null);
+  const plan = questionPlan(answers),
+    index = plan.findIndex((q) => q.id === stepId),
+    rawQuestion = plan[index],
+    question = rawQuestion && localQuestion(rawQuestion, language),
+    isPlus = tier === "plus";
+  const urgent = getSafetyDisposition(answers).status === "stop",
+    minor = answers.audience === "minor_under_18";
   useEffect(() => {
     document.title = t("Find Out What You Need — VITA TAPE");
   }, [t]);
-
-  function update(name, value) {
-    setAnswers((previous) => ({ ...previous, [name]: value }));
-    setIssues((previous) => ({ ...previous, [name]: undefined }));
-    setReport(null);
-  }
-  function changeTier(nextTier) {
-    if (nextTier === tier) return;
-    setTier(nextTier);
+  function changeTier(next) {
+    if (next === tier) return;
+    setTier(next);
     setFiles([]);
     setFileErrors([]);
+    setConsent(false);
     setReport(null);
-    setIssues({});
-    setAnswers((previous) => ({ ...previous, consent: false }));
+    setError("");
   }
-  function toggle(name, id) {
-    const selected = answers[name];
-    const exclusive = name === "health" && (id === "none" || id === "private");
-    update(
-      name,
-      selected.includes(id)
-        ? selected.filter((item) => item !== id)
-        : exclusive
-          ? [id]
-          : [
-              ...selected.filter(
-                (item) =>
-                  name !== "health" || !["none", "private"].includes(item),
-              ),
-              id,
-            ],
+  function update(value) {
+    setAnswers((previous) =>
+      reconcileAnswers({ ...previous, [stepId]: value }),
     );
-  }
-  function addFiles(incoming) {
-    if (!isPlus) return;
-    const selection = selectAttachments(files, incoming);
-    setFiles(selection.files);
-    setFileErrors(selection.errors);
+    setError("");
+    setConsent(false);
     setReport(null);
   }
-  function preview(event) {
+  function move(id) {
+    setStepId(id);
+    setError("");
+    top.current?.scrollIntoView({ block: "start" });
+  }
+  function next(event) {
     event.preventDefault();
-    const nextIssues = formIssues(answers);
-    setIssues(nextIssues);
-    if (Object.keys(nextIssues).length) {
-      const first = Object.keys(nextIssues)[0];
-      form.current.querySelector(`[name="${first}"]`)?.focus();
+    const check = validateQuestion(rawQuestion, answers[stepId], answers);
+    if (!check.valid) {
+      setError(
+        language === "zh"
+          ? check.message
+          : "Please complete the required choices. Use Not sure where available, and check any optional numbers.",
+      );
       return;
     }
-    setReport(createDraftReport(answers, files, { tier }));
+    if (urgent || minor) return;
+    move(plan[index + 1]?.id || "review");
   }
-
+  function generate(event) {
+    event.preventDefault();
+    const issues = formIssues(answers);
+    if (Object.keys(issues).length) {
+      const first = Object.keys(issues)[0];
+      move(first);
+      setError(
+        language === "zh"
+          ? issues[first]
+          : "Please complete this answer before viewing your report.",
+      );
+      return;
+    }
+    if (!consent) {
+      setError(
+        C("Please acknowledge the report notice.", "请确认已阅读报告说明。"),
+      );
+      return;
+    }
+    setReport(createDraftReport(answers, files, { tier, notes }));
+    top.current?.scrollIntoView({ block: "start" });
+  }
   return (
-    <div className="needs-page" id="top">
-      <a className="skip-link" href="#needs-questionnaire">
-        {t("Skip to questionnaire")}
+    <div className="needs-page bubu-page" id="top">
+      <a className="skip-link" href="#bubu-questionnaire">
+        {C("Skip to questionnaire", "跳至问卷")}
       </a>
       <Header />
-      <main>
-        <div className="needs-main">
-          <a href="/build-your-tape" className="needs-back">
-            <ArrowLeft size={17} aria-hidden="true" />
-            {t("Back to Build Your Tape")}
-          </a>
-          <div className="needs-intro">
-            <h1>
-              {t("Find out what")}
-              <br className="needs-title-break" />
-              {t(" you need.")}
-            </h1>
-            <p>
-              {t("A little about you. A more personal starting point.")}
-              <br />
-              {t("Tell us about your goals and everyday routine.")}
-              <br />
-              {isPlus
-                ? t("Add a health report only if you choose.")
-                : t("A questionnaire is all you need to get started.")}
-            </p>
-          </div>
-          <div className="needs-experience" id="needs-experience">
-            <fieldset>
-              <legend>{t("Choose your experience")}</legend>
-              <div className="needs-experience-options">
-                <label className={!isPlus ? "is-selected" : ""}>
-                  <input
-                    type="radio"
-                    name="experience"
-                    value="standard"
-                    aria-label={t("Standard — self-guided questionnaire")}
-                    checked={!isPlus}
-                    onChange={() => changeTier("standard")}
-                  />
-                  <span>
-                    <strong>{t("Standard")}</strong>
-                    <span>
-                      {t("Supplement suggestions · No upload needed")}
-                    </span>
-                  </span>
-                </label>
-                <label className={isPlus ? "is-selected" : ""}>
-                  <input
-                    type="radio"
-                    name="experience"
-                    value="plus"
-                    aria-label={t(
-                      "Plus with BUBU补补 — optional reports and nutritionist review",
-                    )}
-                    checked={isPlus}
-                    onChange={() => changeTier("plus")}
-                  />
-                  <span>
-                    <strong>{t("Plus with BUBU补补")}</strong>
-                    <span>
-                      {t("Optional report upload · Nutritionist review")}
-                    </span>
-                  </span>
-                </label>
-              </div>
-            </fieldset>
-            <p className="needs-field-hint">
-              {t(
-                "Experience preview only. Switching here does not activate a membership or send information to BUBU补补.",
-              )}
-            </p>
-          </div>
-          <div className="needs-layout">
-            <aside className="needs-sidebar">
-              <div className="needs-sidebar-inner">
-                <h2>
-                  {t("A clearer")}
-                  <br />
-                  {t("picture of you.")}
-                </h2>
-                <p>
-                  {isPlus
-                    ? t(
-                        "Your answers shape a draft nutrition report for a BUBU nutritionist to review. Health reports are optional.",
-                      )
-                    : t(
-                        "Get a supplement shortlist with reasons, food alternatives and safety checks. No report upload or Plus membership is required.",
-                      )}
-                </p>
-                <nav aria-label={t("Questionnaire sections")}>
-                  {sections.map(([id, label], index) => (
-                    <a href={`#needs-${id}`} key={id}>
-                      <span>
-                        {t("0")}
-                        {index + 1}
-                      </span>
-                      {id === "health" && isPlus
-                        ? t("Health & reports")
-                        : id === "review" && isPlus
-                          ? t("Your review")
-                          : t(label)}
-                    </a>
-                  ))}
-                </nav>
-                <p className="needs-time">
-                  {t("About 5 minutes · For adults 18+")}
-                </p>
-                <div className="needs-privacy">
-                  <LockSimple size={21} aria-hidden="true" />
-                  <p>
-                    {t("Your answers stay with you.")}
-                    <br />
-                    {t(
-                      "This demo does not save your health information. Reloading clears your answers and files.",
-                    )}
-                  </p>
-                </div>
-              </div>
-            </aside>
-            <form
-              className="needs-form"
-              id="needs-questionnaire"
-              ref={form}
-              onSubmit={preview}
-              noValidate
-            >
-              <section id="needs-goals" aria-labelledby="needs-goals-title">
-                <SectionTitle number="01" id="needs-goals-title">
-                  {t("What would you like to focus on?")}
-                </SectionTitle>
-                <p className="needs-section-help" id="needs-goal-help">
-                  {t("Choose up to 3 priorities. ")}
-                  <span>{t("Required")}</span>
-                </p>
-                <fieldset className="needs-goals-field">
-                  <legend className="needs-sr-only">
-                    {t("Your priorities")}
-                  </legend>
-                  <div className="needs-check-grid">
-                    {goals.map((goal) => (
-                      <label
-                        key={goal.id}
-                        className={
-                          answers.goals.includes(goal.id) ? "is-selected" : ""
-                        }
-                      >
-                        <input
-                          type="checkbox"
-                          name="goals"
-                          value={goal.id}
-                          checked={answers.goals.includes(goal.id)}
-                          disabled={
-                            answers.goals.length === 3 &&
-                            !answers.goals.includes(goal.id)
-                          }
-                          onChange={() => toggle("goals", goal.id)}
-                          aria-describedby={
-                            issues.goals
-                              ? "needs-goal-error"
-                              : "needs-goal-help"
-                          }
-                          aria-invalid={!!issues.goals}
-                        />
-                        <span>{t(goal.label)}</span>
-                      </label>
-                    ))}
-                  </div>
-                </fieldset>
-                {issues.goals && (
-                  <p className="needs-error" id="needs-goal-error">
-                    {t(issues.goals)}
-                  </p>
-                )}
-              </section>
-              <section
-                id="needs-everyday"
-                aria-labelledby="needs-everyday-title"
-              >
-                <SectionTitle number="02" id="needs-everyday-title">
-                  {t("Your everyday")}
-                </SectionTitle>
-                <div className="needs-age-field">
-                  <label htmlFor="needs-age">
-                    {t("Age range ")}
-                    <span>{t("Required")}</span>
-                  </label>
-                  <select
-                    id="needs-age"
-                    name="age"
-                    value={answers.age}
-                    onChange={(event) => update("age", event.target.value)}
-                    aria-invalid={!!issues.age}
-                    aria-describedby={
-                      issues.age ? "needs-age-error" : undefined
-                    }
-                  >
-                    <option value="">{t("Select your age range")}</option>
-                    {ageRanges.map((age) => (
-                      <option key={age} value={age}>
-                        {t(age)}
-                      </option>
-                    ))}
-                  </select>
-                  {issues.age && (
-                    <p className="needs-error" id="needs-age-error">
-                      {t(issues.age)}
-                    </p>
-                  )}
-                </div>
-                <Choices
-                  label={t("How do you usually eat?")}
-                  name="diet"
-                  options={diets}
-                  value={answers.diet}
-                  onChange={update}
-                  segmented
-                  error={issues.diet}
-                  hint={t("Required")}
-                />
-                <Choices
-                  label={t("How often do you include plant foods?")}
-                  hint={t(
-                    "Fruit, vegetables, whole grains and legumes · Optional",
-                  )}
-                  name="plants"
-                  options={["Rarely", "Sometimes", "Often", "Most meals"]}
-                  value={answers.plants}
-                  onChange={update}
-                />
-                <div className="needs-intake-intro">
-                  <h3>{t("A few details for your supplement suggestions")}</h3>
-                  <p className="needs-section-help">
-                    {t(
-                      "These food and routine answers determine the shortlist. A goal alone does not identify a nutrient gap.",
-                    )}
-                  </p>
-                </div>
-                {intakeQuestions.map((question) => (
-                  <Choices
-                    key={question.name}
-                    {...question}
-                    value={answers[question.name]}
-                    onChange={update}
-                    error={issues[question.name]}
-                  />
-                ))}
-                <Choices
-                  label={t("What does your usual activity look like?")}
-                  hint={t("Optional")}
-                  name="activity"
-                  options={[
-                    "Mostly sitting",
-                    "Lightly active",
-                    "Moderately active",
-                    "Very active",
-                  ]}
-                  value={answers.activity}
-                  onChange={update}
-                />
-                <Choices
-                  label={t("How would you describe your sleep?")}
-                  hint={t("Optional")}
-                  name="sleep"
-                  options={["Poor", "Fair", "Good", "Very good"]}
-                  value={answers.sleep}
-                  onChange={update}
-                />
-              </section>
-              <section id="needs-health" aria-labelledby="needs-health-title">
-                <SectionTitle number="03" id="needs-health-title">
-                  {isPlus ? t("Health & reports") : t("Your health context")}
-                </SectionTitle>
-                <p className="needs-section-help">
-                  {t(
-                    "Choose the factors that apply, None of these apply, or Unsure / private. Details remain optional; a safety flag pauses recommendations for professional review.",
-                  )}
-                </p>
-                <fieldset className="needs-health-field">
-                  <legend className="needs-sr-only">
-                    {t("Health context — required")}
-                  </legend>
-                  <div className="needs-check-grid">
-                    {healthOptions.map(([id, label]) => (
-                      <label
-                        key={id}
-                        className={
-                          answers.health.includes(id) ? "is-selected" : ""
-                        }
-                      >
-                        <input
-                          type="checkbox"
-                          name="health"
-                          value={id}
-                          checked={answers.health.includes(id)}
-                          onChange={() => toggle("health", id)}
-                          aria-invalid={!!issues.health}
-                          aria-describedby={
-                            issues.health ? "needs-health-error" : undefined
-                          }
-                        />
-                        <span>{t(label)}</span>
-                      </label>
-                    ))}
-                  </div>
-                </fieldset>
-                {issues.health && (
-                  <p className="needs-error" id="needs-health-error">
-                    {t(issues.health)}
-                  </p>
-                )}
-                <label className="needs-notes-label" htmlFor="needs-notes">
-                  {t("Anything else you would like us to know?")}{" "}
-                  <span>{t("(optional)")}</span>
-                </label>
-                <textarea
-                  id="needs-notes"
-                  name="notes"
-                  rows={3}
-                  maxLength={2000}
-                  value={answers.notes}
-                  placeholder={
-                    isPlus
-                      ? t(
-                          "Your current routine, food preferences, or questions for a BUBU nutritionist…",
-                        )
-                      : t(
-                          "Your current routine, food preferences, or anything you would like to note…",
-                        )
-                  }
-                  onChange={(event) => update("notes", event.target.value)}
-                />
-                <p className="needs-character-count">
-                  {answers.notes.length}
-                  {t(" / 2,000")}
-                </p>
-                {isPlus && (
-                  <div className="needs-plus-upload">
-                    <div className="needs-plus-heading">
-                      <span>{t("PLUS × BUBU补补")}</span>
-                      <strong>{t("Health report · Optional")}</strong>
-                    </div>
-                    <p className="needs-section-help">
-                      {t(
-                        "Plus members can add a report for a BUBU nutritionist to consider alongside the questionnaire. You can continue without a file.",
-                      )}
-                    </p>
-                    <ReportUpload
-                      files={files}
-                      onAdd={addFiles}
-                      onRemove={(index) => {
-                        setFiles((previous) =>
-                          previous.filter((_, i) => index !== i),
-                        );
-                        setFileErrors([]);
-                        setReport(null);
-                      }}
-                      errors={fileErrors}
-                    />
-                  </div>
-                )}
-              </section>
-              <section id="needs-review" aria-labelledby="needs-review-title">
-                <SectionTitle number="04" id="needs-review-title">
-                  {isPlus ? t("Your review") : t("Your supplement report")}
-                </SectionTitle>
-                <p className="needs-section-help">
-                  {isPlus
-                    ? t(
-                        "Your Plus report will need a BUBU nutritionist’s approval before any final recommendation is released. A health report is not required.",
-                      )
-                    : t(
-                        "Your report will show supplements worth considering, why they match, what to check first, and which options are not suggested. You can finish without an upload or Plus.",
-                      )}
-                </p>
-                <label
-                  className={`needs-consent ${answers.consent ? "is-selected" : ""}`}
-                >
-                  <input
-                    type="checkbox"
-                    name="consent"
-                    checked={answers.consent}
-                    onChange={(event) =>
-                      update("consent", event.target.checked)
-                    }
-                    aria-invalid={!!issues.consent}
-                    aria-describedby={
-                      issues.consent ? "needs-consent-error" : undefined
-                    }
-                  />
-                  <span>
-                    {isPlus
-                      ? t(
-                          "I understand this is a local demo draft and needs professional review. It is not medical advice.",
-                        )
-                      : t(
-                          "I understand these are questionnaire-based supplement suggestions, not a diagnosis or prescription. Personal suitability and amounts need checking.",
-                        )}
-                  </span>
-                </label>
-                {issues.consent && (
-                  <p className="needs-error" id="needs-consent-error">
-                    {t(issues.consent)}
-                  </p>
-                )}
-                {Object.values(issues).some(Boolean) && (
-                  <p className="needs-error" role="alert">
-                    {t(
-                      "Please complete the highlighted fields before previewing your report.",
-                    )}
-                  </p>
-                )}
-                <button className="button needs-submit" type="submit">
-                  {isPlus
-                    ? t("Preview My Nutrition Report")
-                    : t("View My Supplement Report")}{" "}
-                  <ArrowRight size={20} aria-hidden="true" />
-                </button>
-                <p className="needs-field-hint">
-                  {isPlus
-                    ? t(
-                        "Preview only. Your answers and files are not sent to BUBU补补 or a nutritionist in this demo.",
-                      )
-                    : t(
-                        "Questionnaire only. Your answers stay in this tab; no review request is sent.",
-                      )}
-                </p>
-              </section>
-            </form>
-          </div>
+      <main className="needs-main">
+        <a href="/build-your-tape" className="needs-back">
+          <ArrowLeft size={17} />
+          {C("Back to Build Your Tape", "返回定制你的 Tape")}
+        </a>
+        <div className="needs-intro">
+          <h1>
+            {C("A clearer picture.", "更完整地了解你。")}
+            <br />
+            {C("A plan that makes sense.", "让每项建议都有依据。")}
+          </h1>
+          <p>
+            {C(
+              "Built on BUBU’s detailed questionnaire and recommendation logic.",
+              "复用 BUBU 详细问卷与推荐逻辑。",
+            )}
+            <br />
+            {C(
+              "Food sources, daily life and goals, considered together.",
+              "把食物来源、日常习惯与目标放在一起考虑。",
+            )}
+            <br />
+            {C(
+              "About 12–18 minutes · Adults 18+ · No email required",
+              "约 12–18 分钟 · 适用于 18 岁以上成人 · 无需邮箱",
+            )}
+          </p>
         </div>
-        {isPlus ? (
-          <NutritionistReview />
-        ) : (
-          <section
-            className="needs-plus-offer"
-            aria-labelledby="needs-plus-title"
-          >
-            <div>
-              <p className="needs-demo-label">{t("Plus with BUBU补补")}</p>
-              <h2 id="needs-plus-title">
-                {t("A little more guidance, if you want it.")}
-              </h2>
-              <p>
-                {t(
-                  "Explore optional health-report upload and a proposed BUBU nutritionist review with Plus. Your standard questionnaire works on its own.",
-                )}
-              </p>
+        <div className="needs-experience">
+          <fieldset>
+            <legend>{C("Choose your experience", "选择你的体验")}</legend>
+            <div className="needs-experience-options">
+              {[
+                [
+                  "standard",
+                  "Standard",
+                  "普通用户",
+                  "Self-guided complete nutrition report",
+                  "自助完整营养报告",
+                ],
+                [
+                  "plus",
+                  "Plus with BUBU补补",
+                  "Plus × BUBU补补",
+                  "Optional files · Proposed nutritionist review",
+                  "可选文件 · 拟提供营养师审核",
+                ],
+              ].map(([id, en, zh, desc, descZh]) => (
+                <label key={id} className={tier === id ? "is-selected" : ""}>
+                  <input
+                    type="radio"
+                    name="experience"
+                    value={id}
+                    checked={tier === id}
+                    onChange={() => changeTier(id)}
+                  />
+                  <span>
+                    <strong>{C(en, zh)}</strong>
+                    <span>{C(desc, descZh)}</span>
+                  </span>
+                </label>
+              ))}
             </div>
-            <button
-              className="button"
-              onClick={() => {
-                changeTier("plus");
-                document
-                  .getElementById("needs-experience")
-                  ?.scrollIntoView({ block: "start" });
+          </fieldset>
+          <p className="needs-field-hint">
+            {C(
+              "Experience preview only. No membership is activated and no questionnaire data is sent to BUBU.",
+              "仅供体验预览。不会开通会员，也不会向 BUBU 发送问卷资料。",
+            )}
+          </p>
+        </div>
+        <div ref={top} className="bubu-flow-top" id="bubu-questionnaire">
+          {report ? (
+            <NutritionReport
+              report={report}
+              onEdit={() => {
+                setReport(null);
+                move("review");
               }}
-            >
-              {t("Explore Plus with BUBU补补")}{" "}
-              <ArrowRight size={20} aria-hidden="true" />
-            </button>
-          </section>
-        )}
+            />
+          ) : (
+            <div className="bubu-question-layout">
+              <aside className="bubu-guide">
+                <p className="bubu-eyebrow">
+                  {C("A COMPLETE STARTING POINT", "完整的营养起点")}
+                </p>
+                <h2>
+                  {C("You first.", "先了解你。")}
+                  <br />
+                  {C("Then the nutrients.", "再谈怎么补。")}
+                </h2>
+                <ol>
+                  <li>{C("Your context & goals", "个人背景与目标")}</li>
+                  <li>{C("Food amounts & variety", "食物份量与种类")}</li>
+                  <li>
+                    {C("Sleep, movement & preferences", "睡眠、活动与偏好")}
+                  </li>
+                  <li>
+                    {C("Existing supplements & safety", "已有补充与适用性")}
+                  </li>
+                  <li>
+                    {C("Priorities + complete coverage", "重点建议与完整评估")}
+                  </li>
+                </ol>
+                <p>
+                  {C(
+                    "Answers and optional files stay in this tab. Reloading clears them.",
+                    "答案与选填文件只保留在当前标签页，刷新即清除。",
+                  )}
+                </p>
+              </aside>
+              <div className="bubu-question-card">
+                {urgent || minor ? (
+                  <section className="bubu-safety-stop" role="alert">
+                    <ShieldCheck size={36} />
+                    <h2>
+                      {minor
+                        ? C("This assessment is for adults", "此问卷适用于成人")
+                        : C(
+                            "Please prioritise the current concern",
+                            "请先处理当前不适",
+                          )}
+                    </h2>
+                    <p>
+                      {minor
+                        ? C(
+                            "Under-18 nutrition needs an age-appropriate professional assessment. No adult supplement report will be generated.",
+                            "未成年人应接受适龄的专业评估，此处不会生成成人补剂报告。",
+                          )
+                        : C(
+                            "Seek urgent local medical help for the symptoms selected. Do not wait for questionnaire results or use supplements to manage them.",
+                            "已选情况需要及时联系当地急救或急诊，请不要等待问卷结果，也不要用补充剂自行处理。",
+                          )}
+                    </p>
+                    <button
+                      type="button"
+                      className="button"
+                      onClick={() => {
+                        const id = minor ? "audience" : "safety";
+                        setAnswers((previous) => ({
+                          ...previous,
+                          [id]: minor ? "" : [],
+                        }));
+                        move(id);
+                      }}
+                    >
+                      {C("Correct this answer", "修改此答案")}
+                    </button>
+                  </section>
+                ) : stepId === "review" ? (
+                  <form onSubmit={generate} noValidate>
+                    <p className="bubu-eyebrow">
+                      {C("READY TO REVIEW", "准备查看报告")}
+                    </p>
+                    <h2>
+                      {C(
+                        "Your answers. Your next steps.",
+                        "你的答案，你的下一步。",
+                      )}
+                    </h2>
+                    <p>
+                      {C(
+                        "Your report includes the full nutrition review, matched supplement options and a decision for every Tape ingredient.",
+                        "报告包含完整营养评估、匹配的补充选项，以及每种 Tape 成分的本次决策。",
+                      )}
+                    </p>
+                    <details className="bubu-answer-review">
+                      <summary>
+                        {C("Check or edit your answers", "核对或修改答案")}
+                      </summary>
+                      {plan.map((q) => (
+                        <div className="bubu-edit-answer" key={q.id}>
+                          <span>{localQuestion(q, language).title}</span>
+                          <button type="button" onClick={() => move(q.id)}>
+                            {C("Edit", "修改")}
+                          </button>
+                        </div>
+                      ))}
+                    </details>
+                    <label className="bubu-notes-label" htmlFor="bubu-notes">
+                      {C(
+                        "Notes for a future professional review (optional)",
+                        "供后续专业审核参考的备注（选填）",
+                      )}
+                    </label>
+                    <textarea
+                      id="bubu-notes"
+                      rows={3}
+                      maxLength={2000}
+                      value={notes}
+                      onChange={(event) => {
+                        setNotes(event.target.value);
+                        setConsent(false);
+                      }}
+                    />
+                    <p className="bubu-note">
+                      {C(
+                        "Notes and files are not automatically interpreted. Record safety information in the relevant questions.",
+                        "备注和文件不会自动解读；涉及安全的信息请在对应题目中明确选择。",
+                      )}
+                    </p>
+                    {isPlus && (
+                      <ReportUpload
+                        files={files}
+                        errors={fileErrors}
+                        onAdd={(incoming) => {
+                          const result = selectAttachments(files, incoming);
+                          setFiles(result.files);
+                          setFileErrors(result.errors);
+                        }}
+                        onRemove={(i) => {
+                          setFiles((previous) =>
+                            previous.filter((_, index) => index !== i),
+                          );
+                          setFileErrors([]);
+                        }}
+                      />
+                    )}
+                    <label className="needs-consent">
+                      <input
+                        type="checkbox"
+                        name="consent"
+                        checked={consent}
+                        onChange={(event) => setConsent(event.target.checked)}
+                      />
+                      <span>
+                        {C(
+                          "I understand this is an educational questionnaire report, not a diagnosis, dose prescription or approved combined formula.",
+                          "我理解这是教育性的问卷报告，不是诊断、个人剂量处方或已获批的组合配方。",
+                        )}
+                      </span>
+                    </label>
+                    {error && (
+                      <p className="bubu-error" role="alert">
+                        {error}
+                      </p>
+                    )}
+                    {isPlus && (
+                      <p className="bubu-note">
+                        {C(
+                          "Plus remains pending BUBU nutritionist review. No actual review request or file upload is sent by this prototype.",
+                          "Plus 报告仍待 BUBU补补营养师审核；此原型不会实际发送审核申请或上传文件。",
+                        )}
+                      </p>
+                    )}
+                    <div className="bubu-wizard-actions">
+                      <button
+                        type="button"
+                        className="needs-text-button"
+                        onClick={() => move(plan.at(-1).id)}
+                      >
+                        {C("Back", "上一步")}
+                      </button>
+                      <button type="submit" className="button">
+                        {C("View my complete report", "查看我的完整报告")}{" "}
+                        <ArrowRight size={18} />
+                      </button>
+                    </div>
+                  </form>
+                ) : question ? (
+                  <form onSubmit={next} noValidate>
+                    <p className="bubu-eyebrow">
+                      {C(
+                        `QUESTION ${index + 1} OF ${plan.length}`,
+                        `第 ${index + 1} / ${plan.length} 题`,
+                      )}
+                    </p>
+                    <h2 id="bubu-question-title">{question.title}</h2>
+                    {question.helper && (
+                      <p className="bubu-question-help">{question.helper}</p>
+                    )}
+                    {question.why && (
+                      <details className="bubu-why">
+                        <summary>{C("Why we ask", "为什么问这个")}</summary>
+                        <p>{question.why}</p>
+                      </details>
+                    )}
+                    <QuestionFields
+                      question={question}
+                      value={answers[stepId]}
+                      onChange={update}
+                      error={error}
+                    />
+                    {error && (
+                      <p
+                        className="bubu-error"
+                        id="bubu-question-error"
+                        role="alert"
+                      >
+                        {error}
+                      </p>
+                    )}
+                    <div className="bubu-wizard-actions">
+                      <button
+                        type="button"
+                        className="needs-text-button"
+                        disabled={index === 0}
+                        onClick={() => move(plan[index - 1].id)}
+                      >
+                        <ArrowLeft size={16} /> {C("Back", "上一步")}
+                      </button>
+                      <button type="submit" className="button">
+                        {index === plan.length - 1
+                          ? C("Review answers", "核对答案")
+                          : C("Continue", "继续")}{" "}
+                        <ArrowRight size={18} />
+                      </button>
+                    </div>
+                  </form>
+                ) : null}
+              </div>
+            </div>
+          )}
+        </div>
+        {isPlus && !report && <NutritionistReview />}
       </main>
       <PageFooter />
-      {report && (
-        <DraftReport report={report} onClose={() => setReport(null)} />
-      )}
     </div>
   );
 }
